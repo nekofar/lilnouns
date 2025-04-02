@@ -26,6 +26,10 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
+    "./contracts": {
+      "import": "./dist/contracts/index.mjs",
+      "require": "./dist/contracts/index.cjs"
+    },
     "./subgraphs": {
       "import": "./dist/subgraphs/index.mjs",
       "require": "./dist/subgraphs/index.cjs"

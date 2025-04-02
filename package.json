@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -25,6 +25,10 @@
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./contracts": {
+      "import": "./dist/contracts/index.mjs",
+      "require": "./dist/contracts/index.cjs"
     },
     "./subgraphs": {
       "import": "./dist/subgraphs/index.mjs",

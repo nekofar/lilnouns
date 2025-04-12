@@ -568,6 +568,238 @@ export const lilNounsAuctionConfig = {
 } as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LilNounsData
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const lilNounsDataAbi = [
+  { type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
+  {
+    type: 'error',
+    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
+    name: 'AddressEmptyCode',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'implementation', internalType: 'address', type: 'address' },
+    ],
+    name: 'ERC1967InvalidImplementation',
+  },
+  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
+  { type: 'error', inputs: [], name: 'FailedCall' },
+  { type: 'error', inputs: [], name: 'InvalidInitialization' },
+  { type: 'error', inputs: [], name: 'InvalidSupportValue' },
+  { type: 'error', inputs: [], name: 'NotInitializing' },
+  {
+    type: 'error',
+    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
+    name: 'OwnableInvalidOwner',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'OwnableUnauthorizedAccount',
+  },
+  { type: 'error', inputs: [], name: 'UUPSUnauthorizedCallContext' },
+  {
+    type: 'error',
+    inputs: [{ name: 'slot', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'UUPSUnsupportedProxiableUUID',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'sender',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'proposalId',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: true,
+      },
+      { name: 'support', internalType: 'uint8', type: 'uint8', indexed: false },
+      {
+        name: 'reason',
+        internalType: 'string',
+        type: 'string',
+        indexed: false,
+      },
+    ],
+    name: 'FeedbackSent',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'version',
+        internalType: 'uint64',
+        type: 'uint64',
+        indexed: false,
+      },
+    ],
+    name: 'Initialized',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferStarted',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferred',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'implementation',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'Upgraded',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'UPGRADE_INTERFACE_VERSION',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'acceptOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'initialOwner', internalType: 'address', type: 'address' },
+    ],
+    name: 'initialize',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'owner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'pendingOwner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'proxiableUUID',
+    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'renounceOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
+      { name: 'support', internalType: 'uint8', type: 'uint8' },
+      { name: 'reason', internalType: 'string', type: 'string' },
+    ],
+    name: 'sendFeedback',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'newImplementation', internalType: 'address', type: 'address' },
+      { name: 'data', internalType: 'bytes', type: 'bytes' },
+    ],
+    name: 'upgradeToAndCall',
+    outputs: [],
+    stateMutability: 'payable',
+  },
+] as const
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const lilNounsDataAddress = {
+  1: '0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902',
+  11155111: '0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902',
+} as const
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const lilNounsDataConfig = {
+  address: lilNounsDataAddress,
+  abi: lilNounsDataAbi,
+} as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsDescriptor
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -4115,6 +4347,323 @@ export const useWatchLilNounsAuctionUpgradedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
+    eventName: 'Upgraded',
+  })
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useReadLilNounsData = /*#__PURE__*/ createUseReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useReadLilNounsDataUpgradeInterfaceVersion =
+  /*#__PURE__*/ createUseReadContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'UPGRADE_INTERFACE_VERSION',
+  })
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useReadLilNounsDataOwner = /*#__PURE__*/ createUseReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"pendingOwner"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useReadLilNounsDataPendingOwner =
+  /*#__PURE__*/ createUseReadContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'pendingOwner',
+  })
+
+/**
+ * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"proxiableUUID"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useReadLilNounsDataProxiableUuid =
+  /*#__PURE__*/ createUseReadContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'proxiableUUID',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsData = /*#__PURE__*/ createUseWriteContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataAcceptOwnership =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'acceptOwnership',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataInitialize =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'initialize',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataRenounceOwnership =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataSendFeedback =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'sendFeedback',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataTransferOwnership =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWriteLilNounsDataUpgradeToAndCall =
+  /*#__PURE__*/ createUseWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsData = /*#__PURE__*/ createUseSimulateContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataAcceptOwnership =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'acceptOwnership',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataInitialize =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'initialize',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataRenounceOwnership =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataSendFeedback =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'sendFeedback',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataTransferOwnership =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useSimulateLilNounsDataUpgradeToAndCall =
+  /*#__PURE__*/ createUseSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"FeedbackSent"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataFeedbackSentEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'FeedbackSent',
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Initialized"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataInitializedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'Initialized',
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferStarted"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataOwnershipTransferStartedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'OwnershipTransferStarted',
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataOwnershipTransferredEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Upgraded"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const useWatchLilNounsDataUpgradedEvent =
+  /*#__PURE__*/ createUseWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
     eventName: 'Upgraded',
   })
 
@@ -8957,6 +9506,318 @@ export const watchLilNounsAuctionUpgradedEvent =
   /*#__PURE__*/ createWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
+    eventName: 'Upgraded',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const readLilNounsData = /*#__PURE__*/ createReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const readLilNounsDataUpgradeInterfaceVersion =
+  /*#__PURE__*/ createReadContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'UPGRADE_INTERFACE_VERSION',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const readLilNounsDataOwner = /*#__PURE__*/ createReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"pendingOwner"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const readLilNounsDataPendingOwner = /*#__PURE__*/ createReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'pendingOwner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"proxiableUUID"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const readLilNounsDataProxiableUuid = /*#__PURE__*/ createReadContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'proxiableUUID',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsData = /*#__PURE__*/ createWriteContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataAcceptOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'acceptOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataInitialize = /*#__PURE__*/ createWriteContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'initialize',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataRenounceOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataSendFeedback = /*#__PURE__*/ createWriteContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+  functionName: 'sendFeedback',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataTransferOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const writeLilNounsDataUpgradeToAndCall =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsData = /*#__PURE__*/ createSimulateContract({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataAcceptOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'acceptOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataInitialize =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'initialize',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataRenounceOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataSendFeedback =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'sendFeedback',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataTransferOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const simulateLilNounsDataUpgradeToAndCall =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataEvent = /*#__PURE__*/ createWatchContractEvent({
+  abi: lilNounsDataAbi,
+  address: lilNounsDataAddress,
+})
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"FeedbackSent"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataFeedbackSentEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'FeedbackSent',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Initialized"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataInitializedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'Initialized',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferStarted"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataOwnershipTransferStartedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'OwnershipTransferStarted',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataOwnershipTransferredEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Upgraded"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
+ */
+export const watchLilNounsDataUpgradedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsDataAbi,
+    address: lilNounsDataAddress,
     eventName: 'Upgraded',
   })
 

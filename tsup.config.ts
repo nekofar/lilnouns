@@ -7,7 +7,12 @@ export default defineConfig({
     'subgraphs/index': 'src/subgraphs/index.ts',
   },
   format: ['esm', 'cjs'],
-  dts: true,
+  dts: {
+    resolve: true,
+    compilerOptions: {
+      declarationMap: false,
+    },
+  },
   outDir: 'dist',
   outExtension({ format }) {
     return { js: format === 'esm' ? '.mjs' : '.cjs' }

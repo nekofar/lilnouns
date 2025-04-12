@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.4] - 2025-04-12
+
+### 🚀 Features
+
+- *(exports)* Add type exports for module resolution
+
+### 🚜 Refactor
+
+- *(contracts)* Streamline subgraph and contract types
+
+### ⚙️ Miscellaneous Tasks
+
+- *(tsup)* Update `dts` configuration for build
+
 ## [1.0.0-alpha.3] - 2025-04-02
 
 ### ⚙️ Miscellaneous Tasks

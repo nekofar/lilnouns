@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.6] - 2025-04-15
+
+### 🚀 Features
+
+- *(subgraphs)* Add `ProposalFeedback` entity and queries
+
 ## [1.0.0-alpha.5] - 2025-04-15
 
 ### 🚀 Features

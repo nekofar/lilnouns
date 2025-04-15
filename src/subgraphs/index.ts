@@ -1070,6 +1070,8 @@ export type Proposal = {
   executedTransactionHash?: Maybe<Scalars['Bytes']['output']>;
   /** Once the proposal is queued for execution it will have an ETA of the execution */
   executionETA?: Maybe<Scalars['BigInt']['output']>;
+  /** Feedback posts associated to this proposal */
+  feedbackPosts: Array<ProposalFeedback>;
   /** The number of votes in favor of the proposal */
   forVotes: Scalars['BigInt']['output'];
   /** Internal proposal ID, in this implementation it seems to be a autoincremental id */
@@ -1117,6 +1119,15 @@ export type Proposal = {
 };
 
 
+export type ProposalFeedbackPostsArgs = {
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<ProposalFeedbackOrderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ProposalFeedbackFilter>;
+};
+
+
 export type ProposalVotesArgs = {
   first?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<VoteOrderBy>;
@@ -1124,6 +1135,181 @@ export type ProposalVotesArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<VoteFilter>;
 };
+
+export type ProposalFeedback = {
+  __typename?: 'ProposalFeedback';
+  /** The feedback's creation block */
+  createdBlock: Scalars['BigInt']['output'];
+  /** This feedback's creation timestamp */
+  createdTimestamp: Scalars['BigInt']['output'];
+  /** A concatination of tx hash and log index, just to make sure these entities have a unique ID */
+  id: Scalars['ID']['output'];
+  /** The proposal this feedback is provided on */
+  proposal: Proposal;
+  /** The optional feedback reason free text */
+  reason?: Maybe<Scalars['String']['output']>;
+  /** The integer support value: against (0), for (1), or abstain (2) */
+  supportDetailed: Scalars['Int']['output'];
+  /** The voter account providing the feedback */
+  voter: Delegate;
+  /** Amount of votes voter had when feedback was submitted */
+  votes: Scalars['BigInt']['output'];
+};
+
+export type ProposalFeedbackFilter = {
+  /** Filter for the block changed event. */
+  _change_block?: InputMaybe<BlockChangedFilter>;
+  and?: InputMaybe<Array<InputMaybe<ProposalFeedbackFilter>>>;
+  createdBlock?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  createdBlock_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_not?: InputMaybe<Scalars['BigInt']['input']>;
+  createdBlock_not_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  createdTimestamp?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  createdTimestamp_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_not?: InputMaybe<Scalars['BigInt']['input']>;
+  createdTimestamp_not_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  id_gt?: InputMaybe<Scalars['ID']['input']>;
+  id_gte?: InputMaybe<Scalars['ID']['input']>;
+  id_in?: InputMaybe<Array<Scalars['ID']['input']>>;
+  id_lt?: InputMaybe<Scalars['ID']['input']>;
+  id_lte?: InputMaybe<Scalars['ID']['input']>;
+  id_not?: InputMaybe<Scalars['ID']['input']>;
+  id_not_in?: InputMaybe<Array<Scalars['ID']['input']>>;
+  or?: InputMaybe<Array<InputMaybe<ProposalFeedbackFilter>>>;
+  proposal?: InputMaybe<Scalars['String']['input']>;
+  proposal_?: InputMaybe<ProposalFilter>;
+  proposal_contains?: InputMaybe<Scalars['String']['input']>;
+  proposal_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  proposal_ends_with?: InputMaybe<Scalars['String']['input']>;
+  proposal_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  proposal_gt?: InputMaybe<Scalars['String']['input']>;
+  proposal_gte?: InputMaybe<Scalars['String']['input']>;
+  proposal_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  proposal_lt?: InputMaybe<Scalars['String']['input']>;
+  proposal_lte?: InputMaybe<Scalars['String']['input']>;
+  proposal_not?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_contains?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  proposal_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  proposal_not_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  proposal_starts_with?: InputMaybe<Scalars['String']['input']>;
+  proposal_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason?: InputMaybe<Scalars['String']['input']>;
+  reason_contains?: InputMaybe<Scalars['String']['input']>;
+  reason_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason_ends_with?: InputMaybe<Scalars['String']['input']>;
+  reason_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason_gt?: InputMaybe<Scalars['String']['input']>;
+  reason_gte?: InputMaybe<Scalars['String']['input']>;
+  reason_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  reason_lt?: InputMaybe<Scalars['String']['input']>;
+  reason_lte?: InputMaybe<Scalars['String']['input']>;
+  reason_not?: InputMaybe<Scalars['String']['input']>;
+  reason_not_contains?: InputMaybe<Scalars['String']['input']>;
+  reason_not_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  reason_not_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason_not_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  reason_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  reason_not_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  reason_starts_with?: InputMaybe<Scalars['String']['input']>;
+  reason_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  supportDetailed?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_gt?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_gte?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  supportDetailed_lt?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_lte?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_not?: InputMaybe<Scalars['Int']['input']>;
+  supportDetailed_not_in?: InputMaybe<Array<Scalars['Int']['input']>>;
+  voter?: InputMaybe<Scalars['String']['input']>;
+  voter_?: InputMaybe<DelegateFilter>;
+  voter_contains?: InputMaybe<Scalars['String']['input']>;
+  voter_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  voter_ends_with?: InputMaybe<Scalars['String']['input']>;
+  voter_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  voter_gt?: InputMaybe<Scalars['String']['input']>;
+  voter_gte?: InputMaybe<Scalars['String']['input']>;
+  voter_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  voter_lt?: InputMaybe<Scalars['String']['input']>;
+  voter_lte?: InputMaybe<Scalars['String']['input']>;
+  voter_not?: InputMaybe<Scalars['String']['input']>;
+  voter_not_contains?: InputMaybe<Scalars['String']['input']>;
+  voter_not_contains_nocase?: InputMaybe<Scalars['String']['input']>;
+  voter_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  voter_not_ends_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  voter_not_in?: InputMaybe<Array<Scalars['String']['input']>>;
+  voter_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  voter_not_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  voter_starts_with?: InputMaybe<Scalars['String']['input']>;
+  voter_starts_with_nocase?: InputMaybe<Scalars['String']['input']>;
+  votes?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_gt?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_gte?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  votes_lt?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_lte?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_not?: InputMaybe<Scalars['BigInt']['input']>;
+  votes_not_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+};
+
+export enum ProposalFeedbackOrderBy {
+  CreatedBlock = 'createdBlock',
+  CreatedTimestamp = 'createdTimestamp',
+  Id = 'id',
+  Proposal = 'proposal',
+  ProposalAbstainVotes = 'proposal__abstainVotes',
+  ProposalAgainstVotes = 'proposal__againstVotes',
+  ProposalCanceledBlock = 'proposal__canceledBlock',
+  ProposalCanceledTimestamp = 'proposal__canceledTimestamp',
+  ProposalCanceledTransactionHash = 'proposal__canceledTransactionHash',
+  ProposalCreatedBlock = 'proposal__createdBlock',
+  ProposalCreatedTimestamp = 'proposal__createdTimestamp',
+  ProposalCreatedTransactionHash = 'proposal__createdTransactionHash',
+  ProposalDescription = 'proposal__description',
+  ProposalEndBlock = 'proposal__endBlock',
+  ProposalExecutedBlock = 'proposal__executedBlock',
+  ProposalExecutedTimestamp = 'proposal__executedTimestamp',
+  ProposalExecutedTransactionHash = 'proposal__executedTransactionHash',
+  ProposalExecutionEta = 'proposal__executionETA',
+  ProposalForVotes = 'proposal__forVotes',
+  ProposalId = 'proposal__id',
+  ProposalMaxQuorumVotesBps = 'proposal__maxQuorumVotesBPS',
+  ProposalMinQuorumVotesBps = 'proposal__minQuorumVotesBPS',
+  ProposalProposalThreshold = 'proposal__proposalThreshold',
+  ProposalQueuedBlock = 'proposal__queuedBlock',
+  ProposalQueuedTimestamp = 'proposal__queuedTimestamp',
+  ProposalQueuedTransactionHash = 'proposal__queuedTransactionHash',
+  ProposalQuorumCoefficient = 'proposal__quorumCoefficient',
+  ProposalQuorumVotes = 'proposal__quorumVotes',
+  ProposalStartBlock = 'proposal__startBlock',
+  ProposalStatus = 'proposal__status',
+  ProposalTitle = 'proposal__title',
+  ProposalTotalSupply = 'proposal__totalSupply',
+  ProposalVetoedBlock = 'proposal__vetoedBlock',
+  ProposalVetoedTimestamp = 'proposal__vetoedTimestamp',
+  ProposalVetoedTransactionHash = 'proposal__vetoedTransactionHash',
+  Reason = 'reason',
+  SupportDetailed = 'supportDetailed',
+  Voter = 'voter',
+  VoterDelegatedVotes = 'voter__delegatedVotes',
+  VoterDelegatedVotesRaw = 'voter__delegatedVotesRaw',
+  VoterId = 'voter__id',
+  VoterTokenHoldersRepresentedAmount = 'voter__tokenHoldersRepresentedAmount',
+  Votes = 'votes'
+}
 
 export enum ProposalStatus {
   Active = 'ACTIVE',
@@ -1274,6 +1460,7 @@ export type ProposalFilter = {
   executionETA_lte?: InputMaybe<Scalars['BigInt']['input']>;
   executionETA_not?: InputMaybe<Scalars['BigInt']['input']>;
   executionETA_not_in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
+  feedbackPosts_?: InputMaybe<ProposalFeedbackFilter>;
   forVotes?: InputMaybe<Scalars['BigInt']['input']>;
   forVotes_gt?: InputMaybe<Scalars['BigInt']['input']>;
   forVotes_gte?: InputMaybe<Scalars['BigInt']['input']>;
@@ -1481,6 +1668,7 @@ export enum ProposalOrderBy {
   ExecutedTimestamp = 'executedTimestamp',
   ExecutedTransactionHash = 'executedTransactionHash',
   ExecutionEta = 'executionETA',
+  FeedbackPosts = 'feedbackPosts',
   ForVotes = 'forVotes',
   Id = 'id',
   MaxQuorumVotesBps = 'maxQuorumVotesBPS',
@@ -1530,6 +1718,8 @@ export type Query = {
   noun?: Maybe<Noun>;
   nouns: Array<Noun>;
   proposal?: Maybe<Proposal>;
+  proposalFeedback?: Maybe<ProposalFeedback>;
+  proposalFeedbacks: Array<ProposalFeedback>;
   proposals: Array<Proposal>;
   seed?: Maybe<Seed>;
   seeds: Array<Seed>;
@@ -1693,6 +1883,24 @@ export type QueryProposalArgs = {
   block?: InputMaybe<BlockHeight>;
   id: Scalars['ID']['input'];
   subgraphError?: SubgraphErrorPolicy;
+};
+
+
+export type QueryProposalFeedbackArgs = {
+  block?: InputMaybe<BlockHeight>;
+  id: Scalars['ID']['input'];
+  subgraphError?: SubgraphErrorPolicy;
+};
+
+
+export type QueryProposalFeedbacksArgs = {
+  block?: InputMaybe<BlockHeight>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<ProposalFeedbackOrderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  subgraphError?: SubgraphErrorPolicy;
+  where?: InputMaybe<ProposalFeedbackFilter>;
 };
 
 

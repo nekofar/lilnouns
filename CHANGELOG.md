@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.5] - 2025-04-15
+
+### 🚀 Features
+
+- *(config)* Add `LilNounsData` contract addresses
+- *(contracts)* Add support for `LilNounsData` contract
+
 ## [1.0.0-alpha.4] - 2025-04-12
 
 ### 🚀 Features

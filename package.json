@@ -92,7 +92,7 @@
     "prettier-plugin-packagejson": "^2.5.10",
     "rimraf": "^6.0.1",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.2",
+    "typescript": "^5.8.3",
     "typescript-eslint": "^8.30.1"
     "viem": "^2.27.2",
     "wagmi": "^2.14.16"

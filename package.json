@@ -48,7 +48,7 @@
   "scripts": {
     "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
-    "build:assets": "ts-node scripts/build-assets.ts",
+    "build:assets": "tsx scripts/build-assets.ts",
     "postbuild": "pnpm run format",
     "clean": "rimraf dist",
     "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.7] - 2025-04-24
+
+### 💼 Other
+
+- *(tsup)* Simplify and enhance build configuration
+
+### ⚙️ Miscellaneous Tasks
+
+- *(tsconfig)* Enable `emitDeclarationOnly` option
+- *(build)* Increase memory allocation in `build` script
+
 ## [1.0.0-alpha.6] - 2025-04-15
 
 ### 🚀 Features

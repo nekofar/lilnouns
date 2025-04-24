@@ -47,7 +47,7 @@
   ],
   "scripts": {
     "prebuild": "pnpm clean && pnpm graphql:generate && pnpm wagmi:generate",
-    "build": "tsup",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
     "clean": "rimraf dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

@@ -48,7 +48,7 @@
   "scripts": {
     "prebuild": "pnpm clean && pnpm graphql:generate && pnpm wagmi:generate",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
-    "build:assets": "ts-node scripts/build-assets.ts",
+    "build:assets": "tsx scripts/build-assets.ts",
     "clean": "rimraf dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

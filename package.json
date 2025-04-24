@@ -95,7 +95,7 @@
     "viem": "^2.24.2",
     "wagmi": "^2.14.15"
   },
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.9.0",
   "publishConfig": {
     "access": "public"
   }

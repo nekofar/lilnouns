@@ -1,25 +1,25 @@
-import { defineConfig } from 'tsup'
+import { defineConfig, Options } from 'tsup'
 
-export default defineConfig({
-  entry: {
-    index: 'src/index.ts',
-    'contracts/index': 'src/contracts/index.ts',
-    'subgraphs/index': 'src/subgraphs/index.ts',
-  },
-  format: ['esm', 'cjs'],
+const tsupConfig: Options = {
+  entry: ['src/**/*.ts'],
+  format: 'esm',
   dts: {
-    resolve: true,
+    resolve: false,
     compilerOptions: {
       declarationMap: false,
     },
   },
   outDir: 'dist',
-  outExtension({ format }) {
-    return { js: format === 'esm' ? '.mjs' : '.cjs' }
-  },
   splitting: false,
   clean: true,
   treeshake: true,
-  external: ['viem', 'wagmi', '@wagmi/core'],
-  noExternal: [],
-})
+  sourcemap: true,
+  minify: 'terser',
+  terserOptions: {
+    format: {
+      comments: false,
+    },
+  },
+}
+
+export default defineConfig(tsupConfig)

@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -23,32 +23,31 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./contracts": {
-      "types": "./dist/contracts/index.d.ts",
-      "import": "./dist/contracts/index.mjs",
-      "require": "./dist/contracts/index.cjs"
+      "import": "./dist/contracts/index.js",
+      "types": "./dist/contracts/index.d.ts"
     },
     "./subgraphs": {
-      "types": "./dist/subgraphs/index.d.ts",
-      "import": "./dist/subgraphs/index.mjs",
-      "require": "./dist/subgraphs/index.cjs"
+      "import": "./dist/subgraphs/index.js",
+      "types": "./dist/subgraphs/index.d.ts"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/",
+    "dist/**",
+    "src/**/*.ts",
+    "!src/**/*.test.ts",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
     "prebuild": "pnpm clean && pnpm graphql:generate && pnpm wagmi:generate",
-    "build": "tsup",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
     "clean": "rimraf dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -59,27 +58,26 @@
     "test": "echo 'No tests available.' && exit 0",
     "wagmi:generate": "wagmi generate"
   },
-  "dependencies": {
-    "graphql": "^16.10.0",
-    "graphql-request": "^6.1.0",
-    "graphql-tag": "^2.12.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@0no-co/graphqlsp": "^1.12.16",
+    "@eslint/js": "^9.25.0",
     "@graphprotocol/graph-ts": "^0.38.0",
     "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/schema-ast": "^4.1.0",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@parcel/watcher": "^2.5.1",
-    "@types/node": "^22.13.14",
-    "@typescript-eslint/utils": "^8.28.0",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
+    "@typescript-eslint/utils": "^8.30.1",
     "@wagmi/cli": "^2.2.1",
-    "dotenv": "^16.4.7",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-jsdoc": "^50.6.9",
-    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-regexp": "^2.7.0",
     "eslint-plugin-unicorn": "^58.0.0",
     "globals": "^16.0.0",
@@ -89,13 +87,24 @@
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-packagejson": "^2.5.10",
     "rimraf": "^6.0.1",
+    "terser": "^5.39.0",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.28.0",
-    "viem": "^2.24.2",
-    "wagmi": "^2.14.15"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1"
   },
-  "packageManager": "pnpm@10.5.2",
+  "peerDependencies": {
+    "@tanstack/react-query": "^5.74.4",
+    "@wagmi/core": "^2.16.7",
+    "graphql": "^16.10.0",
+    "graphql-request": "^6.1.0",
+    "graphql-tag": "^2.12.6",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "typescript": ">=5.0.0",
+    "viem": "^2.27.2",
+    "wagmi": "^2.14.16"
+  },
+  "packageManager": "pnpm@10.9.0",
   "publishConfig": {
     "access": "public"
   }

@@ -79,12 +79,16 @@ async function readRemoteImageData(): Promise<any> {
     const bodyCount = await readLilNounsDescriptorBodyCount(config, {})
     console.log('Number of bodies: ', bodyCount.toString(), '')
     if (bodyCount !== localImageData.images.bodies.length) {
+      let bodies: { filename: string; data: string }[] = []
       for (let i = 0; i < bodyCount; i++) {
-        localImageData.images.bodies[i].data =
-          await readLilNounsDescriptorBodies(config, {
+        bodies[i] = {
+          filename: localImageData.images.bodies[i].filename ?? `body-${i}`,
+          data: await readLilNounsDescriptorBodies(config, {
             args: [BigInt(i)],
-          })
+          }),
+        }
       }
+      localImageData.images.bodies = bodies
     }
 
     const accessoryCount = await readLilNounsDescriptorAccessoryCount(
@@ -93,36 +97,47 @@ async function readRemoteImageData(): Promise<any> {
     )
     console.log('Number of accessories: ', accessoryCount.toString(), '')
     if (accessoryCount !== localImageData.images.accessories.length) {
+      let accessories: { filename: string; data: string }[] = []
       for (let i = 0; i < accessoryCount; i++) {
-        localImageData.images.accessories[i].data =
-          await readLilNounsDescriptorAccessories(config, {
+        accessories[i] = {
+          filename:
+            localImageData.images.accessories[i].filename ?? `accessory-${i}`,
+          data: await readLilNounsDescriptorAccessories(config, {
             args: [BigInt(i)],
-          })
+          }),
+        }
       }
+      localImageData.images.accessories = accessories
     }
 
     const headCount = await readLilNounsDescriptorHeadCount(config, {})
     console.log('Number of heads: ', headCount.toString(), '')
     if (headCount !== localImageData.images.heads.length) {
+      let heads: { filename: string; data: string }[] = []
       for (let i = 0; i < headCount; i++) {
-        localImageData.images.heads[i].data = await readLilNounsDescriptorHeads(
-          config,
-          {
+        heads[i] = {
+          filename: localImageData.images.heads[i].filename ?? `head-${i}`,
+          data: await readLilNounsDescriptorHeads(config, {
             args: [BigInt(i)],
-          },
-        )
+          }),
+        }
       }
+      localImageData.images.heads = heads
     }
 
     const glassesCount = await readLilNounsDescriptorGlassesCount(config, {})
     console.log('Number of glasses: ', glassesCount.toString(), '')
     if (glassesCount !== localImageData.images.glasses.length) {
+      let glasses: { filename: string; data: string }[] = []
       for (let i = 0; i < glassesCount; i++) {
-        localImageData.images.glasses[i].data =
-          await readLilNounsDescriptorGlasses(config, {
+        glasses[i] = {
+          filename: localImageData.images.glasses[i].filename ?? `glasses-${i}`,
+          data: await readLilNounsDescriptorGlasses(config, {
             args: [BigInt(i)],
-          })
+          }),
+        }
       }
+      localImageData.images.glasses = glasses
     }
 
     console.log('Successfully loaded image data')
@@ -137,8 +152,6 @@ async function readRemoteImageData(): Promise<any> {
   return localImageData
 }
 
-// Create an immediately invoked async function expression (IIFE) to use await
 ;(async () => {
-  const remoteImageData = await readRemoteImageData()
-  console.log('Image data stored in variable: remoteImageData')
+  await readRemoteImageData()
 })()

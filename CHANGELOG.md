@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.8] - 2025-04-25
+
+### 🧪 Testing
+
+- *(index)* Add unit tests for `version`
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump actions/setup-node from 4.3.0 to 4.4.0 (#2)
+- *(build)* Exclude test files from build entry
+
 ## [1.0.0-alpha.7] - 2025-04-24
 
 ### 💼 Other

@@ -30,6 +30,22 @@ function readLocalImageData(): any {
   }
 }
 
+// Function to write the image data back to the JSON file
+function writeLocalImageData(imageData: any): void {
+  try {
+    // Convert the data to a JSON string with proper formatting
+    const jsonData = JSON.stringify(imageData, null, 2)
+
+    // Write the data back to the file
+    fs.writeFileSync('./src/assets/image-data.json', jsonData, 'utf8')
+
+    console.log('Successfully wrote image data to file')
+  } catch (error) {
+    console.error('Error writing image data:', error)
+    throw error
+  }
+}
+
 async function readRemoteImageData(): Promise<any> {
   const localImageData = readLocalImageData()
 
@@ -69,7 +85,6 @@ async function readRemoteImageData(): Promise<any> {
             args: [BigInt(i)],
           })
       }
-      console.log('Bodies: ', localImageData.images.bodies)
     }
 
     const accessoryCount = await readLilNounsDescriptorAccessoryCount(
@@ -84,7 +99,6 @@ async function readRemoteImageData(): Promise<any> {
             args: [BigInt(i)],
           })
       }
-      console.log('Accessories: ', localImageData.images.accessories)
     }
 
     const headCount = await readLilNounsDescriptorHeadCount(config, {})
@@ -98,7 +112,6 @@ async function readRemoteImageData(): Promise<any> {
           },
         )
       }
-      console.log('Heads: ', localImageData.images.heads)
     }
 
     const glassesCount = await readLilNounsDescriptorGlassesCount(config, {})
@@ -110,7 +123,6 @@ async function readRemoteImageData(): Promise<any> {
             args: [BigInt(i)],
           })
       }
-      console.log('Glasses: ', localImageData.images.glasses)
     }
 
     console.log('Successfully loaded image data')
@@ -118,6 +130,11 @@ async function readRemoteImageData(): Promise<any> {
     console.error('Error reading image data:', error)
     throw error
   }
+
+  // After all updates are complete, write the data back to the file
+  writeLocalImageData(localImageData)
+
+  return localImageData
 }
 
 // Create an immediately invoked async function expression (IIFE) to use await

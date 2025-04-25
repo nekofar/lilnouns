@@ -1,7 +1,7 @@
 import { defineConfig, Options } from 'tsup'
 
 const tsupConfig: Options = {
-  entry: ['src/**/*.ts'],
+  entry: ['src/**/*.ts', '!src/**/*.test.ts'],
   format: 'esm',
   dts: {
     resolve: false,

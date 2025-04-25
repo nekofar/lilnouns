@@ -63,13 +63,13 @@ async function readRemoteImageData(): Promise<any> {
     const bodyCount = await readLilNounsDescriptorBodyCount(config, {})
     console.log('Number of bodies: ', bodyCount.toString(), '')
     if (bodyCount !== localImageData.images.bodies.length) {
-      let bodies = []
       for (let i = 0; i < bodyCount; i++) {
-        bodies[i] = await readLilNounsDescriptorBodies(config, {
-          args: [BigInt(i)],
-        })
+        localImageData.images.bodies[i].data =
+          await readLilNounsDescriptorBodies(config, {
+            args: [BigInt(i)],
+          })
       }
-      console.log('Bodies: ', bodies)
+      console.log('Bodies: ', localImageData.images.bodies)
     }
 
     const accessoryCount = await readLilNounsDescriptorAccessoryCount(
@@ -78,36 +78,39 @@ async function readRemoteImageData(): Promise<any> {
     )
     console.log('Number of accessories: ', accessoryCount.toString(), '')
     if (accessoryCount !== localImageData.images.accessories.length) {
-      let accessories = []
       for (let i = 0; i < accessoryCount; i++) {
-        accessories[i] = await readLilNounsDescriptorAccessories(config, {
-          args: [BigInt(i)],
-        })
+        localImageData.images.accessories[i].data =
+          await readLilNounsDescriptorAccessories(config, {
+            args: [BigInt(i)],
+          })
       }
-      console.log('Accessories: ', accessories)
+      console.log('Accessories: ', localImageData.images.accessories)
     }
 
     const headCount = await readLilNounsDescriptorHeadCount(config, {})
     console.log('Number of heads: ', headCount.toString(), '')
     if (headCount !== localImageData.images.heads.length) {
-      let heads = []
       for (let i = 0; i < headCount; i++) {
-        heads[i] = await readLilNounsDescriptorHeads(config, {
-          args: [BigInt(i)],
-        })
+        localImageData.images.heads[i].data = await readLilNounsDescriptorHeads(
+          config,
+          {
+            args: [BigInt(i)],
+          },
+        )
       }
-      console.log('Heads: ', heads)
+      console.log('Heads: ', localImageData.images.heads)
     }
 
     const glassesCount = await readLilNounsDescriptorGlassesCount(config, {})
     console.log('Number of glasses: ', glassesCount.toString(), '')
     if (glassesCount !== localImageData.images.glasses.length) {
-      let glasses = []
       for (let i = 0; i < glassesCount; i++) {
-        glasses[i] = await readLilNounsDescriptorGlasses(config, {
-          args: [BigInt(i)],
-        })
+        localImageData.images.glasses[i].data =
+          await readLilNounsDescriptorGlasses(config, {
+            args: [BigInt(i)],
+          })
       }
+      console.log('Glasses: ', localImageData.images.glasses)
     }
 
     console.log('Successfully loaded image data')

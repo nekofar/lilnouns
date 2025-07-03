@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.11] - 2025-07-03
+
+### 🚀 Features
+
+- *(subgraphs)* Add `CandidateFeedback` and `ProposalCandidate`
+- *(contracts)* Enhance `lilNounsDataAbi` with new errors and events
+
 ## [1.0.0-alpha.10] - 2025-05-17
 
 ### 🐛 Bug Fixes

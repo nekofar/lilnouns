@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.12] - 2025-07-22
+
+### ⚙️ Miscellaneous Tasks
+
+- *(scripts)* Update commands to use `biome` for formatting and linting
+- *(config)* Add `biome` configuration file
+- *(style)* Replace semicolons with new code style conventions
+- *(config)* Add `typedoc` configuration
+- *(scripts)* Add `docs` script for generating documentation
+- *(config)* Update `typedoc` configuration
+- *(config)* Update `typedoc` configuration
+- *(gitignore)* Update ignored documentation files
+- *(config)* Update `biome` configuration
+- *(scripts)* Add `postbuild` script to run format
+- *(build)* Add pnpm workspace config
+- *(scripts)* Fix typo in `postbuild` script
+
 ## [1.0.0-alpha.11] - 2025-07-03
 
 ### 🚀 Features

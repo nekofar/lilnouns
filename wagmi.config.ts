@@ -50,9 +50,9 @@ export default defineConfig({
           name: 'LilNounsData',
           address: {
             [mainnet.id]: '0x8d59e1060464ddcd0367e2eabedf70b3e7422902',
-            [sepolia.id]: '0x8d59e1060464ddcd0367e2eabedf70b3e7422902'
-          }
-        }
+            [sepolia.id]: '0x8d59e1060464ddcd0367e2eabedf70b3e7422902',
+          },
+        },
       ],
       tryFetchProxyImplementation: true,
     }),

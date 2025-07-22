@@ -58,3 +58,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 pnpm-lock.yaml
+/docs/lilnouns/contracts.md
+/docs/lilnouns/README.md
+/docs/lilnouns/subgraphs.md

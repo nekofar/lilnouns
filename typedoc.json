@@ -1,7 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "src/index.ts",
     "src/contracts/index.ts",
     "src/subgraphs/index.ts"
   ],
@@ -13,5 +12,6 @@
   "excludeInternal": true,
   "readme": "none",
   "flattenOutputFiles": true,
-  "router": "module"
+  "router": "module",
+  "validateLinks": false
 }

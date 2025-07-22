@@ -76,7 +76,7 @@
     "graphql-scalars": "^1.24.2",
     "is-ci": "^4.1.0",
     "rimraf": "^6.0.1",
-    "terser": "^5.39.0",
+    "terser": "^5.43.1",
     "tsup": "^8.5.0",
     "typedoc": "^0.28.7",
     "typedoc-plugin-markdown": "^4.7.1",

@@ -1,17 +1,24 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "entryPoints": [
-    "src/contracts/index.ts",
-    "src/subgraphs/index.ts"
-  ],
-  "out": "docs",
+  "entryPoints": ["src/contracts/index.ts", "src/subgraphs/index.ts"],
+  "out": "docs/lilnouns",
   "plugin": ["typedoc-plugin-markdown"],
-  "hideGenerator": true,
+  "validation": {
+    "invalidLink": false,
+    "rewrittenLink": false
+  },
+  "logLevel": "Verbose",
+  "readme": "none",
+  "router": "module",
+  "disableSources": true,
+  "excludeExternals": true,
+  "excludeInternal": true,
   "excludePrivate": true,
   "excludeProtected": true,
-  "excludeInternal": true,
-  "readme": "none",
+  "fileExtension": ".md",
   "flattenOutputFiles": true,
-  "router": "module",
-  "validateLinks": false
+  "hideBreadcrumbs": false,
+  "hideGenerator": true,
+  "hidePageHeader": false,
+  "useCodeBlocks": true
 }

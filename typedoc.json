@@ -1,0 +1,17 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/index.ts",
+    "src/contracts/index.ts",
+    "src/subgraphs/index.ts"
+  ],
+  "out": "docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "hideGenerator": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "readme": "none",
+  "flattenOutputFiles": true,
+  "router": "module"
+}

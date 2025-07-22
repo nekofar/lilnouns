@@ -1,8 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
@@ -10,10 +8,10 @@
       "complexity": {
         "noExcessiveCognitiveComplexity": "error",
         "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noUselessCatch": "error",
         "noUselessTypeConstraint": "error",
-        "noWith": "error"
+        "noAdjacentSpacesInRegex": "error",
+        "noArguments": "error"
       },
       "correctness": {
         "noConstAssign": "error",
@@ -22,7 +20,6 @@
         "noEmptyPattern": "error",
         "noGlobalObjectCalls": "error",
         "noInvalidConstructorSuper": "error",
-        "noInvalidNewBuiltin": "error",
         "noNonoctalDecimalEscape": "error",
         "noPrecisionLoss": "error",
         "noSelfAssign": "error",
@@ -37,11 +34,11 @@
         "noUnusedVariables": "error",
         "useIsNan": "error",
         "useValidForDirection": "error",
-        "useYield": "error"
+        "useYield": "error",
+        "noInvalidBuiltinInstantiation": "error",
+        "useValidTypeof": "error"
       },
       "style": {
-        "noArguments": "error",
-        "noVar": "error",
         "useConst": "error",
         "useTemplate": "error"
       },
@@ -71,7 +68,8 @@
         "noUnsafeDeclarationMerging": "error",
         "noUnsafeNegation": "error",
         "useGetterReturn": "error",
-        "useValidTypeof": "error"
+        "noWith": "error",
+        "noVar": "error"
       }
     }
   },
@@ -99,7 +97,7 @@
   },
   "overrides": [
     {
-      "include": ["*.js", "*.mjs", "*.cjs"],
+      "includes": ["**/*.js", "**/*.mjs", "**/*.cjs"],
       "linter": {
         "rules": {
           "correctness": {
@@ -109,7 +107,7 @@
       }
     },
     {
-      "include": ["src/subgraphs/**"],
+      "includes": ["**/src/subgraphs/**"],
       "linter": {
         "rules": {
           "suspicious": {
@@ -122,7 +120,7 @@
       }
     },
     {
-      "include": ["*.config.{js,mjs,ts}", "wagmi.config.ts"],
+      "includes": ["**/*.config.{js,mjs,ts}", "**/wagmi.config.ts"],
       "linter": {
         "rules": {
           "style": {
@@ -134,12 +132,13 @@
   ],
   "files": {
     "ignoreUnknown": false,
-    "ignore": [
-      "**/build/**",
-      "**/dist/**",
-      "*.config.{js,mjs,ts}",
-      "node_modules/**",
-      ".git/**"
+    "includes": [
+      "**",
+      "!**/build/**",
+      "!**/dist/**",
+      "!**/*.config.{js,mjs,ts}",
+      "!**/node_modules/**",
+      "!**/.git/**"
     ]
   }
 }

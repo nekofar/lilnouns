@@ -3,7 +3,9 @@
   "version": "1.0.0-alpha.11",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
-  "keywords": ["lilnouns"],
+  "keywords": [
+    "lilnouns"
+  ],
   "homepage": "https://github.com/nekofar/lilnouns#readme",
   "bugs": {
     "url": "https://github.com/nekofar/lilnouns/issues"
@@ -47,6 +49,7 @@
     "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
     "clean": "rimraf dist",
+    "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",
     "format": "biome format --write .",
     "format:check": "biome format .",
     "graphql:generate": "graphql-codegen --config codegen.config.ts",
@@ -75,6 +78,8 @@
     "rimraf": "^6.0.1",
     "terser": "^5.39.0",
     "tsup": "^8.4.0",
+    "typedoc": "^0.28.7",
+    "typedoc-plugin-markdown": "^4.7.1",
     "typescript": "^5.8.3",
     "vitest": "^3.1.1"
   },

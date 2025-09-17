@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.18] - 2025-09-17
+
+### 💼 Other
+
+- *(pnpm)* Remove `pnpm-workspace.yaml`
+
+### ⚙️ Miscellaneous Tasks
+
+- *(gitignore)* Remove `pnpm-lock.yaml` from ignored files
+
 ## [1.0.0-alpha.17] - 2025-09-10
 
 ### 💼 Other

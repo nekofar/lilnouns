@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.19] - 2025-09-17
+
+### ⚙️ Miscellaneous Tasks
+
+- *(build)* Simplify pnpm caching in workflows
+- *(package)* Specify minimum Node.js version
+
 ## [1.0.0-alpha.18] - 2025-09-17
 
 ### 💼 Other

@@ -10,6 +10,9 @@ export {
   lilNounsDescriptorAbi, // LilNounsDescriptor ABI
   lilNounsDescriptorAddress, // LilNounsDescriptor addresses
   lilNounsDescriptorConfig, // LilNounsDescriptor config
+  lilNounsEnsMapperAbi, // LilNounsEnsMapper ABI
+  lilNounsEnsMapperAddress, // LilNounsEnsMapper addresses
+  lilNounsEnsMapperConfig, // LilNounsEnsMapper config
   lilNounsGovernorAbi, // LilNounsGovernor ABI
   lilNounsGovernorAddress, // LilNounsGovernor addresses
   lilNounsGovernorConfig, // LilNounsGovernor config
@@ -81,6 +84,22 @@ export {
   readLilNounsDescriptorPalettes, // Actions read helper for LilNounsDescriptor.palettes
   readLilNounsDescriptorRenderer, // Actions read helper for LilNounsDescriptor.renderer
   readLilNounsDescriptorTokenUri, // Actions read helper for LilNounsDescriptor.tokenUri
+  readLilNounsEnsMapper, // Actions read helper for LilNounsEnsMapper
+  readLilNounsEnsMapperUpgradeInterfaceVersion, // Actions read helper for LilNounsEnsMapper.upgradeInterfaceVersion
+  readLilNounsEnsMapperAddr, // Actions read helper for LilNounsEnsMapper.addr
+  readLilNounsEnsMapperEns, // Actions read helper for LilNounsEnsMapper.ens
+  readLilNounsEnsMapperEnsNameOf, // Actions read helper for LilNounsEnsMapper.ensNameOf
+  readLilNounsEnsMapperEnsNodeOf, // Actions read helper for LilNounsEnsMapper.ensNodeOf
+  readLilNounsEnsMapperIsLegacyNode, // Actions read helper for LilNounsEnsMapper.isLegacyNode
+  readLilNounsEnsMapperLegacy, // Actions read helper for LilNounsEnsMapper.legacy
+  readLilNounsEnsMapperName, // Actions read helper for LilNounsEnsMapper.name
+  readLilNounsEnsMapperNft, // Actions read helper for LilNounsEnsMapper.nft
+  readLilNounsEnsMapperOwner, // Actions read helper for LilNounsEnsMapper.owner
+  readLilNounsEnsMapperProxiableUuid, // Actions read helper for LilNounsEnsMapper.proxiableUuid
+  readLilNounsEnsMapperRootLabel, // Actions read helper for LilNounsEnsMapper.rootLabel
+  readLilNounsEnsMapperRootNode, // Actions read helper for LilNounsEnsMapper.rootNode
+  readLilNounsEnsMapperSupportsInterface, // Actions read helper for LilNounsEnsMapper.supportsInterface
+  readLilNounsEnsMapperText, // Actions read helper for LilNounsEnsMapper.text
   readLilNounsGovernor, // Actions read helper for LilNounsGovernor
   readLilNounsGovernorBallotTypehash, // Actions read helper for LilNounsGovernor.ballotTypehash
   readLilNounsGovernorDomainTypehash, // Actions read helper for LilNounsGovernor.domainTypehash
@@ -220,6 +239,19 @@ export {
   writeLilNounsDescriptorSetRenderer, // Actions write helper for LilNounsDescriptor.setRenderer
   writeLilNounsDescriptorToggleDataUriEnabled, // Actions write helper for LilNounsDescriptor.toggleDataUriEnabled
   writeLilNounsDescriptorTransferOwnership, // Actions write helper for LilNounsDescriptor.transferOwnership
+  writeLilNounsEnsMapper, // Actions write helper for LilNounsEnsMapper
+  writeLilNounsEnsMapperClaimSubname, // Actions write helper for LilNounsEnsMapper.claimSubname
+  writeLilNounsEnsMapperEmitAddrEvents, // Actions write helper for LilNounsEnsMapper.emitAddrEvents
+  writeLilNounsEnsMapperEmitTextEvents, // Actions write helper for LilNounsEnsMapper.emitTextEvents
+  writeLilNounsEnsMapperInitialize, // Actions write helper for LilNounsEnsMapper.initialize
+  writeLilNounsEnsMapperMigrateLegacySubname, // Actions write helper for LilNounsEnsMapper.migrateLegacySubname
+  writeLilNounsEnsMapperReleaseLegacySubname, // Actions write helper for LilNounsEnsMapper.releaseLegacySubname
+  writeLilNounsEnsMapperRelinquishSubname, // Actions write helper for LilNounsEnsMapper.relinquishSubname
+  writeLilNounsEnsMapperRenounceOwnership, // Actions write helper for LilNounsEnsMapper.renounceOwnership
+  writeLilNounsEnsMapperRestoreResolver, // Actions write helper for LilNounsEnsMapper.restoreResolver
+  writeLilNounsEnsMapperSetText, // Actions write helper for LilNounsEnsMapper.setText
+  writeLilNounsEnsMapperTransferOwnership, // Actions write helper for LilNounsEnsMapper.transferOwnership
+  writeLilNounsEnsMapperUpgradeToAndCall, // Actions write helper for LilNounsEnsMapper.upgradeToAndCall
   writeLilNounsGovernor, // Actions write helper for LilNounsGovernor
   writeLilNounsGovernorAcceptAdmin, // Actions write helper for LilNounsGovernor.acceptAdmin
   writeLilNounsGovernorAcceptVetoer, // Actions write helper for LilNounsGovernor.acceptVetoer
@@ -325,6 +357,19 @@ export {
   simulateLilNounsDescriptorSetRenderer, // Actions simulate helper for LilNounsDescriptor.setRenderer
   simulateLilNounsDescriptorToggleDataUriEnabled, // Actions simulate helper for LilNounsDescriptor.toggleDataUriEnabled
   simulateLilNounsDescriptorTransferOwnership, // Actions simulate helper for LilNounsDescriptor.transferOwnership
+  simulateLilNounsEnsMapper, // Actions simulate helper for LilNounsEnsMapper
+  simulateLilNounsEnsMapperClaimSubname, // Actions simulate helper for LilNounsEnsMapper.claimSubname
+  simulateLilNounsEnsMapperEmitAddrEvents, // Actions simulate helper for LilNounsEnsMapper.emitAddrEvents
+  simulateLilNounsEnsMapperEmitTextEvents, // Actions simulate helper for LilNounsEnsMapper.emitTextEvents
+  simulateLilNounsEnsMapperInitialize, // Actions simulate helper for LilNounsEnsMapper.initialize
+  simulateLilNounsEnsMapperMigrateLegacySubname, // Actions simulate helper for LilNounsEnsMapper.migrateLegacySubname
+  simulateLilNounsEnsMapperReleaseLegacySubname, // Actions simulate helper for LilNounsEnsMapper.releaseLegacySubname
+  simulateLilNounsEnsMapperRelinquishSubname, // Actions simulate helper for LilNounsEnsMapper.relinquishSubname
+  simulateLilNounsEnsMapperRenounceOwnership, // Actions simulate helper for LilNounsEnsMapper.renounceOwnership
+  simulateLilNounsEnsMapperRestoreResolver, // Actions simulate helper for LilNounsEnsMapper.restoreResolver
+  simulateLilNounsEnsMapperSetText, // Actions simulate helper for LilNounsEnsMapper.setText
+  simulateLilNounsEnsMapperTransferOwnership, // Actions simulate helper for LilNounsEnsMapper.transferOwnership
+  simulateLilNounsEnsMapperUpgradeToAndCall, // Actions simulate helper for LilNounsEnsMapper.upgradeToAndCall
   simulateLilNounsGovernor, // Actions simulate helper for LilNounsGovernor
   simulateLilNounsGovernorAcceptAdmin, // Actions simulate helper for LilNounsGovernor.acceptAdmin
   simulateLilNounsGovernorAcceptVetoer, // Actions simulate helper for LilNounsGovernor.acceptVetoer
@@ -411,6 +456,14 @@ export {
   watchLilNounsDescriptorOwnershipTransferredEvent, // Actions event watcher for LilNounsDescriptor.ownershipTransferred
   watchLilNounsDescriptorPartsLockedEvent, // Actions event watcher for LilNounsDescriptor.partsLocked
   watchLilNounsDescriptorRendererUpdatedEvent, // Actions event watcher for LilNounsDescriptor.rendererUpdated
+  watchLilNounsEnsMapperEvent, // Actions event watcher for LilNounsEnsMapper
+  watchLilNounsEnsMapperAddrChangedEvent, // Actions event watcher for LilNounsEnsMapper.addrChanged
+  watchLilNounsEnsMapperInitializedEvent, // Actions event watcher for LilNounsEnsMapper.initialized
+  watchLilNounsEnsMapperNameChangedEvent, // Actions event watcher for LilNounsEnsMapper.nameChanged
+  watchLilNounsEnsMapperOwnershipTransferredEvent, // Actions event watcher for LilNounsEnsMapper.ownershipTransferred
+  watchLilNounsEnsMapperSubnameClaimedEvent, // Actions event watcher for LilNounsEnsMapper.subnameClaimed
+  watchLilNounsEnsMapperTextChangedEvent, // Actions event watcher for LilNounsEnsMapper.textChanged
+  watchLilNounsEnsMapperUpgradedEvent, // Actions event watcher for LilNounsEnsMapper.upgraded
   watchLilNounsGovernorEvent, // Actions event watcher for LilNounsGovernor
   watchLilNounsGovernorMaxQuorumVotesBpsSetEvent, // Actions event watcher for LilNounsGovernor.maxQuorumVotesBpsSet
   watchLilNounsGovernorMinQuorumVotesBpsSetEvent, // Actions event watcher for LilNounsGovernor.minQuorumVotesBpsSet
@@ -522,6 +575,22 @@ export {
   useReadLilNounsDescriptorPalettes, // React read hook for LilNounsDescriptor.palettes
   useReadLilNounsDescriptorRenderer, // React read hook for LilNounsDescriptor.renderer
   useReadLilNounsDescriptorTokenUri, // React read hook for LilNounsDescriptor.tokenUri
+  useReadLilNounsEnsMapper, // React read hook for LilNounsEnsMapper
+  useReadLilNounsEnsMapperUpgradeInterfaceVersion, // React read hook for LilNounsEnsMapper.upgradeInterfaceVersion
+  useReadLilNounsEnsMapperAddr, // React read hook for LilNounsEnsMapper.addr
+  useReadLilNounsEnsMapperEns, // React read hook for LilNounsEnsMapper.ens
+  useReadLilNounsEnsMapperEnsNameOf, // React read hook for LilNounsEnsMapper.ensNameOf
+  useReadLilNounsEnsMapperEnsNodeOf, // React read hook for LilNounsEnsMapper.ensNodeOf
+  useReadLilNounsEnsMapperIsLegacyNode, // React read hook for LilNounsEnsMapper.isLegacyNode
+  useReadLilNounsEnsMapperLegacy, // React read hook for LilNounsEnsMapper.legacy
+  useReadLilNounsEnsMapperName, // React read hook for LilNounsEnsMapper.name
+  useReadLilNounsEnsMapperNft, // React read hook for LilNounsEnsMapper.nft
+  useReadLilNounsEnsMapperOwner, // React read hook for LilNounsEnsMapper.owner
+  useReadLilNounsEnsMapperProxiableUuid, // React read hook for LilNounsEnsMapper.proxiableUuid
+  useReadLilNounsEnsMapperRootLabel, // React read hook for LilNounsEnsMapper.rootLabel
+  useReadLilNounsEnsMapperRootNode, // React read hook for LilNounsEnsMapper.rootNode
+  useReadLilNounsEnsMapperSupportsInterface, // React read hook for LilNounsEnsMapper.supportsInterface
+  useReadLilNounsEnsMapperText, // React read hook for LilNounsEnsMapper.text
   useReadLilNounsGovernor, // React read hook for LilNounsGovernor
   useReadLilNounsGovernorBallotTypehash, // React read hook for LilNounsGovernor.ballotTypehash
   useReadLilNounsGovernorDomainTypehash, // React read hook for LilNounsGovernor.domainTypehash
@@ -661,6 +730,19 @@ export {
   useWriteLilNounsDescriptorSetRenderer, // React write hook for LilNounsDescriptor.setRenderer
   useWriteLilNounsDescriptorToggleDataUriEnabled, // React write hook for LilNounsDescriptor.toggleDataUriEnabled
   useWriteLilNounsDescriptorTransferOwnership, // React write hook for LilNounsDescriptor.transferOwnership
+  useWriteLilNounsEnsMapper, // React write hook for LilNounsEnsMapper
+  useWriteLilNounsEnsMapperClaimSubname, // React write hook for LilNounsEnsMapper.claimSubname
+  useWriteLilNounsEnsMapperEmitAddrEvents, // React write hook for LilNounsEnsMapper.emitAddrEvents
+  useWriteLilNounsEnsMapperEmitTextEvents, // React write hook for LilNounsEnsMapper.emitTextEvents
+  useWriteLilNounsEnsMapperInitialize, // React write hook for LilNounsEnsMapper.initialize
+  useWriteLilNounsEnsMapperMigrateLegacySubname, // React write hook for LilNounsEnsMapper.migrateLegacySubname
+  useWriteLilNounsEnsMapperReleaseLegacySubname, // React write hook for LilNounsEnsMapper.releaseLegacySubname
+  useWriteLilNounsEnsMapperRelinquishSubname, // React write hook for LilNounsEnsMapper.relinquishSubname
+  useWriteLilNounsEnsMapperRenounceOwnership, // React write hook for LilNounsEnsMapper.renounceOwnership
+  useWriteLilNounsEnsMapperRestoreResolver, // React write hook for LilNounsEnsMapper.restoreResolver
+  useWriteLilNounsEnsMapperSetText, // React write hook for LilNounsEnsMapper.setText
+  useWriteLilNounsEnsMapperTransferOwnership, // React write hook for LilNounsEnsMapper.transferOwnership
+  useWriteLilNounsEnsMapperUpgradeToAndCall, // React write hook for LilNounsEnsMapper.upgradeToAndCall
   useWriteLilNounsGovernor, // React write hook for LilNounsGovernor
   useWriteLilNounsGovernorAcceptAdmin, // React write hook for LilNounsGovernor.acceptAdmin
   useWriteLilNounsGovernorAcceptVetoer, // React write hook for LilNounsGovernor.acceptVetoer
@@ -766,6 +848,19 @@ export {
   useSimulateLilNounsDescriptorSetRenderer, // React simulate hook for LilNounsDescriptor.setRenderer
   useSimulateLilNounsDescriptorToggleDataUriEnabled, // React simulate hook for LilNounsDescriptor.toggleDataUriEnabled
   useSimulateLilNounsDescriptorTransferOwnership, // React simulate hook for LilNounsDescriptor.transferOwnership
+  useSimulateLilNounsEnsMapper, // React simulate hook for LilNounsEnsMapper
+  useSimulateLilNounsEnsMapperClaimSubname, // React simulate hook for LilNounsEnsMapper.claimSubname
+  useSimulateLilNounsEnsMapperEmitAddrEvents, // React simulate hook for LilNounsEnsMapper.emitAddrEvents
+  useSimulateLilNounsEnsMapperEmitTextEvents, // React simulate hook for LilNounsEnsMapper.emitTextEvents
+  useSimulateLilNounsEnsMapperInitialize, // React simulate hook for LilNounsEnsMapper.initialize
+  useSimulateLilNounsEnsMapperMigrateLegacySubname, // React simulate hook for LilNounsEnsMapper.migrateLegacySubname
+  useSimulateLilNounsEnsMapperReleaseLegacySubname, // React simulate hook for LilNounsEnsMapper.releaseLegacySubname
+  useSimulateLilNounsEnsMapperRelinquishSubname, // React simulate hook for LilNounsEnsMapper.relinquishSubname
+  useSimulateLilNounsEnsMapperRenounceOwnership, // React simulate hook for LilNounsEnsMapper.renounceOwnership
+  useSimulateLilNounsEnsMapperRestoreResolver, // React simulate hook for LilNounsEnsMapper.restoreResolver
+  useSimulateLilNounsEnsMapperSetText, // React simulate hook for LilNounsEnsMapper.setText
+  useSimulateLilNounsEnsMapperTransferOwnership, // React simulate hook for LilNounsEnsMapper.transferOwnership
+  useSimulateLilNounsEnsMapperUpgradeToAndCall, // React simulate hook for LilNounsEnsMapper.upgradeToAndCall
   useSimulateLilNounsGovernor, // React simulate hook for LilNounsGovernor
   useSimulateLilNounsGovernorAcceptAdmin, // React simulate hook for LilNounsGovernor.acceptAdmin
   useSimulateLilNounsGovernorAcceptVetoer, // React simulate hook for LilNounsGovernor.acceptVetoer
@@ -852,6 +947,14 @@ export {
   useWatchLilNounsDescriptorOwnershipTransferredEvent, // React event hook for LilNounsDescriptor.ownershipTransferred
   useWatchLilNounsDescriptorPartsLockedEvent, // React event hook for LilNounsDescriptor.partsLocked
   useWatchLilNounsDescriptorRendererUpdatedEvent, // React event hook for LilNounsDescriptor.rendererUpdated
+  useWatchLilNounsEnsMapperEvent, // React event hook for LilNounsEnsMapper
+  useWatchLilNounsEnsMapperAddrChangedEvent, // React event hook for LilNounsEnsMapper.addrChanged
+  useWatchLilNounsEnsMapperInitializedEvent, // React event hook for LilNounsEnsMapper.initialized
+  useWatchLilNounsEnsMapperNameChangedEvent, // React event hook for LilNounsEnsMapper.nameChanged
+  useWatchLilNounsEnsMapperOwnershipTransferredEvent, // React event hook for LilNounsEnsMapper.ownershipTransferred
+  useWatchLilNounsEnsMapperSubnameClaimedEvent, // React event hook for LilNounsEnsMapper.subnameClaimed
+  useWatchLilNounsEnsMapperTextChangedEvent, // React event hook for LilNounsEnsMapper.textChanged
+  useWatchLilNounsEnsMapperUpgradedEvent, // React event hook for LilNounsEnsMapper.upgraded
   useWatchLilNounsGovernorEvent, // React event hook for LilNounsGovernor
   useWatchLilNounsGovernorMaxQuorumVotesBpsSetEvent, // React event hook for LilNounsGovernor.maxQuorumVotesBpsSet
   useWatchLilNounsGovernorMinQuorumVotesBpsSetEvent, // React event hook for LilNounsGovernor.minQuorumVotesBpsSet

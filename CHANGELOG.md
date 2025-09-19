@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.22] - 2025-09-19
+
+### 🚀 Features
+
+- *(config)* Add LilNounsEnsMapper to wagmi config
+- *(contracts)* Add LilNounsEnsMapper actions and config
+- *(contracts)* Add comprehensive LilNounsEnsMapper exports
+
 ## [1.0.0-alpha.21] - 2025-09-19
 
 ### 🚀 Features

@@ -1759,6 +1759,431 @@ export const lilNounsDescriptorConfig = {
 } as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// LilNounsEnsMapper
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const lilNounsEnsMapperAbi = [
+  {
+    type: 'error',
+    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
+    name: 'AddressEmptyCode',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'AlreadyClaimed',
+  },
+  {
+    type: 'error',
+    inputs: [
+      { name: 'implementation', internalType: 'address', type: 'address' },
+    ],
+    name: 'ERC1967InvalidImplementation',
+  },
+  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
+  { type: 'error', inputs: [], name: 'FailedCall' },
+  { type: 'error', inputs: [], name: 'InvalidENSRegistry' },
+  { type: 'error', inputs: [], name: 'InvalidInitialization' },
+  { type: 'error', inputs: [], name: 'InvalidLabel' },
+  { type: 'error', inputs: [], name: 'InvalidLegacyAddress' },
+  {
+    type: 'error',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'NotAuthorised',
+  },
+  { type: 'error', inputs: [], name: 'NotInitializing' },
+  {
+    type: 'error',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'NotTokenOwner',
+  },
+  { type: 'error', inputs: [], name: 'OverrideAvatarKey' },
+  {
+    type: 'error',
+    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
+    name: 'OwnableInvalidOwner',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
+    name: 'OwnableUnauthorizedAccount',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'PreexistingENSRecord',
+  },
+  { type: 'error', inputs: [], name: 'ReentrancyGuardReentrantCall' },
+  { type: 'error', inputs: [], name: 'UUPSUnauthorizedCallContext' },
+  {
+    type: 'error',
+    inputs: [{ name: 'slot', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'UUPSUnsupportedProxiableUUID',
+  },
+  {
+    type: 'error',
+    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'UnregisteredNode',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      { name: 'a', internalType: 'address', type: 'address', indexed: false },
+    ],
+    name: 'AddrChanged',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'version',
+        internalType: 'uint64',
+        type: 'uint64',
+        indexed: false,
+      },
+    ],
+    name: 'Initialized',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      { name: 'name', internalType: 'string', type: 'string', indexed: false },
+    ],
+    name: 'NameChanged',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'previousOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'newOwner',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'OwnershipTransferred',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'registrar',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+      {
+        name: 'tokenId',
+        internalType: 'uint256',
+        type: 'uint256',
+        indexed: true,
+      },
+      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      { name: 'label', internalType: 'string', type: 'string', indexed: false },
+    ],
+    name: 'SubnameClaimed',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      {
+        name: 'indexedKey',
+        internalType: 'string',
+        type: 'string',
+        indexed: true,
+      },
+      { name: 'key', internalType: 'string', type: 'string', indexed: false },
+      { name: 'value', internalType: 'string', type: 'string', indexed: false },
+    ],
+    name: 'TextChanged',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
+      {
+        name: 'indexedKey',
+        internalType: 'string',
+        type: 'string',
+        indexed: true,
+      },
+      { name: 'key', internalType: 'string', type: 'string', indexed: false },
+    ],
+    name: 'TextChanged',
+  },
+  {
+    type: 'event',
+    anonymous: false,
+    inputs: [
+      {
+        name: 'implementation',
+        internalType: 'address',
+        type: 'address',
+        indexed: true,
+      },
+    ],
+    name: 'Upgraded',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'UPGRADE_INTERFACE_VERSION',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'addr',
+    outputs: [{ name: '', internalType: 'address payable', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'label', internalType: 'string', type: 'string' },
+      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+    ],
+    name: 'claimSubname',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'tokenIds', internalType: 'uint256[]', type: 'uint256[]' },
+    ],
+    name: 'emitAddrEvents',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'tokenIds', internalType: 'uint256[]', type: 'uint256[]' },
+      { name: 'key', internalType: 'string', type: 'string' },
+    ],
+    name: 'emitTextEvents',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'ens',
+    outputs: [{ name: '', internalType: 'contract ENS', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'ensNameOf',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'ensNodeOf',
+    outputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'initialOwner', internalType: 'address', type: 'address' },
+      { name: 'legacyAddr', internalType: 'address', type: 'address' },
+      { name: 'ensRegistry', internalType: 'address', type: 'address' },
+      { name: 'ensRoot', internalType: 'bytes32', type: 'bytes32' },
+      { name: 'labelRoot', internalType: 'string', type: 'string' },
+    ],
+    name: 'initialize',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'isLegacyNode',
+    outputs: [{ name: 'isLegacy', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'legacy',
+    outputs: [
+      {
+        name: '',
+        internalType: 'contract ILilNounsEnsMapperV1',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'migrateLegacySubname',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
+    name: 'name',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'nft',
+    outputs: [{ name: '', internalType: 'contract IERC721', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'owner',
+    outputs: [{ name: '', internalType: 'address', type: 'address' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'proxiableUUID',
+    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'releaseLegacySubname',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'relinquishSubname',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'renounceOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
+    name: 'restoreResolver',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'rootLabel',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [],
+    name: 'rootNode',
+    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32' },
+      { name: 'key', internalType: 'string', type: 'string' },
+      { name: 'value', internalType: 'string', type: 'string' },
+    ],
+    name: 'setText',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'interfaceId', internalType: 'bytes4', type: 'bytes4' }],
+    name: 'supportsInterface',
+    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
+    stateMutability: 'pure',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'node', internalType: 'bytes32', type: 'bytes32' },
+      { name: 'key', internalType: 'string', type: 'string' },
+    ],
+    name: 'text',
+    outputs: [{ name: '', internalType: 'string', type: 'string' }],
+    stateMutability: 'view',
+  },
+  {
+    type: 'function',
+    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+  },
+  {
+    type: 'function',
+    inputs: [
+      { name: 'newImplementation', internalType: 'address', type: 'address' },
+      { name: 'data', internalType: 'bytes', type: 'bytes' },
+    ],
+    name: 'upgradeToAndCall',
+    outputs: [],
+    stateMutability: 'payable',
+  },
+] as const
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const lilNounsEnsMapperAddress = {
+  1: '0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f',
+  11155111: '0x20779E57C32AE340cb8671E5EafC9eB26e753D22',
+} as const
+
+/**
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const lilNounsEnsMapperConfig = {
+  address: lilNounsEnsMapperAddress,
+  abi: lilNounsEnsMapperAbi,
+} as const
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsGovernor
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -6429,6 +6854,637 @@ export const watchLilNounsDescriptorRendererUpdatedEvent =
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
     eventName: 'RendererUpdated',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapper = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperUpgradeInterfaceVersion =
+  /*#__PURE__*/ createReadContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'UPGRADE_INTERFACE_VERSION',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"addr"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperAddr = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'addr',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ens"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperEns = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'ens',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ensNameOf"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperEnsNameOf = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'ensNameOf',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ensNodeOf"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperEnsNodeOf = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'ensNodeOf',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"isLegacyNode"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperIsLegacyNode =
+  /*#__PURE__*/ createReadContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'isLegacyNode',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"legacy"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperLegacy = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'legacy',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"name"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperName = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'name',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"nft"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperNft = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'nft',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"owner"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperOwner = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'owner',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"proxiableUUID"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperProxiableUuid =
+  /*#__PURE__*/ createReadContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'proxiableUUID',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"rootLabel"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperRootLabel = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'rootLabel',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"rootNode"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperRootNode = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'rootNode',
+})
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"supportsInterface"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperSupportsInterface =
+  /*#__PURE__*/ createReadContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'supportsInterface',
+  })
+
+/**
+ * Wraps __{@link readContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"text"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const readLilNounsEnsMapperText = /*#__PURE__*/ createReadContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'text',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapper = /*#__PURE__*/ createWriteContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"claimSubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperClaimSubname =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'claimSubname',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitAddrEvents"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperEmitAddrEvents =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'emitAddrEvents',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitTextEvents"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperEmitTextEvents =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'emitTextEvents',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperInitialize =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'initialize',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"migrateLegacySubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperMigrateLegacySubname =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'migrateLegacySubname',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"releaseLegacySubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperReleaseLegacySubname =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'releaseLegacySubname',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"relinquishSubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperRelinquishSubname =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'relinquishSubname',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperRenounceOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"restoreResolver"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperRestoreResolver =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'restoreResolver',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"setText"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperSetText = /*#__PURE__*/ createWriteContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+  functionName: 'setText',
+})
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperTransferOwnership =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link writeContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const writeLilNounsEnsMapperUpgradeToAndCall =
+  /*#__PURE__*/ createWriteContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapper = /*#__PURE__*/ createSimulateContract({
+  abi: lilNounsEnsMapperAbi,
+  address: lilNounsEnsMapperAddress,
+})
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"claimSubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperClaimSubname =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'claimSubname',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitAddrEvents"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperEmitAddrEvents =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'emitAddrEvents',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitTextEvents"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperEmitTextEvents =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'emitTextEvents',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"initialize"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperInitialize =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'initialize',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"migrateLegacySubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperMigrateLegacySubname =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'migrateLegacySubname',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"releaseLegacySubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperReleaseLegacySubname =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'releaseLegacySubname',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"relinquishSubname"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperRelinquishSubname =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'relinquishSubname',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"renounceOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperRenounceOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'renounceOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"restoreResolver"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperRestoreResolver =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'restoreResolver',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"setText"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperSetText =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'setText',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"transferOwnership"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperTransferOwnership =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'transferOwnership',
+  })
+
+/**
+ * Wraps __{@link simulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"upgradeToAndCall"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const simulateLilNounsEnsMapperUpgradeToAndCall =
+  /*#__PURE__*/ createSimulateContract({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    functionName: 'upgradeToAndCall',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"AddrChanged"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperAddrChangedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'AddrChanged',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"Initialized"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperInitializedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'Initialized',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"NameChanged"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperNameChangedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'NameChanged',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"OwnershipTransferred"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperOwnershipTransferredEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'OwnershipTransferred',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"SubnameClaimed"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperSubnameClaimedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'SubnameClaimed',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"TextChanged"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperTextChangedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'TextChanged',
+  })
+
+/**
+ * Wraps __{@link watchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"Upgraded"`
+ *
+ * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
+ * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
+ */
+export const watchLilNounsEnsMapperUpgradedEvent =
+  /*#__PURE__*/ createWatchContractEvent({
+    abi: lilNounsEnsMapperAbi,
+    address: lilNounsEnsMapperAddress,
+    eventName: 'Upgraded',
   })
 
 /**

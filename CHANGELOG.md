@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.21] - 2025-09-19
+
+### 🚀 Features
+
+- *(contracts)* Add LilNounsAuction and LilNounsData
+- *(contracts)* Consolidate and expand LilNouns utilities
+- *(config)* Validate subgraph URL and update schema generation
+- *(subgraphs)* Add generated types for LilNouns
+- *(subgraphs)* Standardize exports for LilNouns utilities
+
+### 🚜 Refactor
+
+- *(config)* Split wagmi config output
+
+### 🎨 Styling
+
+- *(subgraphs)* Remove redundant line breaks in exports
+
 ## [1.0.0-alpha.20] - 2025-09-17
 
 ### 🐛 Bug Fixes

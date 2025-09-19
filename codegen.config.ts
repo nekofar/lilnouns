@@ -1,16 +1,22 @@
 import 'dotenv/config'
-import type { CodegenConfig } from '@graphql-codegen/cli'
 import {
-  TimestampResolver,
   BigIntResolver,
   ByteResolver,
+  TimestampResolver,
 } from 'graphql-scalars'
+import { CodegenConfig } from '@graphql-codegen/cli'
+
+const subgraphUrl = process.env.SUBGRAPH_URL
+
+if (!subgraphUrl) {
+  throw new Error('Missing SUBGRAPH_URL environment variable')
+}
 
 const config: CodegenConfig = {
   emitLegacyCommonJSImports: false,
+  schema: subgraphUrl,
   generates: {
-    './src/subgraphs/index.ts': {
-      schema: process.env.SUBGRAPH_URL,
+    'src/subgraphs/lilnouns.gen.ts': {
       plugins: [
         'typescript',
         'typescript-operations',

@@ -102,7 +102,6 @@ export {
   type Meta, // GraphQL subgraph metadata payload
   type SdkFunctionWrapper, // GraphQL SDK wrapper callback signature
   type Sdk, // GraphQL SDK type alias
-
   // Enums from lilnouns.gen.ts
   AccountOrderBy, // GraphQL enum for ordering Account results
   AggregationInterval, // GraphQL enum for Aggregation Interval
@@ -126,7 +125,6 @@ export {
   TransferEventOrderBy, // GraphQL enum for ordering Transfer Event results
   VoteOrderBy, // GraphQL enum for ordering Vote results
   SubgraphErrorPolicy, // GraphQL enum for subgraph error handling
-
   // Functions from lilnouns.gen.ts
   getSdk, // GraphQL SDK factory
 } from './lilnouns.gen'

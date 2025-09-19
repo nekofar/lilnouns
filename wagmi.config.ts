@@ -49,6 +49,13 @@ const etherscanPlugin = etherscan({
         [sepolia.id]: '0x8d59e1060464ddcd0367e2eabedf70b3e7422902',
       },
     },
+    {
+      name: "LilNounsEnsMapper",
+      address: {
+        [sepolia.id]: "0x20779E57C32AE340cb8671E5EafC9eB26e753D22",
+        [mainnet.id]: "0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f",
+      },
+    },
   ],
   tryFetchProxyImplementation: true,
 })

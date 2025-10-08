@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - Solve some minor issues and update dependencies
 
+### ⚙️ Miscellaneous Tasks
+
+- *(subgraphs)* Update generated subgraph types
+
 ## [1.0.0-alpha.25] - 2025-10-03
 
 ### 🐛 Bug Fixes

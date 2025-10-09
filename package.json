@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.27",
+  "version": "1.0.0-alpha.28",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -96,7 +96,7 @@
     "viem": "^2.27.2",
     "wagmi": "^2.14.16"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.18.1",
   "publishConfig": {
     "access": "public"
   },

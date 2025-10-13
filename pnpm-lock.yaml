@@ -44,7 +44,7 @@ importers:
         version: 2.2.5
       '@graphprotocol/graph-ts':
         specifier: ^0.38.1
-        version: 0.38.1
+        version: 0.38.2
       '@graphql-codegen/cli':
         specifier: ^6.0.0
         version: 6.0.0(@parcel/watcher@2.5.1)(@types/node@24.7.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql-sock@1.0.1(graphql@16.10.0))(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
@@ -988,8 +988,8 @@ packages:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
 
-  '@graphprotocol/graph-ts@0.38.1':
-    resolution: {integrity: sha512-CEE2mJugPuukPugMY4bJRW8t8lOqdNa6Y3Oc0x8xc0EwidjF1LRBcfbuC5Ep5gfvWILNC/IQTT1p+QYW8cz4Hw==}
+  '@graphprotocol/graph-ts@0.38.2':
+    resolution: {integrity: sha512-87KIFSFs2+Te+mnmb7Y+M57oqzlLy20cIyPIRbn9qJfpZFSZHTKtBLT6KQmcsK0YkoWis9Ur3c3M2c9mmaaEHQ==}
 
   '@graphql-codegen/add@6.0.0':
     resolution: {integrity: sha512-biFdaURX0KTwEJPQ1wkT6BRgNasqgQ5KbCI1a3zwtLtO7XTo7/vKITPylmiU27K5DSOWYnY/1jfSqUAEBuhZrQ==}
@@ -5085,7 +5085,7 @@ snapshots:
       graphql: 16.10.0
       typescript: 5.9.3
 
-  '@graphprotocol/graph-ts@0.38.1':
+  '@graphprotocol/graph-ts@0.38.2':
     dependencies:
       assemblyscript: 0.27.31
 

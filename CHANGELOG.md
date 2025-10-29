@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.34] - 2025-10-29
+
+### 📚 Documentation
+
+- *(subgraphs)* Add blank line in meta comment
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update biome schema
+
 ## [1.0.0-alpha.33] - 2025-10-21
 
 ### 🐛 Bug Fixes

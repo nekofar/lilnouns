@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.35] - 2025-11-02
+
+### 🚀 Features
+
+- *(subgraphs)* Improve and extend GraphQL type exports
+
+### ⚙️ Miscellaneous Tasks
+
+- *(scripts)* Update build script to use `tsdown`
+- *(config)* Replace `tsup` config with `tsdown`
+- *(config)* Update `exports` and `main` fields
+- *(config)* Update `tsdown` configuration
+- *(config)* Add `zod` to external dependencies
+
 ## [1.0.0-alpha.34] - 2025-10-29
 
 ### 📚 Documentation

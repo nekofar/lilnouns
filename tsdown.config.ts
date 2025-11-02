@@ -1,25 +1,40 @@
-import { defineConfig, type Options } from 'tsdown'
+import { defineConfig } from 'tsdown'
 
-const tsupConfig: Options = {
-  entry: ['src/**/*.ts', '!src/**/*.test.ts'],
-  format: 'esm',
-  dts: {
-    resolve: false,
-    compilerOptions: {
-      declarationMap: false,
-    },
-  },
-  outDir: 'dist',
-  splitting: false,
-  clean: true,
-  treeshake: true,
+// tsdown build configuration
+export default defineConfig({
+  // Entry point for the build
+  entry: ["src/index.ts", "src/contracts/index.ts", "src/subgraphs/index.ts"],
+
+  // Output both ESM and CommonJS formats
+  format: ["esm", "cjs"],
+
+  // Output directory for built files
+  outDir: "dist",
+
+  // Generate source maps for debugging
   sourcemap: true,
-  minify: 'terser',
-  terserOptions: {
-    format: {
-      comments: false,
-    },
-  },
-}
 
-export default defineConfig(tsupConfig)
+  // Generate TypeScript declaration files
+  dts: true,
+
+  // Clean the output directory before building
+  clean: true,
+
+  // Target ECMAScript version
+  target: "es2022",
+
+  // Disable minification for better readability
+  minify: false,
+
+  // Enable tree shaking to remove unused code
+  treeshake: true,
+
+  // Add shims for Node.js compatibility
+  shims: true,
+
+  // External dependencies that should not be bundled
+  external: [],
+
+  // Generate package.json exports field
+  exports: true,
+});

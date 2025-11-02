@@ -24,20 +24,21 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     },
     "./contracts": {
       "import": "./dist/contracts/index.js",
-      "types": "./dist/contracts/index.d.ts"
+      "require": "./dist/contracts/index.cjs"
     },
     "./subgraphs": {
       "import": "./dist/subgraphs/index.js",
-      "types": "./dist/subgraphs/index.d.ts"
-    }
+      "require": "./dist/subgraphs/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist/**",
     "src/**/*.ts",

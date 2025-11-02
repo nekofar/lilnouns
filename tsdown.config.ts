@@ -1,4 +1,4 @@
-import { defineConfig, type Options } from 'tsup'
+import { defineConfig, type Options } from 'tsdown'
 
 const tsupConfig: Options = {
   entry: ['src/**/*.ts', '!src/**/*.test.ts'],

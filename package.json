@@ -24,20 +24,21 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs"
     },
     "./contracts": {
       "import": "./dist/contracts/index.js",
-      "types": "./dist/contracts/index.d.ts"
+      "require": "./dist/contracts/index.cjs"
     },
     "./subgraphs": {
       "import": "./dist/subgraphs/index.js",
-      "types": "./dist/subgraphs/index.d.ts"
-    }
+      "require": "./dist/subgraphs/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist/**",
     "src/**/*.ts",
@@ -47,7 +48,7 @@
   ],
   "scripts": {
     "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsup",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsdown",
     "postbuild": "pnpm run format",
     "clean": "rimraf dist",
     "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",
@@ -77,8 +78,7 @@
     "graphql-scalars": "^1.24.2",
     "is-ci": "^4.1.0",
     "rimraf": "^6.0.1",
-    "terser": "^5.43.1",
-    "tsup": "^8.5.0",
+    "tsdown": "^0.15.12",
     "typedoc": "^0.28.12",
     "typedoc-plugin-markdown": "^4.8.1",
     "typescript": "^5.9.2",

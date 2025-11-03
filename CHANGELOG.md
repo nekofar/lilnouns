@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.36] - 2025-11-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Remove unused `src` entries from `files`
+
 ## [1.0.0-alpha.35] - 2025-11-02
 
 ### 🚀 Features

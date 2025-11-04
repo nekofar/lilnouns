@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.37] - 2025-11-04
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update biome schema reference
+
 ## [1.0.0-alpha.36] - 2025-11-03
 
 ### ⚙️ Miscellaneous Tasks

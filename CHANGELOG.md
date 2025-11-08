@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.39] - 2025-11-08
+
+### 🐛 Bug Fixes
+
+- *(package)* Point exports to mjs bundles
+
+### 📚 Documentation
+
+- *(subgraphs)* Clean meta comment spacing
+
 ## [1.0.0-alpha.38] - 2025-11-07
 
 ### 🐛 Bug Fixes

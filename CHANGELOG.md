@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.45] - 2025-11-25
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update biome schema version
+
 ## [1.0.0-alpha.44] - 2025-11-23
 
 ### 🐛 Bug Fixes

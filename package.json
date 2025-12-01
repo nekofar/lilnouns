@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.46",
+  "version": "1.0.0-alpha.47",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [

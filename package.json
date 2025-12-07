@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.49",
+  "version": "1.0.0-alpha.50",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -76,7 +76,7 @@
     "graphql-scalars": "^1.24.2",
     "is-ci": "^4.1.0",
     "rimraf": "^6.0.1",
-    "tsdown": "^0.16.0",
+    "tsdown": "^0.17.0",
     "typedoc": "^0.28.12",
     "typedoc-plugin-markdown": "^4.8.1",
     "typescript": "^5.9.2",

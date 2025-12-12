@@ -23,16 +23,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     },
     "./contracts": {
-      "import": "./dist/contracts/index.mjs",
-      "require": "./dist/contracts/index.cjs"
+      "require": "./dist/contracts/index.cjs",
+      "import": "./dist/contracts/index.mjs"
     },
     "./subgraphs": {
-      "import": "./dist/subgraphs/index.mjs",
-      "require": "./dist/subgraphs/index.cjs"
+      "require": "./dist/subgraphs/index.cjs",
+      "import": "./dist/subgraphs/index.mjs"
     },
     "./package.json": "./package.json"
   },

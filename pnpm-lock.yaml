@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@0no-co/graphqlsp':
         specifier: ^1.15.0
-        version: 1.15.1(graphql@16.10.0)(typescript@5.9.3)
+        version: 1.15.2(graphql@16.10.0)(typescript@5.9.3)
       '@biomejs/biome':
         specifier: ^2.2.2
         version: 2.3.8
@@ -47,7 +47,7 @@ importers:
         version: 0.38.2
       '@graphql-codegen/cli':
         specifier: ^6.0.0
-        version: 6.1.0(@parcel/watcher@2.5.1)(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql-sock@1.0.1(graphql@16.10.0))(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
+        version: 6.1.0(@parcel/watcher@2.5.1)(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql-sock@1.0.1(graphql@16.10.0))(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@graphql-codegen/schema-ast':
         specifier: ^5.0.0
         version: 5.0.0(graphql@16.10.0)
@@ -61,8 +61,8 @@ importers:
         specifier: ^2.5.1
         version: 2.5.1
       '@types/node':
-        specifier: ^24.3.0
-        version: 24.10.1
+        specifier: ^25.0.0
+        version: 25.0.0
       '@types/react':
         specifier: ^19.1.12
         version: 19.2.7
@@ -86,7 +86,7 @@ importers:
         version: 6.1.2
       tsdown:
         specifier: ^0.17.0
-        version: 0.17.0(typescript@5.9.3)
+        version: 0.17.2(typescript@5.9.3)
       typedoc:
         specifier: ^0.28.12
         version: 0.28.15(typescript@5.9.3)
@@ -98,7 +98,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.1
-        version: 4.0.15(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
+        version: 4.0.15(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
 
 packages:
 
@@ -110,8 +110,8 @@ packages:
       graphql:
         optional: true
 
-  '@0no-co/graphqlsp@1.15.1':
-    resolution: {integrity: sha512-UBDBuVGpX5Ti0PjGnSAzkMG04psNYxKfJ+1bgF8HFPfHHpKNVl4GULHSNW0GTOngcYCYA70c+InoKw0qjHwmVQ==}
+  '@0no-co/graphqlsp@1.15.2':
+    resolution: {integrity: sha512-Ys031WnS3sTQQBtRTkQsYnw372OlW72ais4sp0oh2UMPRNyxxnq85zRfU4PIdoy9kWriysPT5BYAkgIxhbonFA==}
     peerDependencies:
       graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
       typescript: ^5.0.0
@@ -1480,10 +1480,6 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@oxc-project/runtime@0.101.0':
-    resolution: {integrity: sha512-t3qpfVZIqSiLQ5Kqt/MC4Ge/WCOGrrcagAdzTcDaggupjiGxUx4nJF2v6wUCXWSzWHn5Ns7XLv13fCJEwCOERQ==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-
   '@oxc-project/types@0.101.0':
     resolution: {integrity: sha512-nuFhqlUzJX+gVIPPfuE6xurd4lST3mdcWOhyK/rZO0B9XWMKm79SuszIQEnSMmmDhq1DC8WWVYGVd+6F93o1gQ==}
 
@@ -1862,8 +1858,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.10.1':
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
+  '@types/node@25.0.0':
+    resolution: {integrity: sha512-rl78HwuZlaDIUSeUKkmogkhebA+8K1Hy7tddZuJ3D0xV8pZSfsYGTsliGUol1JPzu9EKnTxPC4L1fiWouStRew==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -3719,13 +3715,13 @@ packages:
   ts-log@2.2.7:
     resolution: {integrity: sha512-320x5Ggei84AxzlXp91QkIGSw5wgaLT6GeAH0KsqDmRZdVWW2OiSeVvElVoatk3f7nicwXlElXsoFkARiGE2yg==}
 
-  tsdown@0.17.0:
-    resolution: {integrity: sha512-NPZRrlC51X9Bb55ZTDwrWges8Dm1niCvNA5AYw7aix6pfnDnB4WR0neG5RPq75xIodg3hqlQUzzyrX7n4dmnJg==}
+  tsdown@0.17.2:
+    resolution: {integrity: sha512-SuU+0CWm/95KfXqojHTVuwcouIsdn7HpYcwDyOdKktJi285NxKwysjFUaxYLxpCNqqPvcFvokXLO4dZThRwzkw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@vitejs/devtools': ^0.0.0-alpha.18
+      '@vitejs/devtools': ^0.0.0-alpha.19
       publint: ^0.3.0
       typescript: ^5.0.0
       unplugin-lightningcss: ^0.4.0
@@ -3809,8 +3805,8 @@ packages:
     resolution: {integrity: sha512-6bc58dPYhCMHHuwxldQxO3RRNZ4eCogZ/st++0+fcC1nr0jiGUtAdBJ2qzmLQWSxbtz42pWt4QQMiZ9HvZf5cg==}
     engines: {node: '>=0.10.0'}
 
-  unrun@0.2.17:
-    resolution: {integrity: sha512-mumOyjZp1K1bsa1QwfRPw7+9TxyVHSgx6LHB2dBWI4m1hGDG9b2TK3fS3H8vCl/Gl9YTSxhZ9XuLbWv3QF8GEA==}
+  unrun@0.2.19:
+    resolution: {integrity: sha512-DbwbJ9BvPEb3BeZnIpP9S5tGLO/JIgPQ3JrpMRFIfZMZfMG19f26OlLbC2ml8RRdrI2ZA7z2t+at5tsIHbh6Qw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -4225,7 +4221,7 @@ snapshots:
     optionalDependencies:
       graphql: 16.10.0
 
-  '@0no-co/graphqlsp@1.15.1(graphql@16.10.0)(typescript@5.9.3)':
+  '@0no-co/graphqlsp@1.15.2(graphql@16.10.0)(typescript@5.9.3)':
     dependencies:
       '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.9.3)
       graphql: 16.10.0
@@ -4894,7 +4890,7 @@ snapshots:
       graphql: 16.10.0
       tslib: 2.6.3
 
-  '@graphql-codegen/cli@6.1.0(@parcel/watcher@2.5.1)(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql-sock@1.0.1(graphql@16.10.0))(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)':
+  '@graphql-codegen/cli@6.1.0(@parcel/watcher@2.5.1)(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql-sock@1.0.1(graphql@16.10.0))(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/template': 7.27.2
@@ -4905,20 +4901,20 @@ snapshots:
       '@graphql-tools/apollo-engine-loader': 8.0.26(graphql@16.10.0)
       '@graphql-tools/code-file-loader': 8.1.26(graphql@16.10.0)
       '@graphql-tools/git-loader': 8.0.30(graphql@16.10.0)
-      '@graphql-tools/github-loader': 9.0.4(@types/node@24.10.1)(graphql@16.10.0)
+      '@graphql-tools/github-loader': 9.0.4(@types/node@25.0.0)(graphql@16.10.0)
       '@graphql-tools/graphql-file-loader': 8.1.7(graphql@16.10.0)
       '@graphql-tools/json-file-loader': 8.0.24(graphql@16.10.0)
       '@graphql-tools/load': 8.1.6(graphql@16.10.0)
-      '@graphql-tools/url-loader': 9.0.4(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
+      '@graphql-tools/url-loader': 9.0.4(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
       '@graphql-tools/utils': 10.10.3(graphql@16.10.0)
-      '@inquirer/prompts': 7.10.1(@types/node@24.10.1)
+      '@inquirer/prompts': 7.10.1(@types/node@25.0.0)
       '@whatwg-node/fetch': 0.10.13
       chalk: 4.1.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
       debounce: 2.2.0
       detect-indent: 6.1.0
       graphql: 16.10.0
-      graphql-config: 5.1.5(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
+      graphql-config: 5.1.5(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
       is-glob: 4.0.3
       jiti: 2.6.1
       json-to-pretty-yaml: 1.2.2
@@ -5242,7 +5238,7 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@graphql-tools/executor-http@1.3.3(@types/node@24.10.1)(graphql@16.10.0)':
+  '@graphql-tools/executor-http@1.3.3(@types/node@25.0.0)(graphql@16.10.0)':
     dependencies:
       '@graphql-hive/signal': 1.0.0
       '@graphql-tools/executor-common': 0.0.4(graphql@16.10.0)
@@ -5252,12 +5248,12 @@ snapshots:
       '@whatwg-node/fetch': 0.10.13
       '@whatwg-node/promise-helpers': 1.3.2
       graphql: 16.10.0
-      meros: 1.3.2(@types/node@24.10.1)
+      meros: 1.3.2(@types/node@25.0.0)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@types/node'
 
-  '@graphql-tools/executor-http@3.0.7(@types/node@24.10.1)(graphql@16.10.0)':
+  '@graphql-tools/executor-http@3.0.7(@types/node@25.0.0)(graphql@16.10.0)':
     dependencies:
       '@graphql-hive/signal': 2.0.0
       '@graphql-tools/executor-common': 1.0.5(graphql@16.10.0)
@@ -5267,7 +5263,7 @@ snapshots:
       '@whatwg-node/fetch': 0.10.13
       '@whatwg-node/promise-helpers': 1.3.2
       graphql: 16.10.0
-      meros: 1.3.2(@types/node@24.10.1)
+      meros: 1.3.2(@types/node@25.0.0)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@types/node'
@@ -5306,9 +5302,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@graphql-tools/github-loader@9.0.4(@types/node@24.10.1)(graphql@16.10.0)':
+  '@graphql-tools/github-loader@9.0.4(@types/node@25.0.0)(graphql@16.10.0)':
     dependencies:
-      '@graphql-tools/executor-http': 3.0.7(@types/node@24.10.1)(graphql@16.10.0)
+      '@graphql-tools/executor-http': 3.0.7(@types/node@25.0.0)(graphql@16.10.0)
       '@graphql-tools/graphql-tag-pluck': 8.3.25(graphql@16.10.0)
       '@graphql-tools/utils': 10.10.3(graphql@16.10.0)
       '@whatwg-node/fetch': 0.10.13
@@ -5412,10 +5408,10 @@ snapshots:
       graphql: 16.10.0
       tslib: 2.8.1
 
-  '@graphql-tools/url-loader@8.0.33(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)':
+  '@graphql-tools/url-loader@8.0.33(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)':
     dependencies:
       '@graphql-tools/executor-graphql-ws': 2.0.7(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
-      '@graphql-tools/executor-http': 1.3.3(@types/node@24.10.1)(graphql@16.10.0)
+      '@graphql-tools/executor-http': 1.3.3(@types/node@25.0.0)(graphql@16.10.0)
       '@graphql-tools/executor-legacy-ws': 1.1.23(bufferutil@4.0.9)(graphql@16.10.0)(utf-8-validate@5.0.10)
       '@graphql-tools/utils': 10.10.3(graphql@16.10.0)
       '@graphql-tools/wrap': 10.1.4(graphql@16.10.0)
@@ -5435,10 +5431,10 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@graphql-tools/url-loader@9.0.4(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)':
+  '@graphql-tools/url-loader@9.0.4(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)':
     dependencies:
       '@graphql-tools/executor-graphql-ws': 3.1.3(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
-      '@graphql-tools/executor-http': 3.0.7(@types/node@24.10.1)(graphql@16.10.0)
+      '@graphql-tools/executor-http': 3.0.7(@types/node@25.0.0)(graphql@16.10.0)
       '@graphql-tools/executor-legacy-ws': 1.1.23(bufferutil@4.0.9)(graphql@16.10.0)(utf-8-validate@5.0.10)
       '@graphql-tools/utils': 10.10.3(graphql@16.10.0)
       '@graphql-tools/wrap': 11.0.5(graphql@16.10.0)
@@ -5513,128 +5509,128 @@ snapshots:
 
   '@inquirer/ansi@1.0.2': {}
 
-  '@inquirer/checkbox@4.3.2(@types/node@24.10.1)':
+  '@inquirer/checkbox@4.3.2(@types/node@25.0.0)':
     dependencies:
       '@inquirer/ansi': 1.0.2
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
       '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/confirm@5.1.21(@types/node@24.10.1)':
+  '@inquirer/confirm@5.1.21(@types/node@25.0.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/core@10.3.2(@types/node@24.10.1)':
+  '@inquirer/core@10.3.2(@types/node@25.0.0)':
     dependencies:
       '@inquirer/ansi': 1.0.2
       '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/editor@4.2.23(@types/node@24.10.1)':
+  '@inquirer/editor@4.2.23(@types/node@25.0.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/external-editor': 1.0.3(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/external-editor': 1.0.3(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/expand@4.0.23(@types/node@24.10.1)':
+  '@inquirer/expand@4.0.23(@types/node@25.0.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/external-editor@1.0.3(@types/node@24.10.1)':
+  '@inquirer/external-editor@1.0.3(@types/node@25.0.0)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
   '@inquirer/figures@1.0.15': {}
 
-  '@inquirer/input@4.3.1(@types/node@24.10.1)':
+  '@inquirer/input@4.3.1(@types/node@25.0.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/number@3.0.23(@types/node@24.10.1)':
+  '@inquirer/number@3.0.23(@types/node@25.0.0)':
     dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/password@4.0.23(@types/node@24.10.1)':
-    dependencies:
-      '@inquirer/ansi': 1.0.2
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
-    optionalDependencies:
-      '@types/node': 24.10.1
-
-  '@inquirer/prompts@7.10.1(@types/node@24.10.1)':
-    dependencies:
-      '@inquirer/checkbox': 4.3.2(@types/node@24.10.1)
-      '@inquirer/confirm': 5.1.21(@types/node@24.10.1)
-      '@inquirer/editor': 4.2.23(@types/node@24.10.1)
-      '@inquirer/expand': 4.0.23(@types/node@24.10.1)
-      '@inquirer/input': 4.3.1(@types/node@24.10.1)
-      '@inquirer/number': 3.0.23(@types/node@24.10.1)
-      '@inquirer/password': 4.0.23(@types/node@24.10.1)
-      '@inquirer/rawlist': 4.1.11(@types/node@24.10.1)
-      '@inquirer/search': 3.2.2(@types/node@24.10.1)
-      '@inquirer/select': 4.4.2(@types/node@24.10.1)
-    optionalDependencies:
-      '@types/node': 24.10.1
-
-  '@inquirer/rawlist@4.1.11(@types/node@24.10.1)':
-    dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
-      yoctocolors-cjs: 2.1.3
-    optionalDependencies:
-      '@types/node': 24.10.1
-
-  '@inquirer/search@3.2.2(@types/node@24.10.1)':
-    dependencies:
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
-      yoctocolors-cjs: 2.1.3
-    optionalDependencies:
-      '@types/node': 24.10.1
-
-  '@inquirer/select@4.4.2(@types/node@24.10.1)':
+  '@inquirer/password@4.0.23(@types/node@25.0.0)':
     dependencies:
       '@inquirer/ansi': 1.0.2
-      '@inquirer/core': 10.3.2(@types/node@24.10.1)
-      '@inquirer/figures': 1.0.15
-      '@inquirer/type': 3.0.10(@types/node@24.10.1)
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
+    optionalDependencies:
+      '@types/node': 25.0.0
+
+  '@inquirer/prompts@7.10.1(@types/node@25.0.0)':
+    dependencies:
+      '@inquirer/checkbox': 4.3.2(@types/node@25.0.0)
+      '@inquirer/confirm': 5.1.21(@types/node@25.0.0)
+      '@inquirer/editor': 4.2.23(@types/node@25.0.0)
+      '@inquirer/expand': 4.0.23(@types/node@25.0.0)
+      '@inquirer/input': 4.3.1(@types/node@25.0.0)
+      '@inquirer/number': 3.0.23(@types/node@25.0.0)
+      '@inquirer/password': 4.0.23(@types/node@25.0.0)
+      '@inquirer/rawlist': 4.1.11(@types/node@25.0.0)
+      '@inquirer/search': 3.2.2(@types/node@25.0.0)
+      '@inquirer/select': 4.4.2(@types/node@25.0.0)
+    optionalDependencies:
+      '@types/node': 25.0.0
+
+  '@inquirer/rawlist@4.1.11(@types/node@25.0.0)':
+    dependencies:
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
-  '@inquirer/type@3.0.10(@types/node@24.10.1)':
+  '@inquirer/search@3.2.2(@types/node@25.0.0)':
+    dependencies:
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/figures': 1.0.15
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
+      yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
+
+  '@inquirer/select@4.4.2(@types/node@25.0.0)':
+    dependencies:
+      '@inquirer/ansi': 1.0.2
+      '@inquirer/core': 10.3.2(@types/node@25.0.0)
+      '@inquirer/figures': 1.0.15
+      '@inquirer/type': 3.0.10(@types/node@25.0.0)
+      yoctocolors-cjs: 2.1.3
+    optionalDependencies:
+      '@types/node': 25.0.0
+
+  '@inquirer/type@3.0.10(@types/node@25.0.0)':
+    optionalDependencies:
+      '@types/node': 25.0.0
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -5920,8 +5916,6 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
-
-  '@oxc-project/runtime@0.101.0': {}
 
   '@oxc-project/types@0.101.0': {}
 
@@ -6228,7 +6222,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.10.1':
+  '@types/node@25.0.0':
     dependencies:
       undici-types: 7.16.0
 
@@ -6246,7 +6240,7 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
   '@vitest/expect@4.0.15':
     dependencies:
@@ -6257,13 +6251,13 @@ snapshots:
       chai: 6.2.1
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2))':
+  '@vitest/mocker@4.0.15(vite@7.2.6(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.0.15
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.6(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.2.6(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
 
   '@vitest/pretty-format@4.0.15':
     dependencies:
@@ -7473,13 +7467,13 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  graphql-config@5.1.5(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10):
+  graphql-config@5.1.5(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(typescript@5.9.3)(utf-8-validate@5.0.10):
     dependencies:
       '@graphql-tools/graphql-file-loader': 8.1.7(graphql@16.10.0)
       '@graphql-tools/json-file-loader': 8.0.24(graphql@16.10.0)
       '@graphql-tools/load': 8.1.6(graphql@16.10.0)
       '@graphql-tools/merge': 9.1.5(graphql@16.10.0)
-      '@graphql-tools/url-loader': 8.0.33(@types/node@24.10.1)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
+      '@graphql-tools/url-loader': 8.0.33(@types/node@25.0.0)(bufferutil@4.0.9)(crossws@0.3.4)(graphql@16.10.0)(utf-8-validate@5.0.10)
       '@graphql-tools/utils': 10.10.3(graphql@16.10.0)
       cosmiconfig: 8.3.6(typescript@5.9.3)
       graphql: 16.10.0
@@ -7823,9 +7817,9 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  meros@1.3.2(@types/node@24.10.1):
+  meros@1.3.2(@types/node@25.0.0):
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
 
   micro-ftch@0.3.1: {}
 
@@ -8480,7 +8474,7 @@ snapshots:
 
   ts-log@2.2.7: {}
 
-  tsdown@0.17.0(typescript@5.9.3):
+  tsdown@0.17.2(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
@@ -8495,7 +8489,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
       unconfig-core: 7.4.2
-      unrun: 0.2.17
+      unrun: 0.2.19
     optionalDependencies:
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -8561,9 +8555,8 @@ snapshots:
     dependencies:
       normalize-path: 2.1.1
 
-  unrun@0.2.17:
+  unrun@0.2.19:
     dependencies:
-      '@oxc-project/runtime': 0.101.0
       rolldown: 1.0.0-beta.53
 
   unstorage@1.15.0(idb-keyval@6.2.1):
@@ -8680,7 +8673,7 @@ snapshots:
       - utf-8-validate
       - zod
 
-  vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2):
+  vite@7.2.6(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -8689,17 +8682,17 @@ snapshots:
       rollup: 4.53.3
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
       fsevents: 2.3.3
       jiti: 2.6.1
       terser: 5.44.0
       tsx: 4.19.2
       yaml: 2.8.2
 
-  vitest@4.0.15(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2):
+  vitest@4.0.15(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2))
+      '@vitest/mocker': 4.0.15(vite@7.2.6(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
@@ -8716,10 +8709,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.2.6(@types/node@24.10.1)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
+      vite: 7.2.6(@types/node@25.0.0)(jiti@2.6.1)(terser@5.44.0)(tsx@4.19.2)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.10.1
+      '@types/node': 25.0.0
     transitivePeerDependencies:
       - jiti
       - less

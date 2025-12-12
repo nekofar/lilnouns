@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.50",
+  "version": "1.0.0-alpha.51",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -23,16 +23,16 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
     },
     "./contracts": {
-      "import": "./dist/contracts/index.mjs",
-      "require": "./dist/contracts/index.cjs"
+      "require": "./dist/contracts/index.cjs",
+      "import": "./dist/contracts/index.mjs"
     },
     "./subgraphs": {
-      "import": "./dist/subgraphs/index.mjs",
-      "require": "./dist/subgraphs/index.cjs"
+      "require": "./dist/subgraphs/index.cjs",
+      "import": "./dist/subgraphs/index.mjs"
     },
     "./package.json": "./package.json"
   },
@@ -68,7 +68,7 @@
     "@graphql-codegen/typescript-graphql-request": "^6.3.0",
     "@graphql-codegen/typescript-operations": "^5.0.0",
     "@parcel/watcher": "^2.5.1",
-    "@types/node": "^24.3.0",
+    "@types/node": "^25.0.0",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
     "@wagmi/cli": "^2.5.1",

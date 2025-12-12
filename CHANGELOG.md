@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.51] - 2025-12-12
+
+### ⚙️ Miscellaneous Tasks
+
+- *(build)* Reorder export fields for consistency
+
 ## [1.0.0-alpha.50] - 2025-12-07
 
 ### 🐛 Bug Fixes

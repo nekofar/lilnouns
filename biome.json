@@ -43,7 +43,9 @@
       "linter": {
         "rules": {
           "correctness": {
-            "noUnusedFunctionParameters": "off"
+            "noUnusedFunctionParameters": "off",
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
           },
           "complexity": {
             "noUselessSwitchCase": "off"

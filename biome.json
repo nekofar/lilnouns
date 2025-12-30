@@ -42,6 +42,9 @@
       "includes": ["**/*.gen.ts"],
       "linter": {
         "rules": {
+          "correctness": {
+            "noUnusedFunctionParameters": "off"
+          },
           "complexity": {
             "noUselessSwitchCase": "off"
           },

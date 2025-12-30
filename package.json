@@ -45,9 +45,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
+    "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate && pnpm run lint:fix && pnpm docs)",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsdown",
-    "postbuild": "pnpm run lint:fix && pnpm docs",
     "clean": "rimraf dist",
     "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",
     "graphql:generate": "graphql-codegen --config codegen.config.ts",

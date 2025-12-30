@@ -47,14 +47,12 @@
   "scripts": {
     "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsdown",
-    "postbuild": "pnpm run format",
+    "postbuild": "pnpm run lint:fix && pnpm docs",
     "clean": "rimraf dist",
     "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",
-    "format": "biome format --write .",
-    "format:check": "biome format .",
     "graphql:generate": "graphql-codegen --config codegen.config.ts",
-    "lint": "biome lint .",
-    "lint:fix": "biome lint --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "prepublishOnly": "pnpm build",
     "test": "vitest run",
     "wagmi:generate": "wagmi generate"

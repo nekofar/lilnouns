@@ -1,10 +1,10 @@
 import "dotenv/config";
+import type { CodegenConfig } from "@graphql-codegen/cli";
 import {
   BigIntResolver,
   ByteResolver,
   TimestampResolver,
 } from "graphql-scalars";
-import { CodegenConfig } from "@graphql-codegen/cli";
 
 const subgraphUrl = process.env.SUBGRAPH_URL;
 

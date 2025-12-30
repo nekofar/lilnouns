@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown'
+import { defineConfig } from "tsdown";
 
 // tsdown build configuration
 export default defineConfig({

@@ -510,7 +510,7 @@ export {
   watchLilNounsTreasuryNewDelayEvent, // Actions event watcher for LilNounsTreasury.newDelay
   watchLilNounsTreasuryNewPendingAdminEvent, // Actions event watcher for LilNounsTreasury.newPendingAdmin
   watchLilNounsTreasuryQueueTransactionEvent, // Actions event watcher for LilNounsTreasury.queueTransaction
-} from './actions.gen'
+} from "./actions.gen";
 
 export {
   // Generated React hooks: read helpers
@@ -1001,4 +1001,4 @@ export {
   useWatchLilNounsTreasuryNewDelayEvent, // React event hook for LilNounsTreasury.newDelay
   useWatchLilNounsTreasuryNewPendingAdminEvent, // React event hook for LilNounsTreasury.newPendingAdmin
   useWatchLilNounsTreasuryQueueTransactionEvent, // React event hook for LilNounsTreasury.queueTransaction
-} from './react.gen'
+} from "./react.gen";

@@ -50,17 +50,17 @@ export {
   readLilNounsAuctionUsedBlockNumbers, // Actions read helper for LilNounsAuction.usedBlockNumbers
   readLilNounsAuctionWethAddress, // Actions read helper for LilNounsAuction.wethAddress
   readLilNounsData, // Actions read helper for LilNounsData
-  readLilNounsDataMaxProposalCalls, // Actions read helper for LilNounsData.maxProposalCalls
-  readLilNounsDataPriorVotesBlocksAgo, // Actions read helper for LilNounsData.priorVotesBlocksAgo
-  readLilNounsDataUpgradeInterfaceVersion, // Actions read helper for LilNounsData.upgradeInterfaceVersion
   readLilNounsDataCreateCandidateCost, // Actions read helper for LilNounsData.createCandidateCost
   readLilNounsDataFeeRecipient, // Actions read helper for LilNounsData.feeRecipient
+  readLilNounsDataMaxProposalCalls, // Actions read helper for LilNounsData.maxProposalCalls
   readLilNounsDataOwner, // Actions read helper for LilNounsData.owner
   readLilNounsDataPendingOwner, // Actions read helper for LilNounsData.pendingOwner
+  readLilNounsDataPriorVotesBlocksAgo, // Actions read helper for LilNounsData.priorVotesBlocksAgo
   readLilNounsDataPropCandidates, // Actions read helper for LilNounsData.propCandidates
   readLilNounsDataProxiableUuid, // Actions read helper for LilNounsData.proxiableUuid
   readLilNounsDataToken, // Actions read helper for LilNounsData.token
   readLilNounsDataUpdateCandidateCost, // Actions read helper for LilNounsData.updateCandidateCost
+  readLilNounsDataUpgradeInterfaceVersion, // Actions read helper for LilNounsData.upgradeInterfaceVersion
   readLilNounsDescriptor, // Actions read helper for LilNounsDescriptor
   readLilNounsDescriptorAccessories, // Actions read helper for LilNounsDescriptor.accessories
   readLilNounsDescriptorAccessoryCount, // Actions read helper for LilNounsDescriptor.accessoryCount
@@ -85,7 +85,6 @@ export {
   readLilNounsDescriptorRenderer, // Actions read helper for LilNounsDescriptor.renderer
   readLilNounsDescriptorTokenUri, // Actions read helper for LilNounsDescriptor.tokenUri
   readLilNounsEnsMapper, // Actions read helper for LilNounsEnsMapper
-  readLilNounsEnsMapperUpgradeInterfaceVersion, // Actions read helper for LilNounsEnsMapper.upgradeInterfaceVersion
   readLilNounsEnsMapperAddr, // Actions read helper for LilNounsEnsMapper.addr
   readLilNounsEnsMapperEns, // Actions read helper for LilNounsEnsMapper.ens
   readLilNounsEnsMapperEnsNameOf, // Actions read helper for LilNounsEnsMapper.ensNameOf
@@ -100,10 +99,19 @@ export {
   readLilNounsEnsMapperRootNode, // Actions read helper for LilNounsEnsMapper.rootNode
   readLilNounsEnsMapperSupportsInterface, // Actions read helper for LilNounsEnsMapper.supportsInterface
   readLilNounsEnsMapperText, // Actions read helper for LilNounsEnsMapper.text
+  readLilNounsEnsMapperUpgradeInterfaceVersion, // Actions read helper for LilNounsEnsMapper.upgradeInterfaceVersion
   readLilNounsGovernor, // Actions read helper for LilNounsGovernor
+  readLilNounsGovernorAdmin, // Actions read helper for LilNounsGovernor.admin
   readLilNounsGovernorBallotTypehash, // Actions read helper for LilNounsGovernor.ballotTypehash
   readLilNounsGovernorDomainTypehash, // Actions read helper for LilNounsGovernor.domainTypehash
+  readLilNounsGovernorDynamicQuorumVotes, // Actions read helper for LilNounsGovernor.dynamicQuorumVotes
+  readLilNounsGovernorGetActions, // Actions read helper for LilNounsGovernor.getActions
+  readLilNounsGovernorGetDynamicQuorumParamsAt, // Actions read helper for LilNounsGovernor.getDynamicQuorumParamsAt
+  readLilNounsGovernorGetReceipt, // Actions read helper for LilNounsGovernor.getReceipt
+  readLilNounsGovernorImplementation, // Actions read helper for LilNounsGovernor.implementation
+  readLilNounsGovernorLatestProposalIds, // Actions read helper for LilNounsGovernor.latestProposalIds
   readLilNounsGovernorMaxProposalThresholdBps, // Actions read helper for LilNounsGovernor.maxProposalThresholdBps
+  readLilNounsGovernorMaxQuorumVotes, // Actions read helper for LilNounsGovernor.maxQuorumVotes
   readLilNounsGovernorMaxQuorumVotesBps, // Actions read helper for LilNounsGovernor.maxQuorumVotesBps
   readLilNounsGovernorMaxQuorumVotesBpsUpperBound, // Actions read helper for LilNounsGovernor.maxQuorumVotesBpsUpperBound
   readLilNounsGovernorMaxRefundBaseFee, // Actions read helper for LilNounsGovernor.maxRefundBaseFee
@@ -112,47 +120,39 @@ export {
   readLilNounsGovernorMaxVotingDelay, // Actions read helper for LilNounsGovernor.maxVotingDelay
   readLilNounsGovernorMaxVotingPeriod, // Actions read helper for LilNounsGovernor.maxVotingPeriod
   readLilNounsGovernorMinProposalThresholdBps, // Actions read helper for LilNounsGovernor.minProposalThresholdBps
+  readLilNounsGovernorMinQuorumVotes, // Actions read helper for LilNounsGovernor.minQuorumVotes
   readLilNounsGovernorMinQuorumVotesBpsLowerBound, // Actions read helper for LilNounsGovernor.minQuorumVotesBpsLowerBound
   readLilNounsGovernorMinQuorumVotesBpsUpperBound, // Actions read helper for LilNounsGovernor.minQuorumVotesBpsUpperBound
   readLilNounsGovernorMinVotingDelay, // Actions read helper for LilNounsGovernor.minVotingDelay
   readLilNounsGovernorMinVotingPeriod, // Actions read helper for LilNounsGovernor.minVotingPeriod
-  readLilNounsGovernorRefundBaseGas, // Actions read helper for LilNounsGovernor.refundBaseGas
-  readLilNounsGovernorAdmin, // Actions read helper for LilNounsGovernor.admin
-  readLilNounsGovernorDynamicQuorumVotes, // Actions read helper for LilNounsGovernor.dynamicQuorumVotes
-  readLilNounsGovernorGetActions, // Actions read helper for LilNounsGovernor.getActions
-  readLilNounsGovernorGetDynamicQuorumParamsAt, // Actions read helper for LilNounsGovernor.getDynamicQuorumParamsAt
-  readLilNounsGovernorGetReceipt, // Actions read helper for LilNounsGovernor.getReceipt
-  readLilNounsGovernorImplementation, // Actions read helper for LilNounsGovernor.implementation
-  readLilNounsGovernorLatestProposalIds, // Actions read helper for LilNounsGovernor.latestProposalIds
-  readLilNounsGovernorMaxQuorumVotes, // Actions read helper for LilNounsGovernor.maxQuorumVotes
-  readLilNounsGovernorMinQuorumVotes, // Actions read helper for LilNounsGovernor.minQuorumVotes
   readLilNounsGovernorName, // Actions read helper for LilNounsGovernor.name
   readLilNounsGovernorNouns, // Actions read helper for LilNounsGovernor.nouns
   readLilNounsGovernorPendingAdmin, // Actions read helper for LilNounsGovernor.pendingAdmin
   readLilNounsGovernorPendingVetoer, // Actions read helper for LilNounsGovernor.pendingVetoer
   readLilNounsGovernorProposalCount, // Actions read helper for LilNounsGovernor.proposalCount
   readLilNounsGovernorProposalMaxOperations, // Actions read helper for LilNounsGovernor.proposalMaxOperations
+  readLilNounsGovernorProposals, // Actions read helper for LilNounsGovernor.proposals
   readLilNounsGovernorProposalThreshold, // Actions read helper for LilNounsGovernor.proposalThreshold
   readLilNounsGovernorProposalThresholdBps, // Actions read helper for LilNounsGovernor.proposalThresholdBps
-  readLilNounsGovernorProposals, // Actions read helper for LilNounsGovernor.proposals
   readLilNounsGovernorQuorumParamsCheckpoints, // Actions read helper for LilNounsGovernor.quorumParamsCheckpoints
   readLilNounsGovernorQuorumVotes, // Actions read helper for LilNounsGovernor.quorumVotes
   readLilNounsGovernorQuorumVotesBps, // Actions read helper for LilNounsGovernor.quorumVotesBps
+  readLilNounsGovernorRefundBaseGas, // Actions read helper for LilNounsGovernor.refundBaseGas
   readLilNounsGovernorState, // Actions read helper for LilNounsGovernor.state
   readLilNounsGovernorTimelock, // Actions read helper for LilNounsGovernor.timelock
   readLilNounsGovernorVetoer, // Actions read helper for LilNounsGovernor.vetoer
   readLilNounsGovernorVotingDelay, // Actions read helper for LilNounsGovernor.votingDelay
   readLilNounsGovernorVotingPeriod, // Actions read helper for LilNounsGovernor.votingPeriod
   readLilNounsToken, // Actions read helper for LilNounsToken
-  readLilNounsTokenDelegationTypehash, // Actions read helper for LilNounsToken.delegationTypehash
-  readLilNounsTokenDomainTypehash, // Actions read helper for LilNounsToken.domainTypehash
   readLilNounsTokenBalanceOf, // Actions read helper for LilNounsToken.balanceOf
   readLilNounsTokenCheckpoints, // Actions read helper for LilNounsToken.checkpoints
   readLilNounsTokenContractUri, // Actions read helper for LilNounsToken.contractUri
   readLilNounsTokenDataUri, // Actions read helper for LilNounsToken.dataUri
   readLilNounsTokenDecimals, // Actions read helper for LilNounsToken.decimals
   readLilNounsTokenDelegates, // Actions read helper for LilNounsToken.delegates
+  readLilNounsTokenDelegationTypehash, // Actions read helper for LilNounsToken.delegationTypehash
   readLilNounsTokenDescriptor, // Actions read helper for LilNounsToken.descriptor
+  readLilNounsTokenDomainTypehash, // Actions read helper for LilNounsToken.domainTypehash
   readLilNounsTokenGetApproved, // Actions read helper for LilNounsToken.getApproved
   readLilNounsTokenGetCurrentVotes, // Actions read helper for LilNounsToken.getCurrentVotes
   readLilNounsTokenGetPriorVotes, // Actions read helper for LilNounsToken.getPriorVotes
@@ -179,131 +179,13 @@ export {
   readLilNounsTokenTotalSupply, // Actions read helper for LilNounsToken.totalSupply
   readLilNounsTokenVotesToDelegate, // Actions read helper for LilNounsToken.votesToDelegate
   readLilNounsTreasury, // Actions read helper for LilNounsTreasury
+  readLilNounsTreasuryAdmin, // Actions read helper for LilNounsTreasury.admin
+  readLilNounsTreasuryDelay, // Actions read helper for LilNounsTreasury.delay
   readLilNounsTreasuryGracePeriod, // Actions read helper for LilNounsTreasury.gracePeriod
   readLilNounsTreasuryMaximumDelay, // Actions read helper for LilNounsTreasury.maximumDelay
   readLilNounsTreasuryMinimumDelay, // Actions read helper for LilNounsTreasury.minimumDelay
-  readLilNounsTreasuryAdmin, // Actions read helper for LilNounsTreasury.admin
-  readLilNounsTreasuryDelay, // Actions read helper for LilNounsTreasury.delay
   readLilNounsTreasuryPendingAdmin, // Actions read helper for LilNounsTreasury.pendingAdmin
   readLilNounsTreasuryQueuedTransactions, // Actions read helper for LilNounsTreasury.queuedTransactions
-  // Generated actions: write helpers
-  writeLilNounsAuction, // Actions write helper for LilNounsAuction
-  writeLilNounsAuctionBuyNow, // Actions write helper for LilNounsAuction.buyNow
-  writeLilNounsAuctionInitialize, // Actions write helper for LilNounsAuction.initialize
-  writeLilNounsAuctionPause, // Actions write helper for LilNounsAuction.pause
-  writeLilNounsAuctionRenounceOwnership, // Actions write helper for LilNounsAuction.renounceOwnership
-  writeLilNounsAuctionSetNounsDescriptor, // Actions write helper for LilNounsAuction.setNounsDescriptor
-  writeLilNounsAuctionSetNounsSeeder, // Actions write helper for LilNounsAuction.setNounsSeeder
-  writeLilNounsAuctionSetPoolSize, // Actions write helper for LilNounsAuction.setPoolSize
-  writeLilNounsAuctionSetReservePrice, // Actions write helper for LilNounsAuction.setReservePrice
-  writeLilNounsAuctionSetUpdateInterval, // Actions write helper for LilNounsAuction.setUpdateInterval
-  writeLilNounsAuctionTransferOwnership, // Actions write helper for LilNounsAuction.transferOwnership
-  writeLilNounsAuctionUnpause, // Actions write helper for LilNounsAuction.unpause
-  writeLilNounsAuctionUpgradeTo, // Actions write helper for LilNounsAuction.upgradeTo
-  writeLilNounsAuctionUpgradeToAndCall, // Actions write helper for LilNounsAuction.upgradeToAndCall
-  writeLilNounsData, // Actions write helper for LilNounsData
-  writeLilNounsDataAcceptOwnership, // Actions write helper for LilNounsData.acceptOwnership
-  writeLilNounsDataCancelProposalCandidate, // Actions write helper for LilNounsData.cancelProposalCandidate
-  writeLilNounsDataCreateProposalCandidate, // Actions write helper for LilNounsData.createProposalCandidate
-  writeLilNounsDataInitialize, // Actions write helper for LilNounsData.initialize
-  writeLilNounsDataInitializeV2, // Actions write helper for LilNounsData.initializeV2
-  writeLilNounsDataRenounceOwnership, // Actions write helper for LilNounsData.renounceOwnership
-  writeLilNounsDataSendCandidateFeedback, // Actions write helper for LilNounsData.sendCandidateFeedback
-  writeLilNounsDataSendFeedback, // Actions write helper for LilNounsData.sendFeedback
-  writeLilNounsDataSetCreateCandidateCost, // Actions write helper for LilNounsData.setCreateCandidateCost
-  writeLilNounsDataSetFeeRecipient, // Actions write helper for LilNounsData.setFeeRecipient
-  writeLilNounsDataSetUpdateCandidateCost, // Actions write helper for LilNounsData.setUpdateCandidateCost
-  writeLilNounsDataTransferOwnership, // Actions write helper for LilNounsData.transferOwnership
-  writeLilNounsDataUpdateProposalCandidate, // Actions write helper for LilNounsData.updateProposalCandidate
-  writeLilNounsDataUpgradeToAndCall, // Actions write helper for LilNounsData.upgradeToAndCall
-  writeLilNounsDataWithdrawEth, // Actions write helper for LilNounsData.withdrawEth
-  writeLilNounsDescriptor, // Actions write helper for LilNounsDescriptor
-  writeLilNounsDescriptorAddAccessories, // Actions write helper for LilNounsDescriptor.addAccessories
-  writeLilNounsDescriptorAddAccessoriesFromPointer, // Actions write helper for LilNounsDescriptor.addAccessoriesFromPointer
-  writeLilNounsDescriptorAddBackground, // Actions write helper for LilNounsDescriptor.addBackground
-  writeLilNounsDescriptorAddBodies, // Actions write helper for LilNounsDescriptor.addBodies
-  writeLilNounsDescriptorAddBodiesFromPointer, // Actions write helper for LilNounsDescriptor.addBodiesFromPointer
-  writeLilNounsDescriptorAddGlasses, // Actions write helper for LilNounsDescriptor.addGlasses
-  writeLilNounsDescriptorAddGlassesFromPointer, // Actions write helper for LilNounsDescriptor.addGlassesFromPointer
-  writeLilNounsDescriptorAddHeads, // Actions write helper for LilNounsDescriptor.addHeads
-  writeLilNounsDescriptorAddHeadsFromPointer, // Actions write helper for LilNounsDescriptor.addHeadsFromPointer
-  writeLilNounsDescriptorAddManyBackgrounds, // Actions write helper for LilNounsDescriptor.addManyBackgrounds
-  writeLilNounsDescriptorLockParts, // Actions write helper for LilNounsDescriptor.lockParts
-  writeLilNounsDescriptorRenounceOwnership, // Actions write helper for LilNounsDescriptor.renounceOwnership
-  writeLilNounsDescriptorSetArt, // Actions write helper for LilNounsDescriptor.setArt
-  writeLilNounsDescriptorSetArtDescriptor, // Actions write helper for LilNounsDescriptor.setArtDescriptor
-  writeLilNounsDescriptorSetArtInflator, // Actions write helper for LilNounsDescriptor.setArtInflator
-  writeLilNounsDescriptorSetBaseUri, // Actions write helper for LilNounsDescriptor.setBaseUri
-  writeLilNounsDescriptorSetPalette, // Actions write helper for LilNounsDescriptor.setPalette
-  writeLilNounsDescriptorSetPalettePointer, // Actions write helper for LilNounsDescriptor.setPalettePointer
-  writeLilNounsDescriptorSetRenderer, // Actions write helper for LilNounsDescriptor.setRenderer
-  writeLilNounsDescriptorToggleDataUriEnabled, // Actions write helper for LilNounsDescriptor.toggleDataUriEnabled
-  writeLilNounsDescriptorTransferOwnership, // Actions write helper for LilNounsDescriptor.transferOwnership
-  writeLilNounsEnsMapper, // Actions write helper for LilNounsEnsMapper
-  writeLilNounsEnsMapperClaimSubname, // Actions write helper for LilNounsEnsMapper.claimSubname
-  writeLilNounsEnsMapperEmitAddrEvents, // Actions write helper for LilNounsEnsMapper.emitAddrEvents
-  writeLilNounsEnsMapperEmitTextEvents, // Actions write helper for LilNounsEnsMapper.emitTextEvents
-  writeLilNounsEnsMapperInitialize, // Actions write helper for LilNounsEnsMapper.initialize
-  writeLilNounsEnsMapperMigrateLegacySubname, // Actions write helper for LilNounsEnsMapper.migrateLegacySubname
-  writeLilNounsEnsMapperReleaseLegacySubname, // Actions write helper for LilNounsEnsMapper.releaseLegacySubname
-  writeLilNounsEnsMapperRelinquishSubname, // Actions write helper for LilNounsEnsMapper.relinquishSubname
-  writeLilNounsEnsMapperRenounceOwnership, // Actions write helper for LilNounsEnsMapper.renounceOwnership
-  writeLilNounsEnsMapperRestoreResolver, // Actions write helper for LilNounsEnsMapper.restoreResolver
-  writeLilNounsEnsMapperSetText, // Actions write helper for LilNounsEnsMapper.setText
-  writeLilNounsEnsMapperTransferOwnership, // Actions write helper for LilNounsEnsMapper.transferOwnership
-  writeLilNounsEnsMapperUpgradeToAndCall, // Actions write helper for LilNounsEnsMapper.upgradeToAndCall
-  writeLilNounsGovernor, // Actions write helper for LilNounsGovernor
-  writeLilNounsGovernorAcceptAdmin, // Actions write helper for LilNounsGovernor.acceptAdmin
-  writeLilNounsGovernorAcceptVetoer, // Actions write helper for LilNounsGovernor.acceptVetoer
-  writeLilNounsGovernorBurnVetoPower, // Actions write helper for LilNounsGovernor.burnVetoPower
-  writeLilNounsGovernorSetDynamicQuorumParams, // Actions write helper for LilNounsGovernor.setDynamicQuorumParams
-  writeLilNounsGovernorSetMaxQuorumVotesBps, // Actions write helper for LilNounsGovernor.setMaxQuorumVotesBps
-  writeLilNounsGovernorSetMinQuorumVotesBps, // Actions write helper for LilNounsGovernor.setMinQuorumVotesBps
-  writeLilNounsGovernorSetPendingAdmin, // Actions write helper for LilNounsGovernor.setPendingAdmin
-  writeLilNounsGovernorSetPendingVetoer, // Actions write helper for LilNounsGovernor.setPendingVetoer
-  writeLilNounsGovernorSetProposalThresholdBps, // Actions write helper for LilNounsGovernor.setProposalThresholdBps
-  writeLilNounsGovernorSetQuorumCoefficient, // Actions write helper for LilNounsGovernor.setQuorumCoefficient
-  writeLilNounsGovernorSetVotingDelay, // Actions write helper for LilNounsGovernor.setVotingDelay
-  writeLilNounsGovernorSetVotingPeriod, // Actions write helper for LilNounsGovernor.setVotingPeriod
-  writeLilNounsGovernorWithdraw, // Actions write helper for LilNounsGovernor.withdraw
-  writeLilNounsGovernorCancel, // Actions write helper for LilNounsGovernor.cancel
-  writeLilNounsGovernorCastRefundableVote, // Actions write helper for LilNounsGovernor.castRefundableVote
-  writeLilNounsGovernorCastRefundableVoteWithReason, // Actions write helper for LilNounsGovernor.castRefundableVoteWithReason
-  writeLilNounsGovernorCastVote, // Actions write helper for LilNounsGovernor.castVote
-  writeLilNounsGovernorCastVoteBySig, // Actions write helper for LilNounsGovernor.castVoteBySig
-  writeLilNounsGovernorCastVoteWithReason, // Actions write helper for LilNounsGovernor.castVoteWithReason
-  writeLilNounsGovernorExecute, // Actions write helper for LilNounsGovernor.execute
-  writeLilNounsGovernorInitialize, // Actions write helper for LilNounsGovernor.initialize
-  writeLilNounsGovernorPropose, // Actions write helper for LilNounsGovernor.propose
-  writeLilNounsGovernorQueue, // Actions write helper for LilNounsGovernor.queue
-  writeLilNounsGovernorVeto, // Actions write helper for LilNounsGovernor.veto
-  writeLilNounsToken, // Actions write helper for LilNounsToken
-  writeLilNounsTokenApprove, // Actions write helper for LilNounsToken.approve
-  writeLilNounsTokenBurn, // Actions write helper for LilNounsToken.burn
-  writeLilNounsTokenDelegate, // Actions write helper for LilNounsToken.delegate
-  writeLilNounsTokenDelegateBySig, // Actions write helper for LilNounsToken.delegateBySig
-  writeLilNounsTokenLockDescriptor, // Actions write helper for LilNounsToken.lockDescriptor
-  writeLilNounsTokenLockMinter, // Actions write helper for LilNounsToken.lockMinter
-  writeLilNounsTokenLockSeeder, // Actions write helper for LilNounsToken.lockSeeder
-  writeLilNounsTokenMint, // Actions write helper for LilNounsToken.mint
-  writeLilNounsTokenRenounceOwnership, // Actions write helper for LilNounsToken.renounceOwnership
-  writeLilNounsTokenSafeTransferFrom, // Actions write helper for LilNounsToken.safeTransferFrom
-  writeLilNounsTokenSetApprovalForAll, // Actions write helper for LilNounsToken.setApprovalForAll
-  writeLilNounsTokenSetContractUriHash, // Actions write helper for LilNounsToken.setContractUriHash
-  writeLilNounsTokenSetDescriptor, // Actions write helper for LilNounsToken.setDescriptor
-  writeLilNounsTokenSetLilNoundersDao, // Actions write helper for LilNounsToken.setLilNoundersDao
-  writeLilNounsTokenSetMinter, // Actions write helper for LilNounsToken.setMinter
-  writeLilNounsTokenSetNounsDao, // Actions write helper for LilNounsToken.setNounsDao
-  writeLilNounsTokenSetSeeder, // Actions write helper for LilNounsToken.setSeeder
-  writeLilNounsTokenTransferFrom, // Actions write helper for LilNounsToken.transferFrom
-  writeLilNounsTokenTransferOwnership, // Actions write helper for LilNounsToken.transferOwnership
-  writeLilNounsTreasury, // Actions write helper for LilNounsTreasury
-  writeLilNounsTreasuryAcceptAdmin, // Actions write helper for LilNounsTreasury.acceptAdmin
-  writeLilNounsTreasuryCancelTransaction, // Actions write helper for LilNounsTreasury.cancelTransaction
-  writeLilNounsTreasuryExecuteTransaction, // Actions write helper for LilNounsTreasury.executeTransaction
-  writeLilNounsTreasuryQueueTransaction, // Actions write helper for LilNounsTreasury.queueTransaction
-  writeLilNounsTreasurySetDelay, // Actions write helper for LilNounsTreasury.setDelay
-  writeLilNounsTreasurySetPendingAdmin, // Actions write helper for LilNounsTreasury.setPendingAdmin
   // Generated actions: simulate helpers
   simulateLilNounsAuction, // Actions simulate helper for LilNounsAuction
   simulateLilNounsAuctionBuyNow, // Actions simulate helper for LilNounsAuction.buyNow
@@ -374,16 +256,6 @@ export {
   simulateLilNounsGovernorAcceptAdmin, // Actions simulate helper for LilNounsGovernor.acceptAdmin
   simulateLilNounsGovernorAcceptVetoer, // Actions simulate helper for LilNounsGovernor.acceptVetoer
   simulateLilNounsGovernorBurnVetoPower, // Actions simulate helper for LilNounsGovernor.burnVetoPower
-  simulateLilNounsGovernorSetDynamicQuorumParams, // Actions simulate helper for LilNounsGovernor.setDynamicQuorumParams
-  simulateLilNounsGovernorSetMaxQuorumVotesBps, // Actions simulate helper for LilNounsGovernor.setMaxQuorumVotesBps
-  simulateLilNounsGovernorSetMinQuorumVotesBps, // Actions simulate helper for LilNounsGovernor.setMinQuorumVotesBps
-  simulateLilNounsGovernorSetPendingAdmin, // Actions simulate helper for LilNounsGovernor.setPendingAdmin
-  simulateLilNounsGovernorSetPendingVetoer, // Actions simulate helper for LilNounsGovernor.setPendingVetoer
-  simulateLilNounsGovernorSetProposalThresholdBps, // Actions simulate helper for LilNounsGovernor.setProposalThresholdBps
-  simulateLilNounsGovernorSetQuorumCoefficient, // Actions simulate helper for LilNounsGovernor.setQuorumCoefficient
-  simulateLilNounsGovernorSetVotingDelay, // Actions simulate helper for LilNounsGovernor.setVotingDelay
-  simulateLilNounsGovernorSetVotingPeriod, // Actions simulate helper for LilNounsGovernor.setVotingPeriod
-  simulateLilNounsGovernorWithdraw, // Actions simulate helper for LilNounsGovernor.withdraw
   simulateLilNounsGovernorCancel, // Actions simulate helper for LilNounsGovernor.cancel
   simulateLilNounsGovernorCastRefundableVote, // Actions simulate helper for LilNounsGovernor.castRefundableVote
   simulateLilNounsGovernorCastRefundableVoteWithReason, // Actions simulate helper for LilNounsGovernor.castRefundableVoteWithReason
@@ -394,7 +266,17 @@ export {
   simulateLilNounsGovernorInitialize, // Actions simulate helper for LilNounsGovernor.initialize
   simulateLilNounsGovernorPropose, // Actions simulate helper for LilNounsGovernor.propose
   simulateLilNounsGovernorQueue, // Actions simulate helper for LilNounsGovernor.queue
+  simulateLilNounsGovernorSetDynamicQuorumParams, // Actions simulate helper for LilNounsGovernor.setDynamicQuorumParams
+  simulateLilNounsGovernorSetMaxQuorumVotesBps, // Actions simulate helper for LilNounsGovernor.setMaxQuorumVotesBps
+  simulateLilNounsGovernorSetMinQuorumVotesBps, // Actions simulate helper for LilNounsGovernor.setMinQuorumVotesBps
+  simulateLilNounsGovernorSetPendingAdmin, // Actions simulate helper for LilNounsGovernor.setPendingAdmin
+  simulateLilNounsGovernorSetPendingVetoer, // Actions simulate helper for LilNounsGovernor.setPendingVetoer
+  simulateLilNounsGovernorSetProposalThresholdBps, // Actions simulate helper for LilNounsGovernor.setProposalThresholdBps
+  simulateLilNounsGovernorSetQuorumCoefficient, // Actions simulate helper for LilNounsGovernor.setQuorumCoefficient
+  simulateLilNounsGovernorSetVotingDelay, // Actions simulate helper for LilNounsGovernor.setVotingDelay
+  simulateLilNounsGovernorSetVotingPeriod, // Actions simulate helper for LilNounsGovernor.setVotingPeriod
   simulateLilNounsGovernorVeto, // Actions simulate helper for LilNounsGovernor.veto
+  simulateLilNounsGovernorWithdraw, // Actions simulate helper for LilNounsGovernor.withdraw
   simulateLilNounsToken, // Actions simulate helper for LilNounsToken
   simulateLilNounsTokenApprove, // Actions simulate helper for LilNounsToken.approve
   simulateLilNounsTokenBurn, // Actions simulate helper for LilNounsToken.burn
@@ -422,12 +304,12 @@ export {
   simulateLilNounsTreasuryQueueTransaction, // Actions simulate helper for LilNounsTreasury.queueTransaction
   simulateLilNounsTreasurySetDelay, // Actions simulate helper for LilNounsTreasury.setDelay
   simulateLilNounsTreasurySetPendingAdmin, // Actions simulate helper for LilNounsTreasury.setPendingAdmin
-  // Generated actions: event watchers
-  watchLilNounsAuctionEvent, // Actions event watcher for LilNounsAuction
   watchLilNounsAuctionAuctionReservePriceUpdatedEvent, // Actions event watcher for LilNounsAuction.auctionReservePriceUpdated
   watchLilNounsAuctionAuctionSettledEvent, // Actions event watcher for LilNounsAuction.auctionSettled
   watchLilNounsAuctionAuctionUpdateIntervalUpdatedEvent, // Actions event watcher for LilNounsAuction.auctionUpdateIntervalUpdated
   watchLilNounsAuctionDescriptorUpdatedEvent, // Actions event watcher for LilNounsAuction.descriptorUpdated
+  // Generated actions: event watchers
+  watchLilNounsAuctionEvent, // Actions event watcher for LilNounsAuction
   watchLilNounsAuctionInitializedEvent, // Actions event watcher for LilNounsAuction.initialized
   watchLilNounsAuctionOwnershipTransferredEvent, // Actions event watcher for LilNounsAuction.ownershipTransferred
   watchLilNounsAuctionPausedEvent, // Actions event watcher for LilNounsAuction.paused
@@ -435,29 +317,29 @@ export {
   watchLilNounsAuctionSeederUpdatedEvent, // Actions event watcher for LilNounsAuction.seederUpdated
   watchLilNounsAuctionUnpausedEvent, // Actions event watcher for LilNounsAuction.unpaused
   watchLilNounsAuctionUpgradedEvent, // Actions event watcher for LilNounsAuction.upgraded
-  watchLilNounsDataEvent, // Actions event watcher for LilNounsData
   watchLilNounsDataCandidateFeedbackSentEvent, // Actions event watcher for LilNounsData.candidateFeedbackSent
   watchLilNounsDataCreateCandidateCostSetEvent, // Actions event watcher for LilNounsData.createCandidateCostSet
   watchLilNounsDataEthWithdrawnEvent, // Actions event watcher for LilNounsData.ethWithdrawn
-  watchLilNounsDataFeeRecipientSetEvent, // Actions event watcher for LilNounsData.feeRecipientSet
+  watchLilNounsDataEvent, // Actions event watcher for LilNounsData
   watchLilNounsDataFeedbackSentEvent, // Actions event watcher for LilNounsData.feedbackSent
+  watchLilNounsDataFeeRecipientSetEvent, // Actions event watcher for LilNounsData.feeRecipientSet
   watchLilNounsDataInitializedEvent, // Actions event watcher for LilNounsData.initialized
-  watchLilNounsDataOwnershipTransferStartedEvent, // Actions event watcher for LilNounsData.ownershipTransferStarted
   watchLilNounsDataOwnershipTransferredEvent, // Actions event watcher for LilNounsData.ownershipTransferred
+  watchLilNounsDataOwnershipTransferStartedEvent, // Actions event watcher for LilNounsData.ownershipTransferStarted
   watchLilNounsDataProposalCandidateCanceledEvent, // Actions event watcher for LilNounsData.proposalCandidateCanceled
   watchLilNounsDataProposalCandidateCreatedEvent, // Actions event watcher for LilNounsData.proposalCandidateCreated
   watchLilNounsDataProposalCandidateUpdatedEvent, // Actions event watcher for LilNounsData.proposalCandidateUpdated
   watchLilNounsDataUpdateCandidateCostSetEvent, // Actions event watcher for LilNounsData.updateCandidateCostSet
   watchLilNounsDataUpgradedEvent, // Actions event watcher for LilNounsData.upgraded
-  watchLilNounsDescriptorEvent, // Actions event watcher for LilNounsDescriptor
   watchLilNounsDescriptorArtUpdatedEvent, // Actions event watcher for LilNounsDescriptor.artUpdated
   watchLilNounsDescriptorBaseUriUpdatedEvent, // Actions event watcher for LilNounsDescriptor.baseUriUpdated
   watchLilNounsDescriptorDataUriToggledEvent, // Actions event watcher for LilNounsDescriptor.dataUriToggled
+  watchLilNounsDescriptorEvent, // Actions event watcher for LilNounsDescriptor
   watchLilNounsDescriptorOwnershipTransferredEvent, // Actions event watcher for LilNounsDescriptor.ownershipTransferred
   watchLilNounsDescriptorPartsLockedEvent, // Actions event watcher for LilNounsDescriptor.partsLocked
   watchLilNounsDescriptorRendererUpdatedEvent, // Actions event watcher for LilNounsDescriptor.rendererUpdated
-  watchLilNounsEnsMapperEvent, // Actions event watcher for LilNounsEnsMapper
   watchLilNounsEnsMapperAddrChangedEvent, // Actions event watcher for LilNounsEnsMapper.addrChanged
+  watchLilNounsEnsMapperEvent, // Actions event watcher for LilNounsEnsMapper
   watchLilNounsEnsMapperInitializedEvent, // Actions event watcher for LilNounsEnsMapper.initialized
   watchLilNounsEnsMapperNameChangedEvent, // Actions event watcher for LilNounsEnsMapper.nameChanged
   watchLilNounsEnsMapperOwnershipTransferredEvent, // Actions event watcher for LilNounsEnsMapper.ownershipTransferred
@@ -486,13 +368,13 @@ export {
   watchLilNounsGovernorVotingDelaySetEvent, // Actions event watcher for LilNounsGovernor.votingDelaySet
   watchLilNounsGovernorVotingPeriodSetEvent, // Actions event watcher for LilNounsGovernor.votingPeriodSet
   watchLilNounsGovernorWithdrawEvent, // Actions event watcher for LilNounsGovernor.withdraw
-  watchLilNounsTokenEvent, // Actions event watcher for LilNounsToken
   watchLilNounsTokenApprovalEvent, // Actions event watcher for LilNounsToken.approval
   watchLilNounsTokenApprovalForAllEvent, // Actions event watcher for LilNounsToken.approvalForAll
   watchLilNounsTokenDelegateChangedEvent, // Actions event watcher for LilNounsToken.delegateChanged
   watchLilNounsTokenDelegateVotesChangedEvent, // Actions event watcher for LilNounsToken.delegateVotesChanged
   watchLilNounsTokenDescriptorLockedEvent, // Actions event watcher for LilNounsToken.descriptorLocked
   watchLilNounsTokenDescriptorUpdatedEvent, // Actions event watcher for LilNounsToken.descriptorUpdated
+  watchLilNounsTokenEvent, // Actions event watcher for LilNounsToken
   watchLilNounsTokenLilNoundersDaoUpdatedEvent, // Actions event watcher for LilNounsToken.lilNoundersDaoUpdated
   watchLilNounsTokenMinterLockedEvent, // Actions event watcher for LilNounsToken.minterLocked
   watchLilNounsTokenMinterUpdatedEvent, // Actions event watcher for LilNounsToken.minterUpdated
@@ -503,13 +385,131 @@ export {
   watchLilNounsTokenSeederLockedEvent, // Actions event watcher for LilNounsToken.seederLocked
   watchLilNounsTokenSeederUpdatedEvent, // Actions event watcher for LilNounsToken.seederUpdated
   watchLilNounsTokenTransferEvent, // Actions event watcher for LilNounsToken.transfer
-  watchLilNounsTreasuryEvent, // Actions event watcher for LilNounsTreasury
   watchLilNounsTreasuryCancelTransactionEvent, // Actions event watcher for LilNounsTreasury.cancelTransaction
+  watchLilNounsTreasuryEvent, // Actions event watcher for LilNounsTreasury
   watchLilNounsTreasuryExecuteTransactionEvent, // Actions event watcher for LilNounsTreasury.executeTransaction
   watchLilNounsTreasuryNewAdminEvent, // Actions event watcher for LilNounsTreasury.newAdmin
   watchLilNounsTreasuryNewDelayEvent, // Actions event watcher for LilNounsTreasury.newDelay
   watchLilNounsTreasuryNewPendingAdminEvent, // Actions event watcher for LilNounsTreasury.newPendingAdmin
   watchLilNounsTreasuryQueueTransactionEvent, // Actions event watcher for LilNounsTreasury.queueTransaction
+  // Generated actions: write helpers
+  writeLilNounsAuction, // Actions write helper for LilNounsAuction
+  writeLilNounsAuctionBuyNow, // Actions write helper for LilNounsAuction.buyNow
+  writeLilNounsAuctionInitialize, // Actions write helper for LilNounsAuction.initialize
+  writeLilNounsAuctionPause, // Actions write helper for LilNounsAuction.pause
+  writeLilNounsAuctionRenounceOwnership, // Actions write helper for LilNounsAuction.renounceOwnership
+  writeLilNounsAuctionSetNounsDescriptor, // Actions write helper for LilNounsAuction.setNounsDescriptor
+  writeLilNounsAuctionSetNounsSeeder, // Actions write helper for LilNounsAuction.setNounsSeeder
+  writeLilNounsAuctionSetPoolSize, // Actions write helper for LilNounsAuction.setPoolSize
+  writeLilNounsAuctionSetReservePrice, // Actions write helper for LilNounsAuction.setReservePrice
+  writeLilNounsAuctionSetUpdateInterval, // Actions write helper for LilNounsAuction.setUpdateInterval
+  writeLilNounsAuctionTransferOwnership, // Actions write helper for LilNounsAuction.transferOwnership
+  writeLilNounsAuctionUnpause, // Actions write helper for LilNounsAuction.unpause
+  writeLilNounsAuctionUpgradeTo, // Actions write helper for LilNounsAuction.upgradeTo
+  writeLilNounsAuctionUpgradeToAndCall, // Actions write helper for LilNounsAuction.upgradeToAndCall
+  writeLilNounsData, // Actions write helper for LilNounsData
+  writeLilNounsDataAcceptOwnership, // Actions write helper for LilNounsData.acceptOwnership
+  writeLilNounsDataCancelProposalCandidate, // Actions write helper for LilNounsData.cancelProposalCandidate
+  writeLilNounsDataCreateProposalCandidate, // Actions write helper for LilNounsData.createProposalCandidate
+  writeLilNounsDataInitialize, // Actions write helper for LilNounsData.initialize
+  writeLilNounsDataInitializeV2, // Actions write helper for LilNounsData.initializeV2
+  writeLilNounsDataRenounceOwnership, // Actions write helper for LilNounsData.renounceOwnership
+  writeLilNounsDataSendCandidateFeedback, // Actions write helper for LilNounsData.sendCandidateFeedback
+  writeLilNounsDataSendFeedback, // Actions write helper for LilNounsData.sendFeedback
+  writeLilNounsDataSetCreateCandidateCost, // Actions write helper for LilNounsData.setCreateCandidateCost
+  writeLilNounsDataSetFeeRecipient, // Actions write helper for LilNounsData.setFeeRecipient
+  writeLilNounsDataSetUpdateCandidateCost, // Actions write helper for LilNounsData.setUpdateCandidateCost
+  writeLilNounsDataTransferOwnership, // Actions write helper for LilNounsData.transferOwnership
+  writeLilNounsDataUpdateProposalCandidate, // Actions write helper for LilNounsData.updateProposalCandidate
+  writeLilNounsDataUpgradeToAndCall, // Actions write helper for LilNounsData.upgradeToAndCall
+  writeLilNounsDataWithdrawEth, // Actions write helper for LilNounsData.withdrawEth
+  writeLilNounsDescriptor, // Actions write helper for LilNounsDescriptor
+  writeLilNounsDescriptorAddAccessories, // Actions write helper for LilNounsDescriptor.addAccessories
+  writeLilNounsDescriptorAddAccessoriesFromPointer, // Actions write helper for LilNounsDescriptor.addAccessoriesFromPointer
+  writeLilNounsDescriptorAddBackground, // Actions write helper for LilNounsDescriptor.addBackground
+  writeLilNounsDescriptorAddBodies, // Actions write helper for LilNounsDescriptor.addBodies
+  writeLilNounsDescriptorAddBodiesFromPointer, // Actions write helper for LilNounsDescriptor.addBodiesFromPointer
+  writeLilNounsDescriptorAddGlasses, // Actions write helper for LilNounsDescriptor.addGlasses
+  writeLilNounsDescriptorAddGlassesFromPointer, // Actions write helper for LilNounsDescriptor.addGlassesFromPointer
+  writeLilNounsDescriptorAddHeads, // Actions write helper for LilNounsDescriptor.addHeads
+  writeLilNounsDescriptorAddHeadsFromPointer, // Actions write helper for LilNounsDescriptor.addHeadsFromPointer
+  writeLilNounsDescriptorAddManyBackgrounds, // Actions write helper for LilNounsDescriptor.addManyBackgrounds
+  writeLilNounsDescriptorLockParts, // Actions write helper for LilNounsDescriptor.lockParts
+  writeLilNounsDescriptorRenounceOwnership, // Actions write helper for LilNounsDescriptor.renounceOwnership
+  writeLilNounsDescriptorSetArt, // Actions write helper for LilNounsDescriptor.setArt
+  writeLilNounsDescriptorSetArtDescriptor, // Actions write helper for LilNounsDescriptor.setArtDescriptor
+  writeLilNounsDescriptorSetArtInflator, // Actions write helper for LilNounsDescriptor.setArtInflator
+  writeLilNounsDescriptorSetBaseUri, // Actions write helper for LilNounsDescriptor.setBaseUri
+  writeLilNounsDescriptorSetPalette, // Actions write helper for LilNounsDescriptor.setPalette
+  writeLilNounsDescriptorSetPalettePointer, // Actions write helper for LilNounsDescriptor.setPalettePointer
+  writeLilNounsDescriptorSetRenderer, // Actions write helper for LilNounsDescriptor.setRenderer
+  writeLilNounsDescriptorToggleDataUriEnabled, // Actions write helper for LilNounsDescriptor.toggleDataUriEnabled
+  writeLilNounsDescriptorTransferOwnership, // Actions write helper for LilNounsDescriptor.transferOwnership
+  writeLilNounsEnsMapper, // Actions write helper for LilNounsEnsMapper
+  writeLilNounsEnsMapperClaimSubname, // Actions write helper for LilNounsEnsMapper.claimSubname
+  writeLilNounsEnsMapperEmitAddrEvents, // Actions write helper for LilNounsEnsMapper.emitAddrEvents
+  writeLilNounsEnsMapperEmitTextEvents, // Actions write helper for LilNounsEnsMapper.emitTextEvents
+  writeLilNounsEnsMapperInitialize, // Actions write helper for LilNounsEnsMapper.initialize
+  writeLilNounsEnsMapperMigrateLegacySubname, // Actions write helper for LilNounsEnsMapper.migrateLegacySubname
+  writeLilNounsEnsMapperReleaseLegacySubname, // Actions write helper for LilNounsEnsMapper.releaseLegacySubname
+  writeLilNounsEnsMapperRelinquishSubname, // Actions write helper for LilNounsEnsMapper.relinquishSubname
+  writeLilNounsEnsMapperRenounceOwnership, // Actions write helper for LilNounsEnsMapper.renounceOwnership
+  writeLilNounsEnsMapperRestoreResolver, // Actions write helper for LilNounsEnsMapper.restoreResolver
+  writeLilNounsEnsMapperSetText, // Actions write helper for LilNounsEnsMapper.setText
+  writeLilNounsEnsMapperTransferOwnership, // Actions write helper for LilNounsEnsMapper.transferOwnership
+  writeLilNounsEnsMapperUpgradeToAndCall, // Actions write helper for LilNounsEnsMapper.upgradeToAndCall
+  writeLilNounsGovernor, // Actions write helper for LilNounsGovernor
+  writeLilNounsGovernorAcceptAdmin, // Actions write helper for LilNounsGovernor.acceptAdmin
+  writeLilNounsGovernorAcceptVetoer, // Actions write helper for LilNounsGovernor.acceptVetoer
+  writeLilNounsGovernorBurnVetoPower, // Actions write helper for LilNounsGovernor.burnVetoPower
+  writeLilNounsGovernorCancel, // Actions write helper for LilNounsGovernor.cancel
+  writeLilNounsGovernorCastRefundableVote, // Actions write helper for LilNounsGovernor.castRefundableVote
+  writeLilNounsGovernorCastRefundableVoteWithReason, // Actions write helper for LilNounsGovernor.castRefundableVoteWithReason
+  writeLilNounsGovernorCastVote, // Actions write helper for LilNounsGovernor.castVote
+  writeLilNounsGovernorCastVoteBySig, // Actions write helper for LilNounsGovernor.castVoteBySig
+  writeLilNounsGovernorCastVoteWithReason, // Actions write helper for LilNounsGovernor.castVoteWithReason
+  writeLilNounsGovernorExecute, // Actions write helper for LilNounsGovernor.execute
+  writeLilNounsGovernorInitialize, // Actions write helper for LilNounsGovernor.initialize
+  writeLilNounsGovernorPropose, // Actions write helper for LilNounsGovernor.propose
+  writeLilNounsGovernorQueue, // Actions write helper for LilNounsGovernor.queue
+  writeLilNounsGovernorSetDynamicQuorumParams, // Actions write helper for LilNounsGovernor.setDynamicQuorumParams
+  writeLilNounsGovernorSetMaxQuorumVotesBps, // Actions write helper for LilNounsGovernor.setMaxQuorumVotesBps
+  writeLilNounsGovernorSetMinQuorumVotesBps, // Actions write helper for LilNounsGovernor.setMinQuorumVotesBps
+  writeLilNounsGovernorSetPendingAdmin, // Actions write helper for LilNounsGovernor.setPendingAdmin
+  writeLilNounsGovernorSetPendingVetoer, // Actions write helper for LilNounsGovernor.setPendingVetoer
+  writeLilNounsGovernorSetProposalThresholdBps, // Actions write helper for LilNounsGovernor.setProposalThresholdBps
+  writeLilNounsGovernorSetQuorumCoefficient, // Actions write helper for LilNounsGovernor.setQuorumCoefficient
+  writeLilNounsGovernorSetVotingDelay, // Actions write helper for LilNounsGovernor.setVotingDelay
+  writeLilNounsGovernorSetVotingPeriod, // Actions write helper for LilNounsGovernor.setVotingPeriod
+  writeLilNounsGovernorVeto, // Actions write helper for LilNounsGovernor.veto
+  writeLilNounsGovernorWithdraw, // Actions write helper for LilNounsGovernor.withdraw
+  writeLilNounsToken, // Actions write helper for LilNounsToken
+  writeLilNounsTokenApprove, // Actions write helper for LilNounsToken.approve
+  writeLilNounsTokenBurn, // Actions write helper for LilNounsToken.burn
+  writeLilNounsTokenDelegate, // Actions write helper for LilNounsToken.delegate
+  writeLilNounsTokenDelegateBySig, // Actions write helper for LilNounsToken.delegateBySig
+  writeLilNounsTokenLockDescriptor, // Actions write helper for LilNounsToken.lockDescriptor
+  writeLilNounsTokenLockMinter, // Actions write helper for LilNounsToken.lockMinter
+  writeLilNounsTokenLockSeeder, // Actions write helper for LilNounsToken.lockSeeder
+  writeLilNounsTokenMint, // Actions write helper for LilNounsToken.mint
+  writeLilNounsTokenRenounceOwnership, // Actions write helper for LilNounsToken.renounceOwnership
+  writeLilNounsTokenSafeTransferFrom, // Actions write helper for LilNounsToken.safeTransferFrom
+  writeLilNounsTokenSetApprovalForAll, // Actions write helper for LilNounsToken.setApprovalForAll
+  writeLilNounsTokenSetContractUriHash, // Actions write helper for LilNounsToken.setContractUriHash
+  writeLilNounsTokenSetDescriptor, // Actions write helper for LilNounsToken.setDescriptor
+  writeLilNounsTokenSetLilNoundersDao, // Actions write helper for LilNounsToken.setLilNoundersDao
+  writeLilNounsTokenSetMinter, // Actions write helper for LilNounsToken.setMinter
+  writeLilNounsTokenSetNounsDao, // Actions write helper for LilNounsToken.setNounsDao
+  writeLilNounsTokenSetSeeder, // Actions write helper for LilNounsToken.setSeeder
+  writeLilNounsTokenTransferFrom, // Actions write helper for LilNounsToken.transferFrom
+  writeLilNounsTokenTransferOwnership, // Actions write helper for LilNounsToken.transferOwnership
+  writeLilNounsTreasury, // Actions write helper for LilNounsTreasury
+  writeLilNounsTreasuryAcceptAdmin, // Actions write helper for LilNounsTreasury.acceptAdmin
+  writeLilNounsTreasuryCancelTransaction, // Actions write helper for LilNounsTreasury.cancelTransaction
+  writeLilNounsTreasuryExecuteTransaction, // Actions write helper for LilNounsTreasury.executeTransaction
+  writeLilNounsTreasuryQueueTransaction, // Actions write helper for LilNounsTreasury.queueTransaction
+  writeLilNounsTreasurySetDelay, // Actions write helper for LilNounsTreasury.setDelay
+  writeLilNounsTreasurySetPendingAdmin, // Actions write helper for LilNounsTreasury.setPendingAdmin
 } from "./actions.gen";
 
 export {
@@ -541,17 +541,17 @@ export {
   useReadLilNounsAuctionUsedBlockNumbers, // React read hook for LilNounsAuction.usedBlockNumbers
   useReadLilNounsAuctionWethAddress, // React read hook for LilNounsAuction.wethAddress
   useReadLilNounsData, // React read hook for LilNounsData
-  useReadLilNounsDataMaxProposalCalls, // React read hook for LilNounsData.maxProposalCalls
-  useReadLilNounsDataPriorVotesBlocksAgo, // React read hook for LilNounsData.priorVotesBlocksAgo
-  useReadLilNounsDataUpgradeInterfaceVersion, // React read hook for LilNounsData.upgradeInterfaceVersion
   useReadLilNounsDataCreateCandidateCost, // React read hook for LilNounsData.createCandidateCost
   useReadLilNounsDataFeeRecipient, // React read hook for LilNounsData.feeRecipient
+  useReadLilNounsDataMaxProposalCalls, // React read hook for LilNounsData.maxProposalCalls
   useReadLilNounsDataOwner, // React read hook for LilNounsData.owner
   useReadLilNounsDataPendingOwner, // React read hook for LilNounsData.pendingOwner
+  useReadLilNounsDataPriorVotesBlocksAgo, // React read hook for LilNounsData.priorVotesBlocksAgo
   useReadLilNounsDataPropCandidates, // React read hook for LilNounsData.propCandidates
   useReadLilNounsDataProxiableUuid, // React read hook for LilNounsData.proxiableUuid
   useReadLilNounsDataToken, // React read hook for LilNounsData.token
   useReadLilNounsDataUpdateCandidateCost, // React read hook for LilNounsData.updateCandidateCost
+  useReadLilNounsDataUpgradeInterfaceVersion, // React read hook for LilNounsData.upgradeInterfaceVersion
   useReadLilNounsDescriptor, // React read hook for LilNounsDescriptor
   useReadLilNounsDescriptorAccessories, // React read hook for LilNounsDescriptor.accessories
   useReadLilNounsDescriptorAccessoryCount, // React read hook for LilNounsDescriptor.accessoryCount
@@ -576,7 +576,6 @@ export {
   useReadLilNounsDescriptorRenderer, // React read hook for LilNounsDescriptor.renderer
   useReadLilNounsDescriptorTokenUri, // React read hook for LilNounsDescriptor.tokenUri
   useReadLilNounsEnsMapper, // React read hook for LilNounsEnsMapper
-  useReadLilNounsEnsMapperUpgradeInterfaceVersion, // React read hook for LilNounsEnsMapper.upgradeInterfaceVersion
   useReadLilNounsEnsMapperAddr, // React read hook for LilNounsEnsMapper.addr
   useReadLilNounsEnsMapperEns, // React read hook for LilNounsEnsMapper.ens
   useReadLilNounsEnsMapperEnsNameOf, // React read hook for LilNounsEnsMapper.ensNameOf
@@ -591,10 +590,19 @@ export {
   useReadLilNounsEnsMapperRootNode, // React read hook for LilNounsEnsMapper.rootNode
   useReadLilNounsEnsMapperSupportsInterface, // React read hook for LilNounsEnsMapper.supportsInterface
   useReadLilNounsEnsMapperText, // React read hook for LilNounsEnsMapper.text
+  useReadLilNounsEnsMapperUpgradeInterfaceVersion, // React read hook for LilNounsEnsMapper.upgradeInterfaceVersion
   useReadLilNounsGovernor, // React read hook for LilNounsGovernor
+  useReadLilNounsGovernorAdmin, // React read hook for LilNounsGovernor.admin
   useReadLilNounsGovernorBallotTypehash, // React read hook for LilNounsGovernor.ballotTypehash
   useReadLilNounsGovernorDomainTypehash, // React read hook for LilNounsGovernor.domainTypehash
+  useReadLilNounsGovernorDynamicQuorumVotes, // React read hook for LilNounsGovernor.dynamicQuorumVotes
+  useReadLilNounsGovernorGetActions, // React read hook for LilNounsGovernor.getActions
+  useReadLilNounsGovernorGetDynamicQuorumParamsAt, // React read hook for LilNounsGovernor.getDynamicQuorumParamsAt
+  useReadLilNounsGovernorGetReceipt, // React read hook for LilNounsGovernor.getReceipt
+  useReadLilNounsGovernorImplementation, // React read hook for LilNounsGovernor.implementation
+  useReadLilNounsGovernorLatestProposalIds, // React read hook for LilNounsGovernor.latestProposalIds
   useReadLilNounsGovernorMaxProposalThresholdBps, // React read hook for LilNounsGovernor.maxProposalThresholdBps
+  useReadLilNounsGovernorMaxQuorumVotes, // React read hook for LilNounsGovernor.maxQuorumVotes
   useReadLilNounsGovernorMaxQuorumVotesBps, // React read hook for LilNounsGovernor.maxQuorumVotesBps
   useReadLilNounsGovernorMaxQuorumVotesBpsUpperBound, // React read hook for LilNounsGovernor.maxQuorumVotesBpsUpperBound
   useReadLilNounsGovernorMaxRefundBaseFee, // React read hook for LilNounsGovernor.maxRefundBaseFee
@@ -603,47 +611,39 @@ export {
   useReadLilNounsGovernorMaxVotingDelay, // React read hook for LilNounsGovernor.maxVotingDelay
   useReadLilNounsGovernorMaxVotingPeriod, // React read hook for LilNounsGovernor.maxVotingPeriod
   useReadLilNounsGovernorMinProposalThresholdBps, // React read hook for LilNounsGovernor.minProposalThresholdBps
+  useReadLilNounsGovernorMinQuorumVotes, // React read hook for LilNounsGovernor.minQuorumVotes
   useReadLilNounsGovernorMinQuorumVotesBpsLowerBound, // React read hook for LilNounsGovernor.minQuorumVotesBpsLowerBound
   useReadLilNounsGovernorMinQuorumVotesBpsUpperBound, // React read hook for LilNounsGovernor.minQuorumVotesBpsUpperBound
   useReadLilNounsGovernorMinVotingDelay, // React read hook for LilNounsGovernor.minVotingDelay
   useReadLilNounsGovernorMinVotingPeriod, // React read hook for LilNounsGovernor.minVotingPeriod
-  useReadLilNounsGovernorRefundBaseGas, // React read hook for LilNounsGovernor.refundBaseGas
-  useReadLilNounsGovernorAdmin, // React read hook for LilNounsGovernor.admin
-  useReadLilNounsGovernorDynamicQuorumVotes, // React read hook for LilNounsGovernor.dynamicQuorumVotes
-  useReadLilNounsGovernorGetActions, // React read hook for LilNounsGovernor.getActions
-  useReadLilNounsGovernorGetDynamicQuorumParamsAt, // React read hook for LilNounsGovernor.getDynamicQuorumParamsAt
-  useReadLilNounsGovernorGetReceipt, // React read hook for LilNounsGovernor.getReceipt
-  useReadLilNounsGovernorImplementation, // React read hook for LilNounsGovernor.implementation
-  useReadLilNounsGovernorLatestProposalIds, // React read hook for LilNounsGovernor.latestProposalIds
-  useReadLilNounsGovernorMaxQuorumVotes, // React read hook for LilNounsGovernor.maxQuorumVotes
-  useReadLilNounsGovernorMinQuorumVotes, // React read hook for LilNounsGovernor.minQuorumVotes
   useReadLilNounsGovernorName, // React read hook for LilNounsGovernor.name
   useReadLilNounsGovernorNouns, // React read hook for LilNounsGovernor.nouns
   useReadLilNounsGovernorPendingAdmin, // React read hook for LilNounsGovernor.pendingAdmin
   useReadLilNounsGovernorPendingVetoer, // React read hook for LilNounsGovernor.pendingVetoer
   useReadLilNounsGovernorProposalCount, // React read hook for LilNounsGovernor.proposalCount
   useReadLilNounsGovernorProposalMaxOperations, // React read hook for LilNounsGovernor.proposalMaxOperations
+  useReadLilNounsGovernorProposals, // React read hook for LilNounsGovernor.proposals
   useReadLilNounsGovernorProposalThreshold, // React read hook for LilNounsGovernor.proposalThreshold
   useReadLilNounsGovernorProposalThresholdBps, // React read hook for LilNounsGovernor.proposalThresholdBps
-  useReadLilNounsGovernorProposals, // React read hook for LilNounsGovernor.proposals
   useReadLilNounsGovernorQuorumParamsCheckpoints, // React read hook for LilNounsGovernor.quorumParamsCheckpoints
   useReadLilNounsGovernorQuorumVotes, // React read hook for LilNounsGovernor.quorumVotes
   useReadLilNounsGovernorQuorumVotesBps, // React read hook for LilNounsGovernor.quorumVotesBps
+  useReadLilNounsGovernorRefundBaseGas, // React read hook for LilNounsGovernor.refundBaseGas
   useReadLilNounsGovernorState, // React read hook for LilNounsGovernor.state
   useReadLilNounsGovernorTimelock, // React read hook for LilNounsGovernor.timelock
   useReadLilNounsGovernorVetoer, // React read hook for LilNounsGovernor.vetoer
   useReadLilNounsGovernorVotingDelay, // React read hook for LilNounsGovernor.votingDelay
   useReadLilNounsGovernorVotingPeriod, // React read hook for LilNounsGovernor.votingPeriod
   useReadLilNounsToken, // React read hook for LilNounsToken
-  useReadLilNounsTokenDelegationTypehash, // React read hook for LilNounsToken.delegationTypehash
-  useReadLilNounsTokenDomainTypehash, // React read hook for LilNounsToken.domainTypehash
   useReadLilNounsTokenBalanceOf, // React read hook for LilNounsToken.balanceOf
   useReadLilNounsTokenCheckpoints, // React read hook for LilNounsToken.checkpoints
   useReadLilNounsTokenContractUri, // React read hook for LilNounsToken.contractUri
   useReadLilNounsTokenDataUri, // React read hook for LilNounsToken.dataUri
   useReadLilNounsTokenDecimals, // React read hook for LilNounsToken.decimals
   useReadLilNounsTokenDelegates, // React read hook for LilNounsToken.delegates
+  useReadLilNounsTokenDelegationTypehash, // React read hook for LilNounsToken.delegationTypehash
   useReadLilNounsTokenDescriptor, // React read hook for LilNounsToken.descriptor
+  useReadLilNounsTokenDomainTypehash, // React read hook for LilNounsToken.domainTypehash
   useReadLilNounsTokenGetApproved, // React read hook for LilNounsToken.getApproved
   useReadLilNounsTokenGetCurrentVotes, // React read hook for LilNounsToken.getCurrentVotes
   useReadLilNounsTokenGetPriorVotes, // React read hook for LilNounsToken.getPriorVotes
@@ -670,131 +670,13 @@ export {
   useReadLilNounsTokenTotalSupply, // React read hook for LilNounsToken.totalSupply
   useReadLilNounsTokenVotesToDelegate, // React read hook for LilNounsToken.votesToDelegate
   useReadLilNounsTreasury, // React read hook for LilNounsTreasury
+  useReadLilNounsTreasuryAdmin, // React read hook for LilNounsTreasury.admin
+  useReadLilNounsTreasuryDelay, // React read hook for LilNounsTreasury.delay
   useReadLilNounsTreasuryGracePeriod, // React read hook for LilNounsTreasury.gracePeriod
   useReadLilNounsTreasuryMaximumDelay, // React read hook for LilNounsTreasury.maximumDelay
   useReadLilNounsTreasuryMinimumDelay, // React read hook for LilNounsTreasury.minimumDelay
-  useReadLilNounsTreasuryAdmin, // React read hook for LilNounsTreasury.admin
-  useReadLilNounsTreasuryDelay, // React read hook for LilNounsTreasury.delay
   useReadLilNounsTreasuryPendingAdmin, // React read hook for LilNounsTreasury.pendingAdmin
   useReadLilNounsTreasuryQueuedTransactions, // React read hook for LilNounsTreasury.queuedTransactions
-  // Generated React hooks: write helpers
-  useWriteLilNounsAuction, // React write hook for LilNounsAuction
-  useWriteLilNounsAuctionBuyNow, // React write hook for LilNounsAuction.buyNow
-  useWriteLilNounsAuctionInitialize, // React write hook for LilNounsAuction.initialize
-  useWriteLilNounsAuctionPause, // React write hook for LilNounsAuction.pause
-  useWriteLilNounsAuctionRenounceOwnership, // React write hook for LilNounsAuction.renounceOwnership
-  useWriteLilNounsAuctionSetNounsDescriptor, // React write hook for LilNounsAuction.setNounsDescriptor
-  useWriteLilNounsAuctionSetNounsSeeder, // React write hook for LilNounsAuction.setNounsSeeder
-  useWriteLilNounsAuctionSetPoolSize, // React write hook for LilNounsAuction.setPoolSize
-  useWriteLilNounsAuctionSetReservePrice, // React write hook for LilNounsAuction.setReservePrice
-  useWriteLilNounsAuctionSetUpdateInterval, // React write hook for LilNounsAuction.setUpdateInterval
-  useWriteLilNounsAuctionTransferOwnership, // React write hook for LilNounsAuction.transferOwnership
-  useWriteLilNounsAuctionUnpause, // React write hook for LilNounsAuction.unpause
-  useWriteLilNounsAuctionUpgradeTo, // React write hook for LilNounsAuction.upgradeTo
-  useWriteLilNounsAuctionUpgradeToAndCall, // React write hook for LilNounsAuction.upgradeToAndCall
-  useWriteLilNounsData, // React write hook for LilNounsData
-  useWriteLilNounsDataAcceptOwnership, // React write hook for LilNounsData.acceptOwnership
-  useWriteLilNounsDataCancelProposalCandidate, // React write hook for LilNounsData.cancelProposalCandidate
-  useWriteLilNounsDataCreateProposalCandidate, // React write hook for LilNounsData.createProposalCandidate
-  useWriteLilNounsDataInitialize, // React write hook for LilNounsData.initialize
-  useWriteLilNounsDataInitializeV2, // React write hook for LilNounsData.initializeV2
-  useWriteLilNounsDataRenounceOwnership, // React write hook for LilNounsData.renounceOwnership
-  useWriteLilNounsDataSendCandidateFeedback, // React write hook for LilNounsData.sendCandidateFeedback
-  useWriteLilNounsDataSendFeedback, // React write hook for LilNounsData.sendFeedback
-  useWriteLilNounsDataSetCreateCandidateCost, // React write hook for LilNounsData.setCreateCandidateCost
-  useWriteLilNounsDataSetFeeRecipient, // React write hook for LilNounsData.setFeeRecipient
-  useWriteLilNounsDataSetUpdateCandidateCost, // React write hook for LilNounsData.setUpdateCandidateCost
-  useWriteLilNounsDataTransferOwnership, // React write hook for LilNounsData.transferOwnership
-  useWriteLilNounsDataUpdateProposalCandidate, // React write hook for LilNounsData.updateProposalCandidate
-  useWriteLilNounsDataUpgradeToAndCall, // React write hook for LilNounsData.upgradeToAndCall
-  useWriteLilNounsDataWithdrawEth, // React write hook for LilNounsData.withdrawEth
-  useWriteLilNounsDescriptor, // React write hook for LilNounsDescriptor
-  useWriteLilNounsDescriptorAddAccessories, // React write hook for LilNounsDescriptor.addAccessories
-  useWriteLilNounsDescriptorAddAccessoriesFromPointer, // React write hook for LilNounsDescriptor.addAccessoriesFromPointer
-  useWriteLilNounsDescriptorAddBackground, // React write hook for LilNounsDescriptor.addBackground
-  useWriteLilNounsDescriptorAddBodies, // React write hook for LilNounsDescriptor.addBodies
-  useWriteLilNounsDescriptorAddBodiesFromPointer, // React write hook for LilNounsDescriptor.addBodiesFromPointer
-  useWriteLilNounsDescriptorAddGlasses, // React write hook for LilNounsDescriptor.addGlasses
-  useWriteLilNounsDescriptorAddGlassesFromPointer, // React write hook for LilNounsDescriptor.addGlassesFromPointer
-  useWriteLilNounsDescriptorAddHeads, // React write hook for LilNounsDescriptor.addHeads
-  useWriteLilNounsDescriptorAddHeadsFromPointer, // React write hook for LilNounsDescriptor.addHeadsFromPointer
-  useWriteLilNounsDescriptorAddManyBackgrounds, // React write hook for LilNounsDescriptor.addManyBackgrounds
-  useWriteLilNounsDescriptorLockParts, // React write hook for LilNounsDescriptor.lockParts
-  useWriteLilNounsDescriptorRenounceOwnership, // React write hook for LilNounsDescriptor.renounceOwnership
-  useWriteLilNounsDescriptorSetArt, // React write hook for LilNounsDescriptor.setArt
-  useWriteLilNounsDescriptorSetArtDescriptor, // React write hook for LilNounsDescriptor.setArtDescriptor
-  useWriteLilNounsDescriptorSetArtInflator, // React write hook for LilNounsDescriptor.setArtInflator
-  useWriteLilNounsDescriptorSetBaseUri, // React write hook for LilNounsDescriptor.setBaseUri
-  useWriteLilNounsDescriptorSetPalette, // React write hook for LilNounsDescriptor.setPalette
-  useWriteLilNounsDescriptorSetPalettePointer, // React write hook for LilNounsDescriptor.setPalettePointer
-  useWriteLilNounsDescriptorSetRenderer, // React write hook for LilNounsDescriptor.setRenderer
-  useWriteLilNounsDescriptorToggleDataUriEnabled, // React write hook for LilNounsDescriptor.toggleDataUriEnabled
-  useWriteLilNounsDescriptorTransferOwnership, // React write hook for LilNounsDescriptor.transferOwnership
-  useWriteLilNounsEnsMapper, // React write hook for LilNounsEnsMapper
-  useWriteLilNounsEnsMapperClaimSubname, // React write hook for LilNounsEnsMapper.claimSubname
-  useWriteLilNounsEnsMapperEmitAddrEvents, // React write hook for LilNounsEnsMapper.emitAddrEvents
-  useWriteLilNounsEnsMapperEmitTextEvents, // React write hook for LilNounsEnsMapper.emitTextEvents
-  useWriteLilNounsEnsMapperInitialize, // React write hook for LilNounsEnsMapper.initialize
-  useWriteLilNounsEnsMapperMigrateLegacySubname, // React write hook for LilNounsEnsMapper.migrateLegacySubname
-  useWriteLilNounsEnsMapperReleaseLegacySubname, // React write hook for LilNounsEnsMapper.releaseLegacySubname
-  useWriteLilNounsEnsMapperRelinquishSubname, // React write hook for LilNounsEnsMapper.relinquishSubname
-  useWriteLilNounsEnsMapperRenounceOwnership, // React write hook for LilNounsEnsMapper.renounceOwnership
-  useWriteLilNounsEnsMapperRestoreResolver, // React write hook for LilNounsEnsMapper.restoreResolver
-  useWriteLilNounsEnsMapperSetText, // React write hook for LilNounsEnsMapper.setText
-  useWriteLilNounsEnsMapperTransferOwnership, // React write hook for LilNounsEnsMapper.transferOwnership
-  useWriteLilNounsEnsMapperUpgradeToAndCall, // React write hook for LilNounsEnsMapper.upgradeToAndCall
-  useWriteLilNounsGovernor, // React write hook for LilNounsGovernor
-  useWriteLilNounsGovernorAcceptAdmin, // React write hook for LilNounsGovernor.acceptAdmin
-  useWriteLilNounsGovernorAcceptVetoer, // React write hook for LilNounsGovernor.acceptVetoer
-  useWriteLilNounsGovernorBurnVetoPower, // React write hook for LilNounsGovernor.burnVetoPower
-  useWriteLilNounsGovernorSetDynamicQuorumParams, // React write hook for LilNounsGovernor.setDynamicQuorumParams
-  useWriteLilNounsGovernorSetMaxQuorumVotesBps, // React write hook for LilNounsGovernor.setMaxQuorumVotesBps
-  useWriteLilNounsGovernorSetMinQuorumVotesBps, // React write hook for LilNounsGovernor.setMinQuorumVotesBps
-  useWriteLilNounsGovernorSetPendingAdmin, // React write hook for LilNounsGovernor.setPendingAdmin
-  useWriteLilNounsGovernorSetPendingVetoer, // React write hook for LilNounsGovernor.setPendingVetoer
-  useWriteLilNounsGovernorSetProposalThresholdBps, // React write hook for LilNounsGovernor.setProposalThresholdBps
-  useWriteLilNounsGovernorSetQuorumCoefficient, // React write hook for LilNounsGovernor.setQuorumCoefficient
-  useWriteLilNounsGovernorSetVotingDelay, // React write hook for LilNounsGovernor.setVotingDelay
-  useWriteLilNounsGovernorSetVotingPeriod, // React write hook for LilNounsGovernor.setVotingPeriod
-  useWriteLilNounsGovernorWithdraw, // React write hook for LilNounsGovernor.withdraw
-  useWriteLilNounsGovernorCancel, // React write hook for LilNounsGovernor.cancel
-  useWriteLilNounsGovernorCastRefundableVote, // React write hook for LilNounsGovernor.castRefundableVote
-  useWriteLilNounsGovernorCastRefundableVoteWithReason, // React write hook for LilNounsGovernor.castRefundableVoteWithReason
-  useWriteLilNounsGovernorCastVote, // React write hook for LilNounsGovernor.castVote
-  useWriteLilNounsGovernorCastVoteBySig, // React write hook for LilNounsGovernor.castVoteBySig
-  useWriteLilNounsGovernorCastVoteWithReason, // React write hook for LilNounsGovernor.castVoteWithReason
-  useWriteLilNounsGovernorExecute, // React write hook for LilNounsGovernor.execute
-  useWriteLilNounsGovernorInitialize, // React write hook for LilNounsGovernor.initialize
-  useWriteLilNounsGovernorPropose, // React write hook for LilNounsGovernor.propose
-  useWriteLilNounsGovernorQueue, // React write hook for LilNounsGovernor.queue
-  useWriteLilNounsGovernorVeto, // React write hook for LilNounsGovernor.veto
-  useWriteLilNounsToken, // React write hook for LilNounsToken
-  useWriteLilNounsTokenApprove, // React write hook for LilNounsToken.approve
-  useWriteLilNounsTokenBurn, // React write hook for LilNounsToken.burn
-  useWriteLilNounsTokenDelegate, // React write hook for LilNounsToken.delegate
-  useWriteLilNounsTokenDelegateBySig, // React write hook for LilNounsToken.delegateBySig
-  useWriteLilNounsTokenLockDescriptor, // React write hook for LilNounsToken.lockDescriptor
-  useWriteLilNounsTokenLockMinter, // React write hook for LilNounsToken.lockMinter
-  useWriteLilNounsTokenLockSeeder, // React write hook for LilNounsToken.lockSeeder
-  useWriteLilNounsTokenMint, // React write hook for LilNounsToken.mint
-  useWriteLilNounsTokenRenounceOwnership, // React write hook for LilNounsToken.renounceOwnership
-  useWriteLilNounsTokenSafeTransferFrom, // React write hook for LilNounsToken.safeTransferFrom
-  useWriteLilNounsTokenSetApprovalForAll, // React write hook for LilNounsToken.setApprovalForAll
-  useWriteLilNounsTokenSetContractUriHash, // React write hook for LilNounsToken.setContractUriHash
-  useWriteLilNounsTokenSetDescriptor, // React write hook for LilNounsToken.setDescriptor
-  useWriteLilNounsTokenSetLilNoundersDao, // React write hook for LilNounsToken.setLilNoundersDao
-  useWriteLilNounsTokenSetMinter, // React write hook for LilNounsToken.setMinter
-  useWriteLilNounsTokenSetNounsDao, // React write hook for LilNounsToken.setNounsDao
-  useWriteLilNounsTokenSetSeeder, // React write hook for LilNounsToken.setSeeder
-  useWriteLilNounsTokenTransferFrom, // React write hook for LilNounsToken.transferFrom
-  useWriteLilNounsTokenTransferOwnership, // React write hook for LilNounsToken.transferOwnership
-  useWriteLilNounsTreasury, // React write hook for LilNounsTreasury
-  useWriteLilNounsTreasuryAcceptAdmin, // React write hook for LilNounsTreasury.acceptAdmin
-  useWriteLilNounsTreasuryCancelTransaction, // React write hook for LilNounsTreasury.cancelTransaction
-  useWriteLilNounsTreasuryExecuteTransaction, // React write hook for LilNounsTreasury.executeTransaction
-  useWriteLilNounsTreasuryQueueTransaction, // React write hook for LilNounsTreasury.queueTransaction
-  useWriteLilNounsTreasurySetDelay, // React write hook for LilNounsTreasury.setDelay
-  useWriteLilNounsTreasurySetPendingAdmin, // React write hook for LilNounsTreasury.setPendingAdmin
   // Generated React hooks: simulate helpers
   useSimulateLilNounsAuction, // React simulate hook for LilNounsAuction
   useSimulateLilNounsAuctionBuyNow, // React simulate hook for LilNounsAuction.buyNow
@@ -865,16 +747,6 @@ export {
   useSimulateLilNounsGovernorAcceptAdmin, // React simulate hook for LilNounsGovernor.acceptAdmin
   useSimulateLilNounsGovernorAcceptVetoer, // React simulate hook for LilNounsGovernor.acceptVetoer
   useSimulateLilNounsGovernorBurnVetoPower, // React simulate hook for LilNounsGovernor.burnVetoPower
-  useSimulateLilNounsGovernorSetDynamicQuorumParams, // React simulate hook for LilNounsGovernor.setDynamicQuorumParams
-  useSimulateLilNounsGovernorSetMaxQuorumVotesBps, // React simulate hook for LilNounsGovernor.setMaxQuorumVotesBps
-  useSimulateLilNounsGovernorSetMinQuorumVotesBps, // React simulate hook for LilNounsGovernor.setMinQuorumVotesBps
-  useSimulateLilNounsGovernorSetPendingAdmin, // React simulate hook for LilNounsGovernor.setPendingAdmin
-  useSimulateLilNounsGovernorSetPendingVetoer, // React simulate hook for LilNounsGovernor.setPendingVetoer
-  useSimulateLilNounsGovernorSetProposalThresholdBps, // React simulate hook for LilNounsGovernor.setProposalThresholdBps
-  useSimulateLilNounsGovernorSetQuorumCoefficient, // React simulate hook for LilNounsGovernor.setQuorumCoefficient
-  useSimulateLilNounsGovernorSetVotingDelay, // React simulate hook for LilNounsGovernor.setVotingDelay
-  useSimulateLilNounsGovernorSetVotingPeriod, // React simulate hook for LilNounsGovernor.setVotingPeriod
-  useSimulateLilNounsGovernorWithdraw, // React simulate hook for LilNounsGovernor.withdraw
   useSimulateLilNounsGovernorCancel, // React simulate hook for LilNounsGovernor.cancel
   useSimulateLilNounsGovernorCastRefundableVote, // React simulate hook for LilNounsGovernor.castRefundableVote
   useSimulateLilNounsGovernorCastRefundableVoteWithReason, // React simulate hook for LilNounsGovernor.castRefundableVoteWithReason
@@ -885,7 +757,17 @@ export {
   useSimulateLilNounsGovernorInitialize, // React simulate hook for LilNounsGovernor.initialize
   useSimulateLilNounsGovernorPropose, // React simulate hook for LilNounsGovernor.propose
   useSimulateLilNounsGovernorQueue, // React simulate hook for LilNounsGovernor.queue
+  useSimulateLilNounsGovernorSetDynamicQuorumParams, // React simulate hook for LilNounsGovernor.setDynamicQuorumParams
+  useSimulateLilNounsGovernorSetMaxQuorumVotesBps, // React simulate hook for LilNounsGovernor.setMaxQuorumVotesBps
+  useSimulateLilNounsGovernorSetMinQuorumVotesBps, // React simulate hook for LilNounsGovernor.setMinQuorumVotesBps
+  useSimulateLilNounsGovernorSetPendingAdmin, // React simulate hook for LilNounsGovernor.setPendingAdmin
+  useSimulateLilNounsGovernorSetPendingVetoer, // React simulate hook for LilNounsGovernor.setPendingVetoer
+  useSimulateLilNounsGovernorSetProposalThresholdBps, // React simulate hook for LilNounsGovernor.setProposalThresholdBps
+  useSimulateLilNounsGovernorSetQuorumCoefficient, // React simulate hook for LilNounsGovernor.setQuorumCoefficient
+  useSimulateLilNounsGovernorSetVotingDelay, // React simulate hook for LilNounsGovernor.setVotingDelay
+  useSimulateLilNounsGovernorSetVotingPeriod, // React simulate hook for LilNounsGovernor.setVotingPeriod
   useSimulateLilNounsGovernorVeto, // React simulate hook for LilNounsGovernor.veto
+  useSimulateLilNounsGovernorWithdraw, // React simulate hook for LilNounsGovernor.withdraw
   useSimulateLilNounsToken, // React simulate hook for LilNounsToken
   useSimulateLilNounsTokenApprove, // React simulate hook for LilNounsToken.approve
   useSimulateLilNounsTokenBurn, // React simulate hook for LilNounsToken.burn
@@ -913,12 +795,12 @@ export {
   useSimulateLilNounsTreasuryQueueTransaction, // React simulate hook for LilNounsTreasury.queueTransaction
   useSimulateLilNounsTreasurySetDelay, // React simulate hook for LilNounsTreasury.setDelay
   useSimulateLilNounsTreasurySetPendingAdmin, // React simulate hook for LilNounsTreasury.setPendingAdmin
-  // Generated React hooks: event watchers
-  useWatchLilNounsAuctionEvent, // React event hook for LilNounsAuction
   useWatchLilNounsAuctionAuctionReservePriceUpdatedEvent, // React event hook for LilNounsAuction.auctionReservePriceUpdated
   useWatchLilNounsAuctionAuctionSettledEvent, // React event hook for LilNounsAuction.auctionSettled
   useWatchLilNounsAuctionAuctionUpdateIntervalUpdatedEvent, // React event hook for LilNounsAuction.auctionUpdateIntervalUpdated
   useWatchLilNounsAuctionDescriptorUpdatedEvent, // React event hook for LilNounsAuction.descriptorUpdated
+  // Generated React hooks: event watchers
+  useWatchLilNounsAuctionEvent, // React event hook for LilNounsAuction
   useWatchLilNounsAuctionInitializedEvent, // React event hook for LilNounsAuction.initialized
   useWatchLilNounsAuctionOwnershipTransferredEvent, // React event hook for LilNounsAuction.ownershipTransferred
   useWatchLilNounsAuctionPausedEvent, // React event hook for LilNounsAuction.paused
@@ -926,29 +808,29 @@ export {
   useWatchLilNounsAuctionSeederUpdatedEvent, // React event hook for LilNounsAuction.seederUpdated
   useWatchLilNounsAuctionUnpausedEvent, // React event hook for LilNounsAuction.unpaused
   useWatchLilNounsAuctionUpgradedEvent, // React event hook for LilNounsAuction.upgraded
-  useWatchLilNounsDataEvent, // React event hook for LilNounsData
   useWatchLilNounsDataCandidateFeedbackSentEvent, // React event hook for LilNounsData.candidateFeedbackSent
   useWatchLilNounsDataCreateCandidateCostSetEvent, // React event hook for LilNounsData.createCandidateCostSet
   useWatchLilNounsDataEthWithdrawnEvent, // React event hook for LilNounsData.ethWithdrawn
-  useWatchLilNounsDataFeeRecipientSetEvent, // React event hook for LilNounsData.feeRecipientSet
+  useWatchLilNounsDataEvent, // React event hook for LilNounsData
   useWatchLilNounsDataFeedbackSentEvent, // React event hook for LilNounsData.feedbackSent
+  useWatchLilNounsDataFeeRecipientSetEvent, // React event hook for LilNounsData.feeRecipientSet
   useWatchLilNounsDataInitializedEvent, // React event hook for LilNounsData.initialized
-  useWatchLilNounsDataOwnershipTransferStartedEvent, // React event hook for LilNounsData.ownershipTransferStarted
   useWatchLilNounsDataOwnershipTransferredEvent, // React event hook for LilNounsData.ownershipTransferred
+  useWatchLilNounsDataOwnershipTransferStartedEvent, // React event hook for LilNounsData.ownershipTransferStarted
   useWatchLilNounsDataProposalCandidateCanceledEvent, // React event hook for LilNounsData.proposalCandidateCanceled
   useWatchLilNounsDataProposalCandidateCreatedEvent, // React event hook for LilNounsData.proposalCandidateCreated
   useWatchLilNounsDataProposalCandidateUpdatedEvent, // React event hook for LilNounsData.proposalCandidateUpdated
   useWatchLilNounsDataUpdateCandidateCostSetEvent, // React event hook for LilNounsData.updateCandidateCostSet
   useWatchLilNounsDataUpgradedEvent, // React event hook for LilNounsData.upgraded
-  useWatchLilNounsDescriptorEvent, // React event hook for LilNounsDescriptor
   useWatchLilNounsDescriptorArtUpdatedEvent, // React event hook for LilNounsDescriptor.artUpdated
   useWatchLilNounsDescriptorBaseUriUpdatedEvent, // React event hook for LilNounsDescriptor.baseUriUpdated
   useWatchLilNounsDescriptorDataUriToggledEvent, // React event hook for LilNounsDescriptor.dataUriToggled
+  useWatchLilNounsDescriptorEvent, // React event hook for LilNounsDescriptor
   useWatchLilNounsDescriptorOwnershipTransferredEvent, // React event hook for LilNounsDescriptor.ownershipTransferred
   useWatchLilNounsDescriptorPartsLockedEvent, // React event hook for LilNounsDescriptor.partsLocked
   useWatchLilNounsDescriptorRendererUpdatedEvent, // React event hook for LilNounsDescriptor.rendererUpdated
-  useWatchLilNounsEnsMapperEvent, // React event hook for LilNounsEnsMapper
   useWatchLilNounsEnsMapperAddrChangedEvent, // React event hook for LilNounsEnsMapper.addrChanged
+  useWatchLilNounsEnsMapperEvent, // React event hook for LilNounsEnsMapper
   useWatchLilNounsEnsMapperInitializedEvent, // React event hook for LilNounsEnsMapper.initialized
   useWatchLilNounsEnsMapperNameChangedEvent, // React event hook for LilNounsEnsMapper.nameChanged
   useWatchLilNounsEnsMapperOwnershipTransferredEvent, // React event hook for LilNounsEnsMapper.ownershipTransferred
@@ -977,13 +859,13 @@ export {
   useWatchLilNounsGovernorVotingDelaySetEvent, // React event hook for LilNounsGovernor.votingDelaySet
   useWatchLilNounsGovernorVotingPeriodSetEvent, // React event hook for LilNounsGovernor.votingPeriodSet
   useWatchLilNounsGovernorWithdrawEvent, // React event hook for LilNounsGovernor.withdraw
-  useWatchLilNounsTokenEvent, // React event hook for LilNounsToken
   useWatchLilNounsTokenApprovalEvent, // React event hook for LilNounsToken.approval
   useWatchLilNounsTokenApprovalForAllEvent, // React event hook for LilNounsToken.approvalForAll
   useWatchLilNounsTokenDelegateChangedEvent, // React event hook for LilNounsToken.delegateChanged
   useWatchLilNounsTokenDelegateVotesChangedEvent, // React event hook for LilNounsToken.delegateVotesChanged
   useWatchLilNounsTokenDescriptorLockedEvent, // React event hook for LilNounsToken.descriptorLocked
   useWatchLilNounsTokenDescriptorUpdatedEvent, // React event hook for LilNounsToken.descriptorUpdated
+  useWatchLilNounsTokenEvent, // React event hook for LilNounsToken
   useWatchLilNounsTokenLilNoundersDaoUpdatedEvent, // React event hook for LilNounsToken.lilNoundersDaoUpdated
   useWatchLilNounsTokenMinterLockedEvent, // React event hook for LilNounsToken.minterLocked
   useWatchLilNounsTokenMinterUpdatedEvent, // React event hook for LilNounsToken.minterUpdated
@@ -994,11 +876,129 @@ export {
   useWatchLilNounsTokenSeederLockedEvent, // React event hook for LilNounsToken.seederLocked
   useWatchLilNounsTokenSeederUpdatedEvent, // React event hook for LilNounsToken.seederUpdated
   useWatchLilNounsTokenTransferEvent, // React event hook for LilNounsToken.transfer
-  useWatchLilNounsTreasuryEvent, // React event hook for LilNounsTreasury
   useWatchLilNounsTreasuryCancelTransactionEvent, // React event hook for LilNounsTreasury.cancelTransaction
+  useWatchLilNounsTreasuryEvent, // React event hook for LilNounsTreasury
   useWatchLilNounsTreasuryExecuteTransactionEvent, // React event hook for LilNounsTreasury.executeTransaction
   useWatchLilNounsTreasuryNewAdminEvent, // React event hook for LilNounsTreasury.newAdmin
   useWatchLilNounsTreasuryNewDelayEvent, // React event hook for LilNounsTreasury.newDelay
   useWatchLilNounsTreasuryNewPendingAdminEvent, // React event hook for LilNounsTreasury.newPendingAdmin
   useWatchLilNounsTreasuryQueueTransactionEvent, // React event hook for LilNounsTreasury.queueTransaction
+  // Generated React hooks: write helpers
+  useWriteLilNounsAuction, // React write hook for LilNounsAuction
+  useWriteLilNounsAuctionBuyNow, // React write hook for LilNounsAuction.buyNow
+  useWriteLilNounsAuctionInitialize, // React write hook for LilNounsAuction.initialize
+  useWriteLilNounsAuctionPause, // React write hook for LilNounsAuction.pause
+  useWriteLilNounsAuctionRenounceOwnership, // React write hook for LilNounsAuction.renounceOwnership
+  useWriteLilNounsAuctionSetNounsDescriptor, // React write hook for LilNounsAuction.setNounsDescriptor
+  useWriteLilNounsAuctionSetNounsSeeder, // React write hook for LilNounsAuction.setNounsSeeder
+  useWriteLilNounsAuctionSetPoolSize, // React write hook for LilNounsAuction.setPoolSize
+  useWriteLilNounsAuctionSetReservePrice, // React write hook for LilNounsAuction.setReservePrice
+  useWriteLilNounsAuctionSetUpdateInterval, // React write hook for LilNounsAuction.setUpdateInterval
+  useWriteLilNounsAuctionTransferOwnership, // React write hook for LilNounsAuction.transferOwnership
+  useWriteLilNounsAuctionUnpause, // React write hook for LilNounsAuction.unpause
+  useWriteLilNounsAuctionUpgradeTo, // React write hook for LilNounsAuction.upgradeTo
+  useWriteLilNounsAuctionUpgradeToAndCall, // React write hook for LilNounsAuction.upgradeToAndCall
+  useWriteLilNounsData, // React write hook for LilNounsData
+  useWriteLilNounsDataAcceptOwnership, // React write hook for LilNounsData.acceptOwnership
+  useWriteLilNounsDataCancelProposalCandidate, // React write hook for LilNounsData.cancelProposalCandidate
+  useWriteLilNounsDataCreateProposalCandidate, // React write hook for LilNounsData.createProposalCandidate
+  useWriteLilNounsDataInitialize, // React write hook for LilNounsData.initialize
+  useWriteLilNounsDataInitializeV2, // React write hook for LilNounsData.initializeV2
+  useWriteLilNounsDataRenounceOwnership, // React write hook for LilNounsData.renounceOwnership
+  useWriteLilNounsDataSendCandidateFeedback, // React write hook for LilNounsData.sendCandidateFeedback
+  useWriteLilNounsDataSendFeedback, // React write hook for LilNounsData.sendFeedback
+  useWriteLilNounsDataSetCreateCandidateCost, // React write hook for LilNounsData.setCreateCandidateCost
+  useWriteLilNounsDataSetFeeRecipient, // React write hook for LilNounsData.setFeeRecipient
+  useWriteLilNounsDataSetUpdateCandidateCost, // React write hook for LilNounsData.setUpdateCandidateCost
+  useWriteLilNounsDataTransferOwnership, // React write hook for LilNounsData.transferOwnership
+  useWriteLilNounsDataUpdateProposalCandidate, // React write hook for LilNounsData.updateProposalCandidate
+  useWriteLilNounsDataUpgradeToAndCall, // React write hook for LilNounsData.upgradeToAndCall
+  useWriteLilNounsDataWithdrawEth, // React write hook for LilNounsData.withdrawEth
+  useWriteLilNounsDescriptor, // React write hook for LilNounsDescriptor
+  useWriteLilNounsDescriptorAddAccessories, // React write hook for LilNounsDescriptor.addAccessories
+  useWriteLilNounsDescriptorAddAccessoriesFromPointer, // React write hook for LilNounsDescriptor.addAccessoriesFromPointer
+  useWriteLilNounsDescriptorAddBackground, // React write hook for LilNounsDescriptor.addBackground
+  useWriteLilNounsDescriptorAddBodies, // React write hook for LilNounsDescriptor.addBodies
+  useWriteLilNounsDescriptorAddBodiesFromPointer, // React write hook for LilNounsDescriptor.addBodiesFromPointer
+  useWriteLilNounsDescriptorAddGlasses, // React write hook for LilNounsDescriptor.addGlasses
+  useWriteLilNounsDescriptorAddGlassesFromPointer, // React write hook for LilNounsDescriptor.addGlassesFromPointer
+  useWriteLilNounsDescriptorAddHeads, // React write hook for LilNounsDescriptor.addHeads
+  useWriteLilNounsDescriptorAddHeadsFromPointer, // React write hook for LilNounsDescriptor.addHeadsFromPointer
+  useWriteLilNounsDescriptorAddManyBackgrounds, // React write hook for LilNounsDescriptor.addManyBackgrounds
+  useWriteLilNounsDescriptorLockParts, // React write hook for LilNounsDescriptor.lockParts
+  useWriteLilNounsDescriptorRenounceOwnership, // React write hook for LilNounsDescriptor.renounceOwnership
+  useWriteLilNounsDescriptorSetArt, // React write hook for LilNounsDescriptor.setArt
+  useWriteLilNounsDescriptorSetArtDescriptor, // React write hook for LilNounsDescriptor.setArtDescriptor
+  useWriteLilNounsDescriptorSetArtInflator, // React write hook for LilNounsDescriptor.setArtInflator
+  useWriteLilNounsDescriptorSetBaseUri, // React write hook for LilNounsDescriptor.setBaseUri
+  useWriteLilNounsDescriptorSetPalette, // React write hook for LilNounsDescriptor.setPalette
+  useWriteLilNounsDescriptorSetPalettePointer, // React write hook for LilNounsDescriptor.setPalettePointer
+  useWriteLilNounsDescriptorSetRenderer, // React write hook for LilNounsDescriptor.setRenderer
+  useWriteLilNounsDescriptorToggleDataUriEnabled, // React write hook for LilNounsDescriptor.toggleDataUriEnabled
+  useWriteLilNounsDescriptorTransferOwnership, // React write hook for LilNounsDescriptor.transferOwnership
+  useWriteLilNounsEnsMapper, // React write hook for LilNounsEnsMapper
+  useWriteLilNounsEnsMapperClaimSubname, // React write hook for LilNounsEnsMapper.claimSubname
+  useWriteLilNounsEnsMapperEmitAddrEvents, // React write hook for LilNounsEnsMapper.emitAddrEvents
+  useWriteLilNounsEnsMapperEmitTextEvents, // React write hook for LilNounsEnsMapper.emitTextEvents
+  useWriteLilNounsEnsMapperInitialize, // React write hook for LilNounsEnsMapper.initialize
+  useWriteLilNounsEnsMapperMigrateLegacySubname, // React write hook for LilNounsEnsMapper.migrateLegacySubname
+  useWriteLilNounsEnsMapperReleaseLegacySubname, // React write hook for LilNounsEnsMapper.releaseLegacySubname
+  useWriteLilNounsEnsMapperRelinquishSubname, // React write hook for LilNounsEnsMapper.relinquishSubname
+  useWriteLilNounsEnsMapperRenounceOwnership, // React write hook for LilNounsEnsMapper.renounceOwnership
+  useWriteLilNounsEnsMapperRestoreResolver, // React write hook for LilNounsEnsMapper.restoreResolver
+  useWriteLilNounsEnsMapperSetText, // React write hook for LilNounsEnsMapper.setText
+  useWriteLilNounsEnsMapperTransferOwnership, // React write hook for LilNounsEnsMapper.transferOwnership
+  useWriteLilNounsEnsMapperUpgradeToAndCall, // React write hook for LilNounsEnsMapper.upgradeToAndCall
+  useWriteLilNounsGovernor, // React write hook for LilNounsGovernor
+  useWriteLilNounsGovernorAcceptAdmin, // React write hook for LilNounsGovernor.acceptAdmin
+  useWriteLilNounsGovernorAcceptVetoer, // React write hook for LilNounsGovernor.acceptVetoer
+  useWriteLilNounsGovernorBurnVetoPower, // React write hook for LilNounsGovernor.burnVetoPower
+  useWriteLilNounsGovernorCancel, // React write hook for LilNounsGovernor.cancel
+  useWriteLilNounsGovernorCastRefundableVote, // React write hook for LilNounsGovernor.castRefundableVote
+  useWriteLilNounsGovernorCastRefundableVoteWithReason, // React write hook for LilNounsGovernor.castRefundableVoteWithReason
+  useWriteLilNounsGovernorCastVote, // React write hook for LilNounsGovernor.castVote
+  useWriteLilNounsGovernorCastVoteBySig, // React write hook for LilNounsGovernor.castVoteBySig
+  useWriteLilNounsGovernorCastVoteWithReason, // React write hook for LilNounsGovernor.castVoteWithReason
+  useWriteLilNounsGovernorExecute, // React write hook for LilNounsGovernor.execute
+  useWriteLilNounsGovernorInitialize, // React write hook for LilNounsGovernor.initialize
+  useWriteLilNounsGovernorPropose, // React write hook for LilNounsGovernor.propose
+  useWriteLilNounsGovernorQueue, // React write hook for LilNounsGovernor.queue
+  useWriteLilNounsGovernorSetDynamicQuorumParams, // React write hook for LilNounsGovernor.setDynamicQuorumParams
+  useWriteLilNounsGovernorSetMaxQuorumVotesBps, // React write hook for LilNounsGovernor.setMaxQuorumVotesBps
+  useWriteLilNounsGovernorSetMinQuorumVotesBps, // React write hook for LilNounsGovernor.setMinQuorumVotesBps
+  useWriteLilNounsGovernorSetPendingAdmin, // React write hook for LilNounsGovernor.setPendingAdmin
+  useWriteLilNounsGovernorSetPendingVetoer, // React write hook for LilNounsGovernor.setPendingVetoer
+  useWriteLilNounsGovernorSetProposalThresholdBps, // React write hook for LilNounsGovernor.setProposalThresholdBps
+  useWriteLilNounsGovernorSetQuorumCoefficient, // React write hook for LilNounsGovernor.setQuorumCoefficient
+  useWriteLilNounsGovernorSetVotingDelay, // React write hook for LilNounsGovernor.setVotingDelay
+  useWriteLilNounsGovernorSetVotingPeriod, // React write hook for LilNounsGovernor.setVotingPeriod
+  useWriteLilNounsGovernorVeto, // React write hook for LilNounsGovernor.veto
+  useWriteLilNounsGovernorWithdraw, // React write hook for LilNounsGovernor.withdraw
+  useWriteLilNounsToken, // React write hook for LilNounsToken
+  useWriteLilNounsTokenApprove, // React write hook for LilNounsToken.approve
+  useWriteLilNounsTokenBurn, // React write hook for LilNounsToken.burn
+  useWriteLilNounsTokenDelegate, // React write hook for LilNounsToken.delegate
+  useWriteLilNounsTokenDelegateBySig, // React write hook for LilNounsToken.delegateBySig
+  useWriteLilNounsTokenLockDescriptor, // React write hook for LilNounsToken.lockDescriptor
+  useWriteLilNounsTokenLockMinter, // React write hook for LilNounsToken.lockMinter
+  useWriteLilNounsTokenLockSeeder, // React write hook for LilNounsToken.lockSeeder
+  useWriteLilNounsTokenMint, // React write hook for LilNounsToken.mint
+  useWriteLilNounsTokenRenounceOwnership, // React write hook for LilNounsToken.renounceOwnership
+  useWriteLilNounsTokenSafeTransferFrom, // React write hook for LilNounsToken.safeTransferFrom
+  useWriteLilNounsTokenSetApprovalForAll, // React write hook for LilNounsToken.setApprovalForAll
+  useWriteLilNounsTokenSetContractUriHash, // React write hook for LilNounsToken.setContractUriHash
+  useWriteLilNounsTokenSetDescriptor, // React write hook for LilNounsToken.setDescriptor
+  useWriteLilNounsTokenSetLilNoundersDao, // React write hook for LilNounsToken.setLilNoundersDao
+  useWriteLilNounsTokenSetMinter, // React write hook for LilNounsToken.setMinter
+  useWriteLilNounsTokenSetNounsDao, // React write hook for LilNounsToken.setNounsDao
+  useWriteLilNounsTokenSetSeeder, // React write hook for LilNounsToken.setSeeder
+  useWriteLilNounsTokenTransferFrom, // React write hook for LilNounsToken.transferFrom
+  useWriteLilNounsTokenTransferOwnership, // React write hook for LilNounsToken.transferOwnership
+  useWriteLilNounsTreasury, // React write hook for LilNounsTreasury
+  useWriteLilNounsTreasuryAcceptAdmin, // React write hook for LilNounsTreasury.acceptAdmin
+  useWriteLilNounsTreasuryCancelTransaction, // React write hook for LilNounsTreasury.cancelTransaction
+  useWriteLilNounsTreasuryExecuteTransaction, // React write hook for LilNounsTreasury.executeTransaction
+  useWriteLilNounsTreasuryQueueTransaction, // React write hook for LilNounsTreasury.queueTransaction
+  useWriteLilNounsTreasurySetDelay, // React write hook for LilNounsTreasury.setDelay
+  useWriteLilNounsTreasurySetPendingAdmin, // React write hook for LilNounsTreasury.setPendingAdmin
 } from "./react.gen";

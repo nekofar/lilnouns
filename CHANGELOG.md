@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.52] - 2025-12-30
+
+### 🎨 Styling
+
+- *(config)* Standardize quotes and formatting
+
+### ⚙️ Miscellaneous Tasks
+
+- *(config)* Update biome schema to v2.3.10
+- *(config)* Adjust `CodegenConfig` import style
+- *(scripts)* Update build and lint scripts
+- *(contracts)* Reorder exports for improved consistency
+- *(config)* Update linter rules in biome config
+- *(config)* Disable `noUnusedFunctionParameters` rule
+- *(scripts)* Update `prebuild` script for consistency
+- *(config)* Disable additional linter rules in biome
+
 ## [1.0.0-alpha.51] - 2025-12-12
 
 ### ⚙️ Miscellaneous Tasks

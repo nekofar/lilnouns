@@ -1,6 +1,6 @@
 {
   "name": "@nekofar/lilnouns",
-  "version": "1.0.0-alpha.51",
+  "version": "1.0.0-alpha.52",
   "private": false,
   "description": "TypeScript client for interacting with Lil Nouns",
   "keywords": [
@@ -45,16 +45,13 @@
     "LICENSE"
   ],
   "scripts": {
-    "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate)",
+    "prebuild": "is-ci && exit 0 || (pnpm clean && pnpm graphql:generate && pnpm wagmi:generate && pnpm run lint:fix && pnpm docs)",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" tsdown",
-    "postbuild": "pnpm run format",
     "clean": "rimraf dist",
     "docs": "NODE_OPTIONS=\"--max-old-space-size=8192\" typedoc",
-    "format": "biome format --write .",
-    "format:check": "biome format .",
     "graphql:generate": "graphql-codegen --config codegen.config.ts",
-    "lint": "biome lint .",
-    "lint:fix": "biome lint --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "prepublishOnly": "pnpm build",
     "test": "vitest run",
     "wagmi:generate": "wagmi generate"
@@ -76,7 +73,7 @@
     "graphql-scalars": "^1.24.2",
     "is-ci": "^4.1.0",
     "rimraf": "^6.0.1",
-    "tsdown": "^0.17.0",
+    "tsdown": "^0.18.0",
     "typedoc": "^0.28.12",
     "typedoc-plugin-markdown": "^4.8.1",
     "typescript": "^5.9.2",

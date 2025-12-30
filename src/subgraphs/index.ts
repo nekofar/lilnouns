@@ -124,4 +124,4 @@ export {
   type VoteFilter, // GraphQL filter input for Vote entity
   type VoteNounsArgs, // GraphQL arguments type for Vote.nouns
   VoteOrderBy, // GraphQL enum for ordering Vote results
-} from './lilnouns.gen'
+} from "./lilnouns.gen";

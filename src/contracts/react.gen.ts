@@ -3,7 +3,7 @@ import {
   createUseWriteContract,
   createUseSimulateContract,
   createUseWatchContractEvent,
-} from 'wagmi/codegen'
+} from "wagmi/codegen";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsAuction
@@ -15,541 +15,541 @@ import {
  */
 export const lilNounsAuctionAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: '_targetPrice', internalType: 'int256', type: 'int256' },
-      { name: '_priceDecayPercent', internalType: 'int256', type: 'int256' },
-      { name: '_perTimeUnit', internalType: 'int256', type: 'int256' },
-      { name: '_wethAddress', internalType: 'address', type: 'address' },
+      { name: "_targetPrice", internalType: "int256", type: "int256" },
+      { name: "_priceDecayPercent", internalType: "int256", type: "int256" },
+      { name: "_perTimeUnit", internalType: "int256", type: "int256" },
+      { name: "_wethAddress", internalType: "address", type: "address" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-  { type: 'error', inputs: [], name: 'ADDRESS_ZERO' },
+  { type: "error", inputs: [], name: "ADDRESS_ZERO" },
   {
-    type: 'error',
-    inputs: [{ name: 'impl', internalType: 'address', type: 'address' }],
-    name: 'INVALID_UPGRADE',
+    type: "error",
+    inputs: [{ name: "impl", internalType: "address", type: "address" }],
+    name: "INVALID_UPGRADE",
   },
-  { type: 'error', inputs: [], name: 'ONLY_CALL' },
-  { type: 'error', inputs: [], name: 'ONLY_DELEGATECALL' },
-  { type: 'error', inputs: [], name: 'ONLY_PROXY' },
-  { type: 'error', inputs: [], name: 'ONLY_UUPS' },
-  { type: 'error', inputs: [], name: 'UNSUPPORTED_UUID' },
+  { type: "error", inputs: [], name: "ONLY_CALL" },
+  { type: "error", inputs: [], name: "ONLY_DELEGATECALL" },
+  { type: "error", inputs: [], name: "ONLY_PROXY" },
+  { type: "error", inputs: [], name: "ONLY_UUPS" },
+  { type: "error", inputs: [], name: "UNSUPPORTED_UUID" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'reservePrice',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "reservePrice",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'AuctionReservePriceUpdated',
+    name: "AuctionReservePriceUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'nounId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "nounId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
       {
-        name: 'winner',
-        internalType: 'address',
-        type: 'address',
+        name: "winner",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'amount',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "amount",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'AuctionSettled',
+    name: "AuctionSettled",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'interval',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "interval",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'AuctionUpdateIntervalUpdated',
+    name: "AuctionUpdateIntervalUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'descriptor',
-        internalType: 'contract INounsDescriptorV2',
-        type: 'address',
+        name: "descriptor",
+        internalType: "contract INounsDescriptorV2",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'DescriptorUpdated',
+    name: "DescriptorUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'version', internalType: 'uint8', type: 'uint8', indexed: false },
+      { name: "version", internalType: "uint8", type: "uint8", indexed: false },
     ],
-    name: 'Initialized',
+    name: "Initialized",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'account',
-        internalType: 'address',
-        type: 'address',
+        name: "account",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'Paused',
+    name: "Paused",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'poolSize',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "poolSize",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'PoolSizeUpdated',
+    name: "PoolSizeUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'seeder',
-        internalType: 'contract INounsSeeder',
-        type: 'address',
+        name: "seeder",
+        internalType: "contract INounsSeeder",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'SeederUpdated',
+    name: "SeederUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'account',
-        internalType: 'address',
-        type: 'address',
+        name: "account",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'Unpaused',
+    name: "Unpaused",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'impl',
-        internalType: 'address',
-        type: 'address',
+        name: "impl",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'Upgraded',
+    name: "Upgraded",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'expectedBlockNumber', internalType: 'uint256', type: 'uint256' },
-      { name: 'expectedNounId', internalType: 'uint256', type: 'uint256' },
+      { name: "expectedBlockNumber", internalType: "uint256", type: "uint256" },
+      { name: "expectedNounId", internalType: "uint256", type: "uint256" },
     ],
-    name: 'buyNow',
+    name: "buyNow",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'fetchNextNoun',
+    name: "fetchNextNoun",
     outputs: [
-      { name: 'nounId', internalType: 'uint256', type: 'uint256' },
+      { name: "nounId", internalType: "uint256", type: "uint256" },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
-      { name: 'svg', internalType: 'string', type: 'string' },
-      { name: 'price', internalType: 'uint256', type: 'uint256' },
-      { name: 'hash', internalType: 'bytes32', type: 'bytes32' },
-      { name: 'blockNumber', internalType: 'uint256', type: 'uint256' },
+      { name: "svg", internalType: "string", type: "string" },
+      { name: "price", internalType: "uint256", type: "uint256" },
+      { name: "hash", internalType: "bytes32", type: "bytes32" },
+      { name: "blockNumber", internalType: "uint256", type: "uint256" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'blockNumber', internalType: 'uint256', type: 'uint256' }],
-    name: 'fetchNoun',
+    type: "function",
+    inputs: [{ name: "blockNumber", internalType: "uint256", type: "uint256" }],
+    name: "fetchNoun",
     outputs: [
-      { name: 'nounId', internalType: 'uint256', type: 'uint256' },
+      { name: "nounId", internalType: "uint256", type: "uint256" },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
-      { name: 'svg', internalType: 'string', type: 'string' },
-      { name: 'price', internalType: 'uint256', type: 'uint256' },
-      { name: 'hash', internalType: 'bytes32', type: 'bytes32' },
-      { name: 'blockNum', internalType: 'uint256', type: 'uint256' },
+      { name: "svg", internalType: "string", type: "string" },
+      { name: "price", internalType: "uint256", type: "uint256" },
+      { name: "hash", internalType: "bytes32", type: "bytes32" },
+      { name: "blockNum", internalType: "uint256", type: "uint256" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'getCurrentVRGDAPrice',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "getCurrentVRGDAPrice",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'getSeederBlockNumber',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "getSeederBlockNumber",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'sold', internalType: 'int256', type: 'int256' }],
-    name: 'getTargetSaleTime',
-    outputs: [{ name: '', internalType: 'int256', type: 'int256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "sold", internalType: "int256", type: "int256" }],
+    name: "getTargetSaleTime",
+    outputs: [{ name: "", internalType: "int256", type: "int256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'timeSinceStart', internalType: 'int256', type: 'int256' },
-      { name: 'sold', internalType: 'uint256', type: 'uint256' },
+      { name: "timeSinceStart", internalType: "int256", type: "int256" },
+      { name: "sold", internalType: "uint256", type: "uint256" },
     ],
-    name: 'getVRGDAPrice',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "getVRGDAPrice",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_reservePrice', internalType: 'uint256', type: 'uint256' },
-      { name: '_nextNounId', internalType: 'uint256', type: 'uint256' },
-      { name: '_poolSize', internalType: 'uint256', type: 'uint256' },
-      { name: '_nounsSoldAtAuction', internalType: 'uint256', type: 'uint256' },
-      { name: '_nounsTokenAddress', internalType: 'address', type: 'address' },
-      { name: '_nounsSeederAddress', internalType: 'address', type: 'address' },
+      { name: "_reservePrice", internalType: "uint256", type: "uint256" },
+      { name: "_nextNounId", internalType: "uint256", type: "uint256" },
+      { name: "_poolSize", internalType: "uint256", type: "uint256" },
+      { name: "_nounsSoldAtAuction", internalType: "uint256", type: "uint256" },
+      { name: "_nounsTokenAddress", internalType: "address", type: "address" },
+      { name: "_nounsSeederAddress", internalType: "address", type: "address" },
       {
-        name: '_nounsDescriptorAddress',
-        internalType: 'address',
-        type: 'address',
+        name: "_nounsDescriptorAddress",
+        internalType: "address",
+        type: "address",
       },
     ],
-    name: 'initialize',
+    name: "initialize",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lilNounderRewardNouns',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "lilNounderRewardNouns",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nextNounId',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "nextNounId",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nextNounIdForCaller',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "nextNounIdForCaller",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsDAORewardNouns',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "nounsDAORewardNouns",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsDescriptor',
+    name: "nounsDescriptor",
     outputs: [
       {
-        name: '',
-        internalType: 'contract INounsDescriptorV2',
-        type: 'address',
+        name: "",
+        internalType: "contract INounsDescriptorV2",
+        type: "address",
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsSeeder',
+    name: "nounsSeeder",
     outputs: [
-      { name: '', internalType: 'contract INounsSeeder', type: 'address' },
+      { name: "", internalType: "contract INounsSeeder", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsSoldAtAuction',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "nounsSoldAtAuction",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsToken',
+    name: "nounsToken",
     outputs: [
-      { name: '', internalType: 'contract INounsToken', type: 'address' },
+      { name: "", internalType: "contract INounsToken", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'pause',
+    name: "pause",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'paused',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "paused",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'poolSize',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "poolSize",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proxiableUUID',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "proxiableUUID",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'reservePrice',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "reservePrice",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'seederBlockNumber',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "seederBlockNumber",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: '_nounsDescriptor',
-        internalType: 'contract INounsDescriptorV2',
-        type: 'address',
+        name: "_nounsDescriptor",
+        internalType: "contract INounsDescriptorV2",
+        type: "address",
       },
     ],
-    name: 'setNounsDescriptor',
+    name: "setNounsDescriptor",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: '_nounsSeeder',
-        internalType: 'contract INounsSeeder',
-        type: 'address',
+        name: "_nounsSeeder",
+        internalType: "contract INounsSeeder",
+        type: "address",
       },
     ],
-    name: 'setNounsSeeder',
+    name: "setNounsSeeder",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_poolSize', internalType: 'uint256', type: 'uint256' }],
-    name: 'setPoolSize',
+    type: "function",
+    inputs: [{ name: "_poolSize", internalType: "uint256", type: "uint256" }],
+    name: "setPoolSize",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_reservePrice', internalType: 'uint256', type: 'uint256' },
+      { name: "_reservePrice", internalType: "uint256", type: "uint256" },
     ],
-    name: 'setReservePrice',
+    name: "setReservePrice",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_updateInterval', internalType: 'uint256', type: 'uint256' },
+      { name: "_updateInterval", internalType: "uint256", type: "uint256" },
     ],
-    name: 'setUpdateInterval',
+    name: "setUpdateInterval",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'startTime',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "startTime",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'targetPrice',
-    outputs: [{ name: '', internalType: 'int256', type: 'int256' }],
-    stateMutability: 'view',
+    name: "targetPrice",
+    outputs: [{ name: "", internalType: "int256", type: "int256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'unpause',
+    name: "unpause",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'updateInterval',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "updateInterval",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_newImpl', internalType: 'address', type: 'address' }],
-    name: 'upgradeTo',
+    type: "function",
+    inputs: [{ name: "_newImpl", internalType: "address", type: "address" }],
+    name: "upgradeTo",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_newImpl', internalType: 'address', type: 'address' },
-      { name: '_data', internalType: 'bytes', type: 'bytes' },
+      { name: "_newImpl", internalType: "address", type: "address" },
+      { name: "_data", internalType: "bytes", type: "bytes" },
     ],
-    name: 'upgradeToAndCall',
+    name: "upgradeToAndCall",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'blockNumber', internalType: 'uint256', type: 'uint256' }],
-    name: 'usedBlockNumbers',
-    outputs: [{ name: 'used', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "blockNumber", internalType: "uint256", type: "uint256" }],
+    name: "usedBlockNumbers",
+    outputs: [{ name: "used", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'wethAddress',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "wethAddress",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xa2587b1e2626904c8575640512b987bd3d3b592d)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x0d8c4d18765ab8808ab6cee4d7a760e8b93ab20c)
  */
 export const lilNounsAuctionAddress = {
-  1: '0xA2587b1e2626904c8575640512b987Bd3d3B592D',
-  11155111: '0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c',
-} as const
+  1: "0xA2587b1e2626904c8575640512b987Bd3d3B592D",
+  11155111: "0x0d8c4d18765AB8808ab6CEE4d7A760e8b93AB20c",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xa2587b1e2626904c8575640512b987bd3d3b592d)
@@ -558,7 +558,7 @@ export const lilNounsAuctionAddress = {
 export const lilNounsAuctionConfig = {
   address: lilNounsAuctionAddress,
   abi: lilNounsAuctionAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsData
@@ -570,639 +570,639 @@ export const lilNounsAuctionConfig = {
  */
 export const lilNounsDataAbi = [
   {
-    type: 'error',
-    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
-    name: 'AddressEmptyCode',
+    type: "error",
+    inputs: [{ name: "target", internalType: "address", type: "address" }],
+    name: "AddressEmptyCode",
   },
-  { type: 'error', inputs: [], name: 'AmountExceedsBalance' },
+  { type: "error", inputs: [], name: "AmountExceedsBalance" },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'implementation', internalType: 'address', type: 'address' },
+      { name: "implementation", internalType: "address", type: "address" },
     ],
-    name: 'ERC1967InvalidImplementation',
+    name: "ERC1967InvalidImplementation",
   },
-  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
-  { type: 'error', inputs: [], name: 'FailedCall' },
+  { type: "error", inputs: [], name: "ERC1967NonPayable" },
+  { type: "error", inputs: [], name: "FailedCall" },
   {
-    type: 'error',
-    inputs: [{ name: 'data', internalType: 'bytes', type: 'bytes' }],
-    name: 'FailedWithdrawingETH',
+    type: "error",
+    inputs: [{ name: "data", internalType: "bytes", type: "bytes" }],
+    name: "FailedWithdrawingETH",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'balance', internalType: 'uint256', type: 'uint256' },
-      { name: 'needed', internalType: 'uint256', type: 'uint256' },
+      { name: "balance", internalType: "uint256", type: "uint256" },
+      { name: "needed", internalType: "uint256", type: "uint256" },
     ],
-    name: 'InsufficientBalance',
+    name: "InsufficientBalance",
   },
-  { type: 'error', inputs: [], name: 'InvalidInitialization' },
-  { type: 'error', inputs: [], name: 'InvalidProposalArrayLengths' },
-  { type: 'error', inputs: [], name: 'InvalidSupportValue' },
-  { type: 'error', inputs: [], name: 'MustBeNounerOrPaySufficientFee' },
-  { type: 'error', inputs: [], name: 'NotInitializing' },
+  { type: "error", inputs: [], name: "InvalidInitialization" },
+  { type: "error", inputs: [], name: "InvalidProposalArrayLengths" },
+  { type: "error", inputs: [], name: "InvalidSupportValue" },
+  { type: "error", inputs: [], name: "MustBeNounerOrPaySufficientFee" },
+  { type: "error", inputs: [], name: "NotInitializing" },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
   },
-  { type: 'error', inputs: [], name: 'ProposalMustHaveAtLeastOneCall' },
-  { type: 'error', inputs: [], name: 'ProposalTooLarge' },
-  { type: 'error', inputs: [], name: 'ReentrancyGuardReentrantCall' },
-  { type: 'error', inputs: [], name: 'SlugAlreadyUsed' },
-  { type: 'error', inputs: [], name: 'SlugDoesNotExist' },
-  { type: 'error', inputs: [], name: 'UUPSUnauthorizedCallContext' },
+  { type: "error", inputs: [], name: "ProposalMustHaveAtLeastOneCall" },
+  { type: "error", inputs: [], name: "ProposalTooLarge" },
+  { type: "error", inputs: [], name: "ReentrancyGuardReentrantCall" },
+  { type: "error", inputs: [], name: "SlugAlreadyUsed" },
+  { type: "error", inputs: [], name: "SlugDoesNotExist" },
+  { type: "error", inputs: [], name: "UUPSUnauthorizedCallContext" },
   {
-    type: 'error',
-    inputs: [{ name: 'slot', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'UUPSUnsupportedProxiableUUID',
+    type: "error",
+    inputs: [{ name: "slot", internalType: "bytes32", type: "bytes32" }],
+    name: "UUPSUnsupportedProxiableUUID",
   },
-  { type: 'error', inputs: [], name: 'ZeroAddress' },
-  { type: 'error', inputs: [], name: 'ZeroLengthString' },
+  { type: "error", inputs: [], name: "ZeroAddress" },
+  { type: "error", inputs: [], name: "ZeroLengthString" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'msgSender',
-        internalType: 'address',
-        type: 'address',
+        name: "msgSender",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'proposer',
-        internalType: 'address',
-        type: 'address',
+        name: "proposer",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
-      { name: 'slug', internalType: 'string', type: 'string', indexed: false },
-      { name: 'support', internalType: 'uint8', type: 'uint8', indexed: false },
+      { name: "slug", internalType: "string", type: "string", indexed: false },
+      { name: "support", internalType: "uint8", type: "uint8", indexed: false },
       {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
+        name: "reason",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'CandidateFeedbackSent',
+    name: "CandidateFeedbackSent",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldCreateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "oldCreateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'newCreateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newCreateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'CreateCandidateCostSet',
+    name: "CreateCandidateCostSet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      { name: "to", internalType: "address", type: "address", indexed: true },
       {
-        name: 'amount',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "amount",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'ETHWithdrawn',
+    name: "ETHWithdrawn",
   },
   {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'oldFeeRecipient',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newFeeRecipient',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-    ],
-    name: 'FeeRecipientSet',
-  },
-  {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'sender',
-        internalType: 'address',
-        type: 'address',
+        name: "oldFeeRecipient",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'proposalId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newFeeRecipient",
+        internalType: "address",
+        type: "address",
         indexed: true,
-      },
-      { name: 'support', internalType: 'uint8', type: 'uint8', indexed: false },
-      {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
       },
     ],
-    name: 'FeedbackSent',
+    name: "FeeRecipientSet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'version',
-        internalType: 'uint64',
-        type: 'uint64',
+        name: "sender",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "proposalId",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: true,
+      },
+      { name: "support", internalType: "uint8", type: "uint8", indexed: false },
+      {
+        name: "reason",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'Initialized',
+    name: "FeedbackSent",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
+        name: "version",
+        internalType: "uint64",
+        type: "uint64",
+        indexed: false,
       },
     ],
-    name: 'OwnershipTransferStarted',
+    name: "Initialized",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferStarted",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'msgSender',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      { name: 'slug', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'ProposalCandidateCanceled',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'msgSender',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'targets',
-        internalType: 'address[]',
-        type: 'address[]',
-        indexed: false,
-      },
-      {
-        name: 'values',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-        indexed: false,
-      },
-      {
-        name: 'signatures',
-        internalType: 'string[]',
-        type: 'string[]',
-        indexed: false,
-      },
-      {
-        name: 'calldatas',
-        internalType: 'bytes[]',
-        type: 'bytes[]',
-        indexed: false,
-      },
-      {
-        name: 'description',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-      { name: 'slug', internalType: 'string', type: 'string', indexed: false },
-      {
-        name: 'proposalIdToUpdate',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'encodedProposalHash',
-        internalType: 'bytes32',
-        type: 'bytes32',
-        indexed: false,
-      },
-    ],
-    name: 'ProposalCandidateCreated',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'msgSender',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'targets',
-        internalType: 'address[]',
-        type: 'address[]',
-        indexed: false,
-      },
-      {
-        name: 'values',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-        indexed: false,
-      },
-      {
-        name: 'signatures',
-        internalType: 'string[]',
-        type: 'string[]',
-        indexed: false,
-      },
-      {
-        name: 'calldatas',
-        internalType: 'bytes[]',
-        type: 'bytes[]',
-        indexed: false,
-      },
-      {
-        name: 'description',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-      { name: 'slug', internalType: 'string', type: 'string', indexed: false },
-      {
-        name: 'proposalIdToUpdate',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'encodedProposalHash',
-        internalType: 'bytes32',
-        type: 'bytes32',
-        indexed: false,
-      },
-      {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-    ],
-    name: 'ProposalCandidateUpdated',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'oldUpdateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'newUpdateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-    ],
-    name: 'UpdateCandidateCostSet',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'implementation',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'Upgraded',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'function',
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "msgSender",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      { name: "slug", internalType: "string", type: "string", indexed: false },
+    ],
+    name: "ProposalCandidateCanceled",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "msgSender",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "targets",
+        internalType: "address[]",
+        type: "address[]",
+        indexed: false,
+      },
+      {
+        name: "values",
+        internalType: "uint256[]",
+        type: "uint256[]",
+        indexed: false,
+      },
+      {
+        name: "signatures",
+        internalType: "string[]",
+        type: "string[]",
+        indexed: false,
+      },
+      {
+        name: "calldatas",
+        internalType: "bytes[]",
+        type: "bytes[]",
+        indexed: false,
+      },
+      {
+        name: "description",
+        internalType: "string",
+        type: "string",
+        indexed: false,
+      },
+      { name: "slug", internalType: "string", type: "string", indexed: false },
+      {
+        name: "proposalIdToUpdate",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "encodedProposalHash",
+        internalType: "bytes32",
+        type: "bytes32",
+        indexed: false,
+      },
+    ],
+    name: "ProposalCandidateCreated",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "msgSender",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "targets",
+        internalType: "address[]",
+        type: "address[]",
+        indexed: false,
+      },
+      {
+        name: "values",
+        internalType: "uint256[]",
+        type: "uint256[]",
+        indexed: false,
+      },
+      {
+        name: "signatures",
+        internalType: "string[]",
+        type: "string[]",
+        indexed: false,
+      },
+      {
+        name: "calldatas",
+        internalType: "bytes[]",
+        type: "bytes[]",
+        indexed: false,
+      },
+      {
+        name: "description",
+        internalType: "string",
+        type: "string",
+        indexed: false,
+      },
+      { name: "slug", internalType: "string", type: "string", indexed: false },
+      {
+        name: "proposalIdToUpdate",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "encodedProposalHash",
+        internalType: "bytes32",
+        type: "bytes32",
+        indexed: false,
+      },
+      {
+        name: "reason",
+        internalType: "string",
+        type: "string",
+        indexed: false,
+      },
+    ],
+    name: "ProposalCandidateUpdated",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "oldUpdateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "newUpdateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+    ],
+    name: "UpdateCandidateCostSet",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "implementation",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+    ],
+    name: "Upgraded",
+  },
+  {
+    type: "function",
     inputs: [],
-    name: 'MAX_PROPOSAL_CALLS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_PROPOSAL_CALLS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'PRIOR_VOTES_BLOCKS_AGO',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "PRIOR_VOTES_BLOCKS_AGO",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'UPGRADE_INTERFACE_VERSION',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "UPGRADE_INTERFACE_VERSION",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'acceptOwnership',
+    name: "acceptOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'slug', internalType: 'string', type: 'string' }],
-    name: 'cancelProposalCandidate',
+    type: "function",
+    inputs: [{ name: "slug", internalType: "string", type: "string" }],
+    name: "cancelProposalCandidate",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'createCandidateCost',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "createCandidateCost",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'targets', internalType: 'address[]', type: 'address[]' },
-      { name: 'values', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'signatures', internalType: 'string[]', type: 'string[]' },
-      { name: 'calldatas', internalType: 'bytes[]', type: 'bytes[]' },
-      { name: 'description', internalType: 'string', type: 'string' },
-      { name: 'slug', internalType: 'string', type: 'string' },
-      { name: 'proposalIdToUpdate', internalType: 'uint256', type: 'uint256' },
+      { name: "targets", internalType: "address[]", type: "address[]" },
+      { name: "values", internalType: "uint256[]", type: "uint256[]" },
+      { name: "signatures", internalType: "string[]", type: "string[]" },
+      { name: "calldatas", internalType: "bytes[]", type: "bytes[]" },
+      { name: "description", internalType: "string", type: "string" },
+      { name: "slug", internalType: "string", type: "string" },
+      { name: "proposalIdToUpdate", internalType: "uint256", type: "uint256" },
     ],
-    name: 'createProposalCandidate',
+    name: "createProposalCandidate",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'feeRecipient',
-    outputs: [{ name: '', internalType: 'address payable', type: 'address' }],
-    stateMutability: 'view',
+    name: "feeRecipient",
+    outputs: [{ name: "", internalType: "address payable", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'initialOwner', internalType: 'address', type: 'address' },
+      { name: "initialOwner", internalType: "address", type: "address" },
     ],
-    name: 'initialize',
+    name: "initialize",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'tokenAddress', internalType: 'address', type: 'address' },
-      { name: 'initialCreateCost', internalType: 'uint256', type: 'uint256' },
-      { name: 'initialUpdateCost', internalType: 'uint256', type: 'uint256' },
+      { name: "tokenAddress", internalType: "address", type: "address" },
+      { name: "initialCreateCost", internalType: "uint256", type: "uint256" },
+      { name: "initialUpdateCost", internalType: "uint256", type: "uint256" },
       {
-        name: 'feeRecipientAddress',
-        internalType: 'address payable',
-        type: 'address',
+        name: "feeRecipientAddress",
+        internalType: "address payable",
+        type: "address",
       },
     ],
-    name: 'initializeV2',
+    name: "initializeV2",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'pendingOwner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "pendingOwner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '', internalType: 'address', type: 'address' },
-      { name: '', internalType: 'bytes32', type: 'bytes32' },
+      { name: "", internalType: "address", type: "address" },
+      { name: "", internalType: "bytes32", type: "bytes32" },
     ],
-    name: 'propCandidates',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "propCandidates",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proxiableUUID',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "proxiableUUID",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposer', internalType: 'address', type: 'address' },
-      { name: 'slug', internalType: 'string', type: 'string' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
-      { name: 'reason', internalType: 'string', type: 'string' },
+      { name: "proposer", internalType: "address", type: "address" },
+      { name: "slug", internalType: "string", type: "string" },
+      { name: "support", internalType: "uint8", type: "uint8" },
+      { name: "reason", internalType: "string", type: "string" },
     ],
-    name: 'sendCandidateFeedback',
+    name: "sendCandidateFeedback",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
-      { name: 'reason', internalType: 'string', type: 'string' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
+      { name: "reason", internalType: "string", type: "string" },
     ],
-    name: 'sendFeedback',
+    name: "sendFeedback",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'newCreateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newCreateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
       },
     ],
-    name: 'setCreateCandidateCost',
+    name: "setCreateCandidateCost",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'newFeeRecipient',
-        internalType: 'address payable',
-        type: 'address',
+        name: "newFeeRecipient",
+        internalType: "address payable",
+        type: "address",
       },
     ],
-    name: 'setFeeRecipient',
+    name: "setFeeRecipient",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'newUpdateCandidateCost',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newUpdateCandidateCost",
+        internalType: "uint256",
+        type: "uint256",
       },
     ],
-    name: 'setUpdateCandidateCost',
+    name: "setUpdateCandidateCost",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'token',
+    name: "token",
     outputs: [
-      { name: '', internalType: 'contract LilNounsToken', type: 'address' },
+      { name: "", internalType: "contract LilNounsToken", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'updateCandidateCost',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "updateCandidateCost",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'targets', internalType: 'address[]', type: 'address[]' },
-      { name: 'values', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'signatures', internalType: 'string[]', type: 'string[]' },
-      { name: 'calldatas', internalType: 'bytes[]', type: 'bytes[]' },
-      { name: 'description', internalType: 'string', type: 'string' },
-      { name: 'slug', internalType: 'string', type: 'string' },
-      { name: 'proposalIdToUpdate', internalType: 'uint256', type: 'uint256' },
-      { name: 'reason', internalType: 'string', type: 'string' },
+      { name: "targets", internalType: "address[]", type: "address[]" },
+      { name: "values", internalType: "uint256[]", type: "uint256[]" },
+      { name: "signatures", internalType: "string[]", type: "string[]" },
+      { name: "calldatas", internalType: "bytes[]", type: "bytes[]" },
+      { name: "description", internalType: "string", type: "string" },
+      { name: "slug", internalType: "string", type: "string" },
+      { name: "proposalIdToUpdate", internalType: "uint256", type: "uint256" },
+      { name: "reason", internalType: "string", type: "string" },
     ],
-    name: 'updateProposalCandidate',
+    name: "updateProposalCandidate",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newImplementation', internalType: 'address', type: 'address' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
+      { name: "newImplementation", internalType: "address", type: "address" },
+      { name: "data", internalType: "bytes", type: "bytes" },
     ],
-    name: 'upgradeToAndCall',
+    name: "upgradeToAndCall",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'amount', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "amount", internalType: "uint256", type: "uint256" },
     ],
-    name: 'withdrawETH',
+    name: "withdrawETH",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
  */
 export const lilNounsDataAddress = {
-  1: '0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902',
-  11155111: '0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902',
-} as const
+  1: "0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902",
+  11155111: "0x8d59e1060464DdCD0367e2EaBEDf70b3E7422902",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x8d59e1060464ddcd0367e2eabedf70b3e7422902)
@@ -1211,7 +1211,7 @@ export const lilNounsDataAddress = {
 export const lilNounsDataConfig = {
   address: lilNounsDataAddress,
   abi: lilNounsDataAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsDescriptor
@@ -1223,531 +1223,531 @@ export const lilNounsDataConfig = {
  */
 export const lilNounsDescriptorAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: '_art', internalType: 'contract INounsArt', type: 'address' },
+      { name: "_art", internalType: "contract INounsArt", type: "address" },
       {
-        name: '_renderer',
-        internalType: 'contract ISVGRenderer',
-        type: 'address',
+        name: "_renderer",
+        internalType: "contract ISVGRenderer",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-  { type: 'error', inputs: [], name: 'BadPaletteLength' },
-  { type: 'error', inputs: [], name: 'EmptyPalette' },
-  { type: 'error', inputs: [], name: 'IndexNotFound' },
+  { type: "error", inputs: [], name: "BadPaletteLength" },
+  { type: "error", inputs: [], name: "EmptyPalette" },
+  { type: "error", inputs: [], name: "IndexNotFound" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'art',
-        internalType: 'contract INounsArt',
-        type: 'address',
+        name: "art",
+        internalType: "contract INounsArt",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'ArtUpdated',
+    name: "ArtUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'baseURI',
-        internalType: 'string',
-        type: 'string',
+        name: "baseURI",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'BaseURIUpdated',
+    name: "BaseURIUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'enabled', internalType: 'bool', type: 'bool', indexed: false },
+      { name: "enabled", internalType: "bool", type: "bool", indexed: false },
     ],
-    name: 'DataURIToggled',
+    name: "DataURIToggled",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
-  { type: 'event', anonymous: false, inputs: [], name: 'PartsLocked' },
+  { type: "event", anonymous: false, inputs: [], name: "PartsLocked" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'renderer',
-        internalType: 'contract ISVGRenderer',
-        type: 'address',
+        name: "renderer",
+        internalType: "contract ISVGRenderer",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'RendererUpdated',
+    name: "RendererUpdated",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'accessories',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "accessories",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'accessoryCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "accessoryCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'encodedCompressed', internalType: 'bytes', type: 'bytes' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "encodedCompressed", internalType: "bytes", type: "bytes" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addAccessories',
+    name: "addAccessories",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'pointer', internalType: 'address', type: 'address' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "pointer", internalType: "address", type: "address" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addAccessoriesFromPointer',
+    name: "addAccessoriesFromPointer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_background', internalType: 'string', type: 'string' }],
-    name: 'addBackground',
+    type: "function",
+    inputs: [{ name: "_background", internalType: "string", type: "string" }],
+    name: "addBackground",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'encodedCompressed', internalType: 'bytes', type: 'bytes' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "encodedCompressed", internalType: "bytes", type: "bytes" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addBodies',
+    name: "addBodies",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'pointer', internalType: 'address', type: 'address' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "pointer", internalType: "address", type: "address" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addBodiesFromPointer',
+    name: "addBodiesFromPointer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'encodedCompressed', internalType: 'bytes', type: 'bytes' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "encodedCompressed", internalType: "bytes", type: "bytes" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addGlasses',
+    name: "addGlasses",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'pointer', internalType: 'address', type: 'address' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "pointer", internalType: "address", type: "address" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addGlassesFromPointer',
+    name: "addGlassesFromPointer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'encodedCompressed', internalType: 'bytes', type: 'bytes' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "encodedCompressed", internalType: "bytes", type: "bytes" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addHeads',
+    name: "addHeads",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'pointer', internalType: 'address', type: 'address' },
-      { name: 'decompressedLength', internalType: 'uint80', type: 'uint80' },
-      { name: 'imageCount', internalType: 'uint16', type: 'uint16' },
+      { name: "pointer", internalType: "address", type: "address" },
+      { name: "decompressedLength", internalType: "uint80", type: "uint80" },
+      { name: "imageCount", internalType: "uint16", type: "uint16" },
     ],
-    name: 'addHeadsFromPointer',
+    name: "addHeadsFromPointer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_backgrounds', internalType: 'string[]', type: 'string[]' },
+      { name: "_backgrounds", internalType: "string[]", type: "string[]" },
     ],
-    name: 'addManyBackgrounds',
+    name: "addManyBackgrounds",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'arePartsLocked',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "arePartsLocked",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'art',
+    name: "art",
     outputs: [
-      { name: '', internalType: 'contract INounsArt', type: 'address' },
+      { name: "", internalType: "contract INounsArt", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'backgroundCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "backgroundCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'backgrounds',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "backgrounds",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'baseURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "baseURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'bodies',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "bodies",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'bodyCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "bodyCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
     ],
-    name: 'dataURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "dataURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
     ],
-    name: 'generateSVGImage',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "generateSVGImage",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'name', internalType: 'string', type: 'string' },
-      { name: 'description', internalType: 'string', type: 'string' },
+      { name: "name", internalType: "string", type: "string" },
+      { name: "description", internalType: "string", type: "string" },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
     ],
-    name: 'genericDataURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "genericDataURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
     ],
-    name: 'getPartsForSeed',
+    name: "getPartsForSeed",
     outputs: [
       {
-        name: '',
-        internalType: 'struct ISVGRenderer.Part[]',
-        type: 'tuple[]',
+        name: "",
+        internalType: "struct ISVGRenderer.Part[]",
+        type: "tuple[]",
         components: [
-          { name: 'image', internalType: 'bytes', type: 'bytes' },
-          { name: 'palette', internalType: 'bytes', type: 'bytes' },
+          { name: "image", internalType: "bytes", type: "bytes" },
+          { name: "palette", internalType: "bytes", type: "bytes" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'glasses',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "glasses",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'glassesCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "glassesCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'headCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "headCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'heads',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "heads",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'isDataURIEnabled',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "isDataURIEnabled",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lockParts',
+    name: "lockParts",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint8', type: 'uint8' }],
-    name: 'palettes',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint8", type: "uint8" }],
+    name: "palettes",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renderer',
+    name: "renderer",
     outputs: [
-      { name: '', internalType: 'contract ISVGRenderer', type: 'address' },
+      { name: "", internalType: "contract ISVGRenderer", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_art', internalType: 'contract INounsArt', type: 'address' },
+      { name: "_art", internalType: "contract INounsArt", type: "address" },
     ],
-    name: 'setArt',
+    name: "setArt",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'descriptor', internalType: 'address', type: 'address' }],
-    name: 'setArtDescriptor',
+    type: "function",
+    inputs: [{ name: "descriptor", internalType: "address", type: "address" }],
+    name: "setArtDescriptor",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'inflator', internalType: 'contract IInflator', type: 'address' },
+      { name: "inflator", internalType: "contract IInflator", type: "address" },
     ],
-    name: 'setArtInflator',
+    name: "setArtInflator",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_baseURI', internalType: 'string', type: 'string' }],
-    name: 'setBaseURI',
+    type: "function",
+    inputs: [{ name: "_baseURI", internalType: "string", type: "string" }],
+    name: "setBaseURI",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'paletteIndex', internalType: 'uint8', type: 'uint8' },
-      { name: 'palette', internalType: 'bytes', type: 'bytes' },
+      { name: "paletteIndex", internalType: "uint8", type: "uint8" },
+      { name: "palette", internalType: "bytes", type: "bytes" },
     ],
-    name: 'setPalette',
+    name: "setPalette",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'paletteIndex', internalType: 'uint8', type: 'uint8' },
-      { name: 'pointer', internalType: 'address', type: 'address' },
+      { name: "paletteIndex", internalType: "uint8", type: "uint8" },
+      { name: "pointer", internalType: "address", type: "address" },
     ],
-    name: 'setPalettePointer',
+    name: "setPalettePointer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: '_renderer',
-        internalType: 'contract ISVGRenderer',
-        type: 'address',
+        name: "_renderer",
+        internalType: "contract ISVGRenderer",
+        type: "address",
       },
     ],
-    name: 'setRenderer',
+    name: "setRenderer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'toggleDataURIEnabled',
+    name: "toggleDataURIEnabled",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
       },
     ],
-    name: 'tokenURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "tokenURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xb2a47999b3117c7dd628920ed8e77ebdfb948b68)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x852f20f0140a4b5aa29c70bf39c9a85edc2b454e)
  */
 export const lilNounsDescriptorAddress = {
-  1: '0xb2a47999b3117c7dD628920ED8e77eBDfB948B68',
-  11155111: '0x852f20f0140A4B5Aa29C70bF39C9a85edc2B454E',
-} as const
+  1: "0xb2a47999b3117c7dD628920ED8e77eBDfB948B68",
+  11155111: "0x852f20f0140A4B5Aa29C70bF39C9a85edc2B454E",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xb2a47999b3117c7dd628920ed8e77ebdfb948b68)
@@ -1756,7 +1756,7 @@ export const lilNounsDescriptorAddress = {
 export const lilNounsDescriptorConfig = {
   address: lilNounsDescriptorAddress,
   abi: lilNounsDescriptorAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsEnsMapper
@@ -1768,411 +1768,411 @@ export const lilNounsDescriptorConfig = {
  */
 export const lilNounsEnsMapperAbi = [
   {
-    type: 'error',
-    inputs: [{ name: 'target', internalType: 'address', type: 'address' }],
-    name: 'AddressEmptyCode',
+    type: "error",
+    inputs: [{ name: "target", internalType: "address", type: "address" }],
+    name: "AddressEmptyCode",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'AlreadyClaimed',
+    type: "error",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "AlreadyClaimed",
   },
   {
-    type: 'error',
+    type: "error",
     inputs: [
-      { name: 'implementation', internalType: 'address', type: 'address' },
+      { name: "implementation", internalType: "address", type: "address" },
     ],
-    name: 'ERC1967InvalidImplementation',
+    name: "ERC1967InvalidImplementation",
   },
-  { type: 'error', inputs: [], name: 'ERC1967NonPayable' },
-  { type: 'error', inputs: [], name: 'FailedCall' },
-  { type: 'error', inputs: [], name: 'InvalidENSRegistry' },
-  { type: 'error', inputs: [], name: 'InvalidInitialization' },
-  { type: 'error', inputs: [], name: 'InvalidLabel' },
-  { type: 'error', inputs: [], name: 'InvalidLegacyAddress' },
+  { type: "error", inputs: [], name: "ERC1967NonPayable" },
+  { type: "error", inputs: [], name: "FailedCall" },
+  { type: "error", inputs: [], name: "InvalidENSRegistry" },
+  { type: "error", inputs: [], name: "InvalidInitialization" },
+  { type: "error", inputs: [], name: "InvalidLabel" },
+  { type: "error", inputs: [], name: "InvalidLegacyAddress" },
   {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'NotAuthorised',
+    type: "error",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "NotAuthorised",
   },
-  { type: 'error', inputs: [], name: 'NotInitializing' },
+  { type: "error", inputs: [], name: "NotInitializing" },
   {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'NotTokenOwner',
+    type: "error",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "NotTokenOwner",
   },
-  { type: 'error', inputs: [], name: 'OverrideAvatarKey' },
+  { type: "error", inputs: [], name: "OverrideAvatarKey" },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
+    type: "error",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "OwnableInvalidOwner",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'PreexistingENSRecord',
-  },
-  { type: 'error', inputs: [], name: 'ReentrancyGuardReentrantCall' },
-  { type: 'error', inputs: [], name: 'UUPSUnauthorizedCallContext' },
-  {
-    type: 'error',
-    inputs: [{ name: 'slot', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'UUPSUnsupportedProxiableUUID',
+    type: "error",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "OwnableUnauthorizedAccount",
   },
   {
-    type: 'error',
-    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'UnregisteredNode',
+    type: "error",
+    inputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    name: "PreexistingENSRecord",
+  },
+  { type: "error", inputs: [], name: "ReentrancyGuardReentrantCall" },
+  { type: "error", inputs: [], name: "UUPSUnauthorizedCallContext" },
+  {
+    type: "error",
+    inputs: [{ name: "slot", internalType: "bytes32", type: "bytes32" }],
+    name: "UUPSUnsupportedProxiableUUID",
   },
   {
-    type: 'event',
+    type: "error",
+    inputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    name: "UnregisteredNode",
+  },
+  {
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
-      { name: 'a', internalType: 'address', type: 'address', indexed: false },
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
+      { name: "a", internalType: "address", type: "address", indexed: false },
     ],
-    name: 'AddrChanged',
+    name: "AddrChanged",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'version',
-        internalType: 'uint64',
-        type: 'uint64',
+        name: "version",
+        internalType: "uint64",
+        type: "uint64",
         indexed: false,
       },
     ],
-    name: 'Initialized',
+    name: "Initialized",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
-      { name: 'name', internalType: 'string', type: 'string', indexed: false },
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
+      { name: "name", internalType: "string", type: "string", indexed: false },
     ],
-    name: 'NameChanged',
+    name: "NameChanged",
   },
   {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-    ],
-    name: 'OwnershipTransferred',
-  },
-  {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'registrar',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
-      { name: 'label', internalType: 'string', type: 'string', indexed: false },
     ],
-    name: 'SubnameClaimed',
+    name: "OwnershipTransferred",
   },
   {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
-      {
-        name: 'indexedKey',
-        internalType: 'string',
-        type: 'string',
-        indexed: true,
-      },
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'value', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'TextChanged',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32', indexed: true },
-      {
-        name: 'indexedKey',
-        internalType: 'string',
-        type: 'string',
-        indexed: true,
-      },
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'TextChanged',
-  },
-  {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'implementation',
-        internalType: 'address',
-        type: 'address',
+        name: "registrar",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "tokenId",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: true,
+      },
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
+      { name: "label", internalType: "string", type: "string", indexed: false },
+    ],
+    name: "SubnameClaimed",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
+      {
+        name: "indexedKey",
+        internalType: "string",
+        type: "string",
+        indexed: true,
+      },
+      { name: "key", internalType: "string", type: "string", indexed: false },
+      { name: "value", internalType: "string", type: "string", indexed: false },
+    ],
+    name: "TextChanged",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      { name: "node", internalType: "bytes32", type: "bytes32", indexed: true },
+      {
+        name: "indexedKey",
+        internalType: "string",
+        type: "string",
+        indexed: true,
+      },
+      { name: "key", internalType: "string", type: "string", indexed: false },
+    ],
+    name: "TextChanged",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "implementation",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'Upgraded',
+    name: "Upgraded",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'UPGRADE_INTERFACE_VERSION',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "UPGRADE_INTERFACE_VERSION",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'addr',
-    outputs: [{ name: '', internalType: 'address payable', type: 'address' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    name: "addr",
+    outputs: [{ name: "", internalType: "address payable", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'label', internalType: 'string', type: 'string' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "label", internalType: "string", type: "string" },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
     ],
-    name: 'claimSubname',
+    name: "claimSubname",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'tokenIds', internalType: 'uint256[]', type: 'uint256[]' },
+      { name: "tokenIds", internalType: "uint256[]", type: "uint256[]" },
     ],
-    name: 'emitAddrEvents',
+    name: "emitAddrEvents",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'tokenIds', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'key', internalType: 'string', type: 'string' },
+      { name: "tokenIds", internalType: "uint256[]", type: "uint256[]" },
+      { name: "key", internalType: "string", type: "string" },
     ],
-    name: 'emitTextEvents',
+    name: "emitTextEvents",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'ens',
-    outputs: [{ name: '', internalType: 'contract ENS', type: 'address' }],
-    stateMutability: 'view',
+    name: "ens",
+    outputs: [{ name: "", internalType: "contract ENS", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ensNameOf',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "ensNameOf",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ensNodeOf',
-    outputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "ensNodeOf",
+    outputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'initialOwner', internalType: 'address', type: 'address' },
-      { name: 'legacyAddr', internalType: 'address', type: 'address' },
-      { name: 'ensRegistry', internalType: 'address', type: 'address' },
-      { name: 'ensRoot', internalType: 'bytes32', type: 'bytes32' },
-      { name: 'labelRoot', internalType: 'string', type: 'string' },
+      { name: "initialOwner", internalType: "address", type: "address" },
+      { name: "legacyAddr", internalType: "address", type: "address" },
+      { name: "ensRegistry", internalType: "address", type: "address" },
+      { name: "ensRoot", internalType: "bytes32", type: "bytes32" },
+      { name: "labelRoot", internalType: "string", type: "string" },
     ],
-    name: 'initialize',
+    name: "initialize",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'isLegacyNode',
-    outputs: [{ name: 'isLegacy', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    name: "isLegacyNode",
+    outputs: [{ name: "isLegacy", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'legacy',
+    name: "legacy",
     outputs: [
       {
-        name: '',
-        internalType: 'contract ILilNounsEnsMapperV1',
-        type: 'address',
+        name: "",
+        internalType: "contract ILilNounsEnsMapperV1",
+        type: "address",
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'migrateLegacySubname',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "migrateLegacySubname",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'node', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "node", internalType: "bytes32", type: "bytes32" }],
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nft',
-    outputs: [{ name: '', internalType: 'contract IERC721', type: 'address' }],
-    stateMutability: 'view',
+    name: "nft",
+    outputs: [{ name: "", internalType: "contract IERC721", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proxiableUUID',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "proxiableUUID",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'releaseLegacySubname',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "releaseLegacySubname",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'relinquishSubname',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "relinquishSubname",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'restoreResolver',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "restoreResolver",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'rootLabel',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "rootLabel",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'rootNode',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "rootNode",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32' },
-      { name: 'key', internalType: 'string', type: 'string' },
-      { name: 'value', internalType: 'string', type: 'string' },
+      { name: "node", internalType: "bytes32", type: "bytes32" },
+      { name: "key", internalType: "string", type: "string" },
+      { name: "value", internalType: "string", type: "string" },
     ],
-    name: 'setText',
+    name: "setText",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'interfaceId', internalType: 'bytes4', type: 'bytes4' }],
-    name: 'supportsInterface',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'pure',
+    type: "function",
+    inputs: [{ name: "interfaceId", internalType: "bytes4", type: "bytes4" }],
+    name: "supportsInterface",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "pure",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'node', internalType: 'bytes32', type: 'bytes32' },
-      { name: 'key', internalType: 'string', type: 'string' },
+      { name: "node", internalType: "bytes32", type: "bytes32" },
+      { name: "key", internalType: "string", type: "string" },
     ],
-    name: 'text',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "text",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newImplementation', internalType: 'address', type: 'address' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
+      { name: "newImplementation", internalType: "address", type: "address" },
+      { name: "data", internalType: "bytes", type: "bytes" },
     ],
-    name: 'upgradeToAndCall',
+    name: "upgradeToAndCall",
     outputs: [],
-    stateMutability: 'payable',
+    stateMutability: "payable",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x20779E57C32AE340cb8671E5EafC9eB26e753D22)
  */
 export const lilNounsEnsMapperAddress = {
-  1: '0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f',
-  11155111: '0x20779E57C32AE340cb8671E5EafC9eB26e753D22',
-} as const
+  1: "0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f",
+  11155111: "0x20779E57C32AE340cb8671E5EafC9eB26e753D22",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5D8E3A1991AC7d97fd813FC6367ec5c5E399A36f)
@@ -2181,7 +2181,7 @@ export const lilNounsEnsMapperAddress = {
 export const lilNounsEnsMapperConfig = {
   address: lilNounsEnsMapperAddress,
   abi: lilNounsEnsMapperAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsGovernor
@@ -2192,1113 +2192,1113 @@ export const lilNounsEnsMapperConfig = {
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0xa7c37f79ff5e6f932147fc69724b6ed432ca6aa7)
  */
 export const lilNounsGovernorAbi = [
-  { type: 'error', inputs: [], name: 'AdminOnly' },
-  { type: 'error', inputs: [], name: 'CantCancelExecutedProposal' },
-  { type: 'error', inputs: [], name: 'CantVetoExecutedProposal' },
-  { type: 'error', inputs: [], name: 'InvalidMaxQuorumVotesBPS' },
-  { type: 'error', inputs: [], name: 'InvalidMinQuorumVotesBPS' },
-  { type: 'error', inputs: [], name: 'MinQuorumBPSGreaterThanMaxQuorumBPS' },
-  { type: 'error', inputs: [], name: 'PendingVetoerOnly' },
-  { type: 'error', inputs: [], name: 'UnsafeUint16Cast' },
-  { type: 'error', inputs: [], name: 'VetoerBurned' },
-  { type: 'error', inputs: [], name: 'VetoerOnly' },
+  { type: "error", inputs: [], name: "AdminOnly" },
+  { type: "error", inputs: [], name: "CantCancelExecutedProposal" },
+  { type: "error", inputs: [], name: "CantVetoExecutedProposal" },
+  { type: "error", inputs: [], name: "InvalidMaxQuorumVotesBPS" },
+  { type: "error", inputs: [], name: "InvalidMinQuorumVotesBPS" },
+  { type: "error", inputs: [], name: "MinQuorumBPSGreaterThanMaxQuorumBPS" },
+  { type: "error", inputs: [], name: "PendingVetoerOnly" },
+  { type: "error", inputs: [], name: "UnsafeUint16Cast" },
+  { type: "error", inputs: [], name: "VetoerBurned" },
+  { type: "error", inputs: [], name: "VetoerOnly" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldMaxQuorumVotesBPS',
-        internalType: 'uint16',
-        type: 'uint16',
+        name: "oldMaxQuorumVotesBPS",
+        internalType: "uint16",
+        type: "uint16",
         indexed: false,
       },
       {
-        name: 'newMaxQuorumVotesBPS',
-        internalType: 'uint16',
-        type: 'uint16',
+        name: "newMaxQuorumVotesBPS",
+        internalType: "uint16",
+        type: "uint16",
         indexed: false,
       },
     ],
-    name: 'MaxQuorumVotesBPSSet',
+    name: "MaxQuorumVotesBPSSet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldMinQuorumVotesBPS',
-        internalType: 'uint16',
-        type: 'uint16',
+        name: "oldMinQuorumVotesBPS",
+        internalType: "uint16",
+        type: "uint16",
         indexed: false,
       },
       {
-        name: 'newMinQuorumVotesBPS',
-        internalType: 'uint16',
-        type: 'uint16',
+        name: "newMinQuorumVotesBPS",
+        internalType: "uint16",
+        type: "uint16",
         indexed: false,
       },
     ],
-    name: 'MinQuorumVotesBPSSet',
+    name: "MinQuorumVotesBPSSet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "oldAdmin",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "newAdmin",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NewAdmin',
+    name: "NewAdmin",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldImplementation',
-        internalType: 'address',
-        type: 'address',
+        name: "oldImplementation",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newImplementation',
-        internalType: 'address',
-        type: 'address',
+        name: "newImplementation",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NewImplementation',
+    name: "NewImplementation",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldPendingAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "oldPendingAdmin",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newPendingAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "newPendingAdmin",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NewPendingAdmin',
+    name: "NewPendingAdmin",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldPendingVetoer',
-        internalType: 'address',
-        type: 'address',
+        name: "oldPendingVetoer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newPendingVetoer',
-        internalType: 'address',
-        type: 'address',
+        name: "newPendingVetoer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NewPendingVetoer',
+    name: "NewPendingVetoer",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldVetoer',
-        internalType: 'address',
-        type: 'address',
+        name: "oldVetoer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newVetoer',
-        internalType: 'address',
-        type: 'address',
+        name: "newVetoer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NewVetoer',
+    name: "NewVetoer",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'ProposalCanceled',
+    name: "ProposalCanceled",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
       {
-        name: 'proposer',
-        internalType: 'address',
-        type: 'address',
+        name: "proposer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'targets',
-        internalType: 'address[]',
-        type: 'address[]',
+        name: "targets",
+        internalType: "address[]",
+        type: "address[]",
         indexed: false,
       },
       {
-        name: 'values',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
+        name: "values",
+        internalType: "uint256[]",
+        type: "uint256[]",
         indexed: false,
       },
       {
-        name: 'signatures',
-        internalType: 'string[]',
-        type: 'string[]',
+        name: "signatures",
+        internalType: "string[]",
+        type: "string[]",
         indexed: false,
       },
       {
-        name: 'calldatas',
-        internalType: 'bytes[]',
-        type: 'bytes[]',
+        name: "calldatas",
+        internalType: "bytes[]",
+        type: "bytes[]",
         indexed: false,
       },
       {
-        name: 'startBlock',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "startBlock",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'endBlock',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "endBlock",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'description',
-        internalType: 'string',
-        type: 'string',
-        indexed: false,
-      },
-    ],
-    name: 'ProposalCreated',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
-      {
-        name: 'proposer',
-        internalType: 'address',
-        type: 'address',
-        indexed: false,
-      },
-      {
-        name: 'targets',
-        internalType: 'address[]',
-        type: 'address[]',
-        indexed: false,
-      },
-      {
-        name: 'values',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-        indexed: false,
-      },
-      {
-        name: 'signatures',
-        internalType: 'string[]',
-        type: 'string[]',
-        indexed: false,
-      },
-      {
-        name: 'calldatas',
-        internalType: 'bytes[]',
-        type: 'bytes[]',
-        indexed: false,
-      },
-      {
-        name: 'startBlock',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'endBlock',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'proposalThreshold',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'quorumVotes',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-      {
-        name: 'description',
-        internalType: 'string',
-        type: 'string',
+        name: "description",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'ProposalCreatedWithRequirements',
+    name: "ProposalCreated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
-    ],
-    name: 'ProposalExecuted',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
-      { name: 'eta', internalType: 'uint256', type: 'uint256', indexed: false },
-    ],
-    name: 'ProposalQueued',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
       {
-        name: 'oldProposalThresholdBPS',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "proposer",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
       {
-        name: 'newProposalThresholdBPS',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "targets",
+        internalType: "address[]",
+        type: "address[]",
+        indexed: false,
+      },
+      {
+        name: "values",
+        internalType: "uint256[]",
+        type: "uint256[]",
+        indexed: false,
+      },
+      {
+        name: "signatures",
+        internalType: "string[]",
+        type: "string[]",
+        indexed: false,
+      },
+      {
+        name: "calldatas",
+        internalType: "bytes[]",
+        type: "bytes[]",
+        indexed: false,
+      },
+      {
+        name: "startBlock",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "endBlock",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "proposalThreshold",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "quorumVotes",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "description",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'ProposalThresholdBPSSet',
+    name: "ProposalCreatedWithRequirements",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'id', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'ProposalVetoed',
+    name: "ProposalExecuted",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      {
-        name: 'oldQuorumCoefficient',
-        internalType: 'uint32',
-        type: 'uint32',
-        indexed: false,
-      },
-      {
-        name: 'newQuorumCoefficient',
-        internalType: 'uint32',
-        type: 'uint32',
-        indexed: false,
-      },
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
+      { name: "eta", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'QuorumCoefficientSet',
+    name: "ProposalQueued",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldQuorumVotesBPS',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "oldProposalThresholdBPS",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'newQuorumVotesBPS',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newProposalThresholdBPS",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'QuorumVotesBPSSet',
+    name: "ProposalThresholdBPSSet",
   },
   {
-    type: 'event',
+    type: "event",
+    anonymous: false,
+    inputs: [
+      { name: "id", internalType: "uint256", type: "uint256", indexed: false },
+    ],
+    name: "ProposalVetoed",
+  },
+  {
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'voter',
-        internalType: 'address',
-        type: 'address',
+        name: "oldQuorumCoefficient",
+        internalType: "uint32",
+        type: "uint32",
+        indexed: false,
+      },
+      {
+        name: "newQuorumCoefficient",
+        internalType: "uint32",
+        type: "uint32",
+        indexed: false,
+      },
+    ],
+    name: "QuorumCoefficientSet",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "oldQuorumVotesBPS",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+      {
+        name: "newQuorumVotesBPS",
+        internalType: "uint256",
+        type: "uint256",
+        indexed: false,
+      },
+    ],
+    name: "QuorumVotesBPSSet",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "voter",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'refundAmount',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "refundAmount",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'refundSent',
-        internalType: 'bool',
-        type: 'bool',
+        name: "refundSent",
+        internalType: "bool",
+        type: "bool",
         indexed: false,
       },
     ],
-    name: 'RefundableVote',
+    name: "RefundableVote",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'voter',
-        internalType: 'address',
-        type: 'address',
+        name: "voter",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'proposalId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "proposalId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
-      { name: 'support', internalType: 'uint8', type: 'uint8', indexed: false },
+      { name: "support", internalType: "uint8", type: "uint8", indexed: false },
       {
-        name: 'votes',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "votes",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'reason',
-        internalType: 'string',
-        type: 'string',
+        name: "reason",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
     ],
-    name: 'VoteCast',
+    name: "VoteCast",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldVotingDelay',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "oldVotingDelay",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'newVotingDelay',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newVotingDelay",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'VotingDelaySet',
+    name: "VotingDelaySet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'oldVotingPeriod',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "oldVotingPeriod",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'newVotingPeriod',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newVotingPeriod",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'VotingPeriodSet',
+    name: "VotingPeriodSet",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'amount',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "amount",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
-      { name: 'sent', internalType: 'bool', type: 'bool', indexed: false },
+      { name: "sent", internalType: "bool", type: "bool", indexed: false },
     ],
-    name: 'Withdraw',
+    name: "Withdraw",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'BALLOT_TYPEHASH',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "BALLOT_TYPEHASH",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'DOMAIN_TYPEHASH',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "DOMAIN_TYPEHASH",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_PROPOSAL_THRESHOLD_BPS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_PROPOSAL_THRESHOLD_BPS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_QUORUM_VOTES_BPS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_QUORUM_VOTES_BPS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_QUORUM_VOTES_BPS_UPPER_BOUND',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_QUORUM_VOTES_BPS_UPPER_BOUND",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_REFUND_BASE_FEE',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_REFUND_BASE_FEE",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_REFUND_GAS_USED',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_REFUND_GAS_USED",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_REFUND_PRIORITY_FEE',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_REFUND_PRIORITY_FEE",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_VOTING_DELAY',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_VOTING_DELAY",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAX_VOTING_PERIOD',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAX_VOTING_PERIOD",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MIN_PROPOSAL_THRESHOLD_BPS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MIN_PROPOSAL_THRESHOLD_BPS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MIN_QUORUM_VOTES_BPS_LOWER_BOUND',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MIN_QUORUM_VOTES_BPS_LOWER_BOUND",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MIN_QUORUM_VOTES_BPS_UPPER_BOUND',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MIN_QUORUM_VOTES_BPS_UPPER_BOUND",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MIN_VOTING_DELAY',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MIN_VOTING_DELAY",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MIN_VOTING_PERIOD',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MIN_VOTING_PERIOD",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'REFUND_BASE_GAS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "REFUND_BASE_GAS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: '_acceptAdmin',
+    name: "_acceptAdmin",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: '_acceptVetoer',
+    name: "_acceptVetoer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: '_burnVetoPower',
+    name: "_burnVetoPower",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newMinQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-      { name: 'newMaxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-      { name: 'newQuorumCoefficient', internalType: 'uint32', type: 'uint32' },
+      { name: "newMinQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+      { name: "newMaxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+      { name: "newQuorumCoefficient", internalType: "uint32", type: "uint32" },
     ],
-    name: '_setDynamicQuorumParams',
+    name: "_setDynamicQuorumParams",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newMaxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
+      { name: "newMaxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
     ],
-    name: '_setMaxQuorumVotesBPS',
+    name: "_setMaxQuorumVotesBPS",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newMinQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
+      { name: "newMinQuorumVotesBPS", internalType: "uint16", type: "uint16" },
     ],
-    name: '_setMinQuorumVotesBPS',
+    name: "_setMinQuorumVotesBPS",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newPendingAdmin', internalType: 'address', type: 'address' },
+      { name: "newPendingAdmin", internalType: "address", type: "address" },
     ],
-    name: '_setPendingAdmin',
+    name: "_setPendingAdmin",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newPendingVetoer', internalType: 'address', type: 'address' },
+      { name: "newPendingVetoer", internalType: "address", type: "address" },
     ],
-    name: '_setPendingVetoer',
+    name: "_setPendingVetoer",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: 'newProposalThresholdBPS',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newProposalThresholdBPS",
+        internalType: "uint256",
+        type: "uint256",
       },
     ],
-    name: '_setProposalThresholdBPS',
+    name: "_setProposalThresholdBPS",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newQuorumCoefficient', internalType: 'uint32', type: 'uint32' },
+      { name: "newQuorumCoefficient", internalType: "uint32", type: "uint32" },
     ],
-    name: '_setQuorumCoefficient',
+    name: "_setQuorumCoefficient",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newVotingDelay', internalType: 'uint256', type: 'uint256' },
+      { name: "newVotingDelay", internalType: "uint256", type: "uint256" },
     ],
-    name: '_setVotingDelay',
+    name: "_setVotingDelay",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newVotingPeriod', internalType: 'uint256', type: 'uint256' },
+      { name: "newVotingPeriod", internalType: "uint256", type: "uint256" },
     ],
-    name: '_setVotingPeriod',
+    name: "_setVotingPeriod",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: '_withdraw',
+    name: "_withdraw",
     outputs: [
-      { name: '', internalType: 'uint256', type: 'uint256' },
-      { name: '', internalType: 'bool', type: 'bool' },
+      { name: "", internalType: "uint256", type: "uint256" },
+      { name: "", internalType: "bool", type: "bool" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'admin',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "admin",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'cancel',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "cancel",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
     ],
-    name: 'castRefundableVote',
+    name: "castRefundableVote",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
-      { name: 'reason', internalType: 'string', type: 'string' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
+      { name: "reason", internalType: "string", type: "string" },
     ],
-    name: 'castRefundableVoteWithReason',
+    name: "castRefundableVoteWithReason",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
     ],
-    name: 'castVote',
+    name: "castVote",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
-      { name: 'v', internalType: 'uint8', type: 'uint8' },
-      { name: 'r', internalType: 'bytes32', type: 'bytes32' },
-      { name: 's', internalType: 'bytes32', type: 'bytes32' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
+      { name: "v", internalType: "uint8", type: "uint8" },
+      { name: "r", internalType: "bytes32", type: "bytes32" },
+      { name: "s", internalType: "bytes32", type: "bytes32" },
     ],
-    name: 'castVoteBySig',
+    name: "castVoteBySig",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'support', internalType: 'uint8', type: 'uint8' },
-      { name: 'reason', internalType: 'string', type: 'string' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "support", internalType: "uint8", type: "uint8" },
+      { name: "reason", internalType: "string", type: "string" },
     ],
-    name: 'castVoteWithReason',
+    name: "castVoteWithReason",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'againstVotes', internalType: 'uint256', type: 'uint256' },
-      { name: 'totalSupply', internalType: 'uint256', type: 'uint256' },
+      { name: "againstVotes", internalType: "uint256", type: "uint256" },
+      { name: "totalSupply", internalType: "uint256", type: "uint256" },
       {
-        name: 'params',
-        internalType: 'struct NounsDAOStorageV2.DynamicQuorumParams',
-        type: 'tuple',
+        name: "params",
+        internalType: "struct NounsDAOStorageV2.DynamicQuorumParams",
+        type: "tuple",
         components: [
-          { name: 'minQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'maxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'quorumCoefficient', internalType: 'uint32', type: 'uint32' },
+          { name: "minQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "maxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "quorumCoefficient", internalType: "uint32", type: "uint32" },
         ],
       },
     ],
-    name: 'dynamicQuorumVotes',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'pure',
+    name: "dynamicQuorumVotes",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "pure",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'execute',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "execute",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'getActions',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "getActions",
     outputs: [
-      { name: 'targets', internalType: 'address[]', type: 'address[]' },
-      { name: 'values', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'signatures', internalType: 'string[]', type: 'string[]' },
-      { name: 'calldatas', internalType: 'bytes[]', type: 'bytes[]' },
+      { name: "targets", internalType: "address[]", type: "address[]" },
+      { name: "values", internalType: "uint256[]", type: "uint256[]" },
+      { name: "signatures", internalType: "string[]", type: "string[]" },
+      { name: "calldatas", internalType: "bytes[]", type: "bytes[]" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'blockNumber_', internalType: 'uint256', type: 'uint256' },
+      { name: "blockNumber_", internalType: "uint256", type: "uint256" },
     ],
-    name: 'getDynamicQuorumParamsAt',
+    name: "getDynamicQuorumParamsAt",
     outputs: [
       {
-        name: '',
-        internalType: 'struct NounsDAOStorageV2.DynamicQuorumParams',
-        type: 'tuple',
+        name: "",
+        internalType: "struct NounsDAOStorageV2.DynamicQuorumParams",
+        type: "tuple",
         components: [
-          { name: 'minQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'maxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'quorumCoefficient', internalType: 'uint32', type: 'uint32' },
+          { name: "minQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "maxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "quorumCoefficient", internalType: "uint32", type: "uint32" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'proposalId', internalType: 'uint256', type: 'uint256' },
-      { name: 'voter', internalType: 'address', type: 'address' },
+      { name: "proposalId", internalType: "uint256", type: "uint256" },
+      { name: "voter", internalType: "address", type: "address" },
     ],
-    name: 'getReceipt',
+    name: "getReceipt",
     outputs: [
       {
-        name: '',
-        internalType: 'struct NounsDAOStorageV1Adjusted.Receipt',
-        type: 'tuple',
+        name: "",
+        internalType: "struct NounsDAOStorageV1Adjusted.Receipt",
+        type: "tuple",
         components: [
-          { name: 'hasVoted', internalType: 'bool', type: 'bool' },
-          { name: 'support', internalType: 'uint8', type: 'uint8' },
-          { name: 'votes', internalType: 'uint96', type: 'uint96' },
+          { name: "hasVoted", internalType: "bool", type: "bool" },
+          { name: "support", internalType: "uint8", type: "uint8" },
+          { name: "votes", internalType: "uint96", type: "uint96" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'implementation',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "implementation",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'timelock_', internalType: 'address', type: 'address' },
-      { name: 'nouns_', internalType: 'address', type: 'address' },
-      { name: 'vetoer_', internalType: 'address', type: 'address' },
-      { name: 'votingPeriod_', internalType: 'uint256', type: 'uint256' },
-      { name: 'votingDelay_', internalType: 'uint256', type: 'uint256' },
+      { name: "timelock_", internalType: "address", type: "address" },
+      { name: "nouns_", internalType: "address", type: "address" },
+      { name: "vetoer_", internalType: "address", type: "address" },
+      { name: "votingPeriod_", internalType: "uint256", type: "uint256" },
+      { name: "votingDelay_", internalType: "uint256", type: "uint256" },
       {
-        name: 'proposalThresholdBPS_',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "proposalThresholdBPS_",
+        internalType: "uint256",
+        type: "uint256",
       },
       {
-        name: 'dynamicQuorumParams_',
-        internalType: 'struct NounsDAOStorageV2.DynamicQuorumParams',
-        type: 'tuple',
+        name: "dynamicQuorumParams_",
+        internalType: "struct NounsDAOStorageV2.DynamicQuorumParams",
+        type: "tuple",
         components: [
-          { name: 'minQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'maxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'quorumCoefficient', internalType: 'uint32', type: 'uint32' },
+          { name: "minQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "maxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "quorumCoefficient", internalType: "uint32", type: "uint32" },
         ],
       },
     ],
-    name: 'initialize',
+    name: "initialize",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'address', type: 'address' }],
-    name: 'latestProposalIds',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "address", type: "address" }],
+    name: "latestProposalIds",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'maxQuorumVotes',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "maxQuorumVotes",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'minQuorumVotes',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "minQuorumVotes",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nouns',
+    name: "nouns",
     outputs: [
-      { name: '', internalType: 'contract NounsTokenLike', type: 'address' },
+      { name: "", internalType: "contract NounsTokenLike", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'pendingAdmin',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "pendingAdmin",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'pendingVetoer',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "pendingVetoer",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proposalCount',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "proposalCount",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proposalMaxOperations',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "proposalMaxOperations",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proposalThreshold',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "proposalThreshold",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proposalThresholdBPS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "proposalThresholdBPS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'proposals',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "proposals",
     outputs: [
       {
-        name: '',
-        internalType: 'struct NounsDAOStorageV2.ProposalCondensed',
-        type: 'tuple',
+        name: "",
+        internalType: "struct NounsDAOStorageV2.ProposalCondensed",
+        type: "tuple",
         components: [
-          { name: 'id', internalType: 'uint256', type: 'uint256' },
-          { name: 'proposer', internalType: 'address', type: 'address' },
+          { name: "id", internalType: "uint256", type: "uint256" },
+          { name: "proposer", internalType: "address", type: "address" },
           {
-            name: 'proposalThreshold',
-            internalType: 'uint256',
-            type: 'uint256',
+            name: "proposalThreshold",
+            internalType: "uint256",
+            type: "uint256",
           },
-          { name: 'quorumVotes', internalType: 'uint256', type: 'uint256' },
-          { name: 'eta', internalType: 'uint256', type: 'uint256' },
-          { name: 'startBlock', internalType: 'uint256', type: 'uint256' },
-          { name: 'endBlock', internalType: 'uint256', type: 'uint256' },
-          { name: 'forVotes', internalType: 'uint256', type: 'uint256' },
-          { name: 'againstVotes', internalType: 'uint256', type: 'uint256' },
-          { name: 'abstainVotes', internalType: 'uint256', type: 'uint256' },
-          { name: 'canceled', internalType: 'bool', type: 'bool' },
-          { name: 'vetoed', internalType: 'bool', type: 'bool' },
-          { name: 'executed', internalType: 'bool', type: 'bool' },
-          { name: 'totalSupply', internalType: 'uint256', type: 'uint256' },
-          { name: 'creationBlock', internalType: 'uint256', type: 'uint256' },
+          { name: "quorumVotes", internalType: "uint256", type: "uint256" },
+          { name: "eta", internalType: "uint256", type: "uint256" },
+          { name: "startBlock", internalType: "uint256", type: "uint256" },
+          { name: "endBlock", internalType: "uint256", type: "uint256" },
+          { name: "forVotes", internalType: "uint256", type: "uint256" },
+          { name: "againstVotes", internalType: "uint256", type: "uint256" },
+          { name: "abstainVotes", internalType: "uint256", type: "uint256" },
+          { name: "canceled", internalType: "bool", type: "bool" },
+          { name: "vetoed", internalType: "bool", type: "bool" },
+          { name: "executed", internalType: "bool", type: "bool" },
+          { name: "totalSupply", internalType: "uint256", type: "uint256" },
+          { name: "creationBlock", internalType: "uint256", type: "uint256" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'targets', internalType: 'address[]', type: 'address[]' },
-      { name: 'values', internalType: 'uint256[]', type: 'uint256[]' },
-      { name: 'signatures', internalType: 'string[]', type: 'string[]' },
-      { name: 'calldatas', internalType: 'bytes[]', type: 'bytes[]' },
-      { name: 'description', internalType: 'string', type: 'string' },
+      { name: "targets", internalType: "address[]", type: "address[]" },
+      { name: "values", internalType: "uint256[]", type: "uint256[]" },
+      { name: "signatures", internalType: "string[]", type: "string[]" },
+      { name: "calldatas", internalType: "bytes[]", type: "bytes[]" },
+      { name: "description", internalType: "string", type: "string" },
     ],
-    name: 'propose',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'nonpayable',
+    name: "propose",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'queue',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "queue",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    name: 'quorumParamsCheckpoints',
+    type: "function",
+    inputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    name: "quorumParamsCheckpoints",
     outputs: [
-      { name: 'fromBlock', internalType: 'uint32', type: 'uint32' },
+      { name: "fromBlock", internalType: "uint32", type: "uint32" },
       {
-        name: 'params',
-        internalType: 'struct NounsDAOStorageV2.DynamicQuorumParams',
-        type: 'tuple',
+        name: "params",
+        internalType: "struct NounsDAOStorageV2.DynamicQuorumParams",
+        type: "tuple",
         components: [
-          { name: 'minQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'maxQuorumVotesBPS', internalType: 'uint16', type: 'uint16' },
-          { name: 'quorumCoefficient', internalType: 'uint32', type: 'uint32' },
+          { name: "minQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "maxQuorumVotesBPS", internalType: "uint16", type: "uint16" },
+          { name: "quorumCoefficient", internalType: "uint32", type: "uint32" },
         ],
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'quorumVotes',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "quorumVotes",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'quorumVotesBPS',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "quorumVotesBPS",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'state',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "state",
     outputs: [
       {
-        name: '',
-        internalType: 'enum NounsDAOStorageV1Adjusted.ProposalState',
-        type: 'uint8',
+        name: "",
+        internalType: "enum NounsDAOStorageV1Adjusted.ProposalState",
+        type: "uint8",
       },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'timelock',
+    name: "timelock",
     outputs: [
-      { name: '', internalType: 'contract INounsDAOExecutor', type: 'address' },
+      { name: "", internalType: "contract INounsDAOExecutor", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'proposalId', internalType: 'uint256', type: 'uint256' }],
-    name: 'veto',
+    type: "function",
+    inputs: [{ name: "proposalId", internalType: "uint256", type: "uint256" }],
+    name: "veto",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'vetoer',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "vetoer",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'votingDelay',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "votingDelay",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'votingPeriod',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "votingPeriod",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
-  { type: 'receive', stateMutability: 'payable' },
-] as const
+  { type: "receive", stateMutability: "payable" },
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5d2c31ce16924c2a71d317e5bbfd5ce387854039)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0xa7c37f79ff5e6f932147fc69724b6ed432ca6aa7)
  */
 export const lilNounsGovernorAddress = {
-  1: '0x5d2C31ce16924C2a71D317e5BbFd5ce387854039',
-  11155111: '0xa7C37f79ff5E6F932147fC69724B6ED432CA6Aa7',
-} as const
+  1: "0x5d2C31ce16924C2a71D317e5BbFd5ce387854039",
+  11155111: "0xa7C37f79ff5E6F932147fC69724B6ED432CA6Aa7",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x5d2c31ce16924c2a71d317e5bbfd5ce387854039)
@@ -3307,7 +3307,7 @@ export const lilNounsGovernorAddress = {
 export const lilNounsGovernorConfig = {
   address: lilNounsGovernorAddress,
   abi: lilNounsGovernorAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsToken
@@ -3319,722 +3319,722 @@ export const lilNounsGovernorConfig = {
  */
 export const lilNounsTokenAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: '_lilnoundersDAO', internalType: 'address', type: 'address' },
-      { name: '_nounsDAO', internalType: 'address', type: 'address' },
-      { name: '_minter', internalType: 'address', type: 'address' },
+      { name: "_lilnoundersDAO", internalType: "address", type: "address" },
+      { name: "_nounsDAO", internalType: "address", type: "address" },
+      { name: "_minter", internalType: "address", type: "address" },
       {
-        name: '_descriptor',
-        internalType: 'contract INounsDescriptor',
-        type: 'address',
+        name: "_descriptor",
+        internalType: "contract INounsDescriptor",
+        type: "address",
       },
       {
-        name: '_seeder',
-        internalType: 'contract INounsSeeder',
-        type: 'address',
+        name: "_seeder",
+        internalType: "contract INounsSeeder",
+        type: "address",
       },
       {
-        name: '_proxyRegistry',
-        internalType: 'contract IProxyRegistry',
-        type: 'address',
+        name: "_proxyRegistry",
+        internalType: "contract IProxyRegistry",
+        type: "address",
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'approved',
-        internalType: 'address',
-        type: 'address',
+        name: "approved",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: true,
-      },
-    ],
-    name: 'Approval',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'operator',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      { name: 'approved', internalType: 'bool', type: 'bool', indexed: false },
-    ],
-    name: 'ApprovalForAll',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'delegator',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'fromDelegate',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'toDelegate',
-        internalType: 'address',
-        type: 'address',
+        name: "tokenId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
     ],
-    name: 'DelegateChanged',
+    name: "Approval",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'delegate',
-        internalType: 'address',
-        type: 'address',
+        name: "owner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'previousBalance',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "operator",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      { name: "approved", internalType: "bool", type: "bool", indexed: false },
+    ],
+    name: "ApprovalForAll",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "delegator",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "fromDelegate",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "toDelegate",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+    ],
+    name: "DelegateChanged",
+  },
+  {
+    type: "event",
+    anonymous: false,
+    inputs: [
+      {
+        name: "delegate",
+        internalType: "address",
+        type: "address",
+        indexed: true,
+      },
+      {
+        name: "previousBalance",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'newBalance',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newBalance",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
     ],
-    name: 'DelegateVotesChanged',
+    name: "DelegateVotesChanged",
   },
-  { type: 'event', anonymous: false, inputs: [], name: 'DescriptorLocked' },
+  { type: "event", anonymous: false, inputs: [], name: "DescriptorLocked" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'descriptor',
-        internalType: 'contract INounsDescriptor',
-        type: 'address',
+        name: "descriptor",
+        internalType: "contract INounsDescriptor",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'DescriptorUpdated',
+    name: "DescriptorUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'lilnoundersDAO',
-        internalType: 'address',
-        type: 'address',
+        name: "lilnoundersDAO",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'LilNoundersDAOUpdated',
+    name: "LilNoundersDAOUpdated",
   },
-  { type: 'event', anonymous: false, inputs: [], name: 'MinterLocked' },
+  { type: "event", anonymous: false, inputs: [], name: "MinterLocked" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'minter',
-        internalType: 'address',
-        type: 'address',
+        name: "minter",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'MinterUpdated',
+    name: "MinterUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "tokenId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
     ],
-    name: 'NounBurned',
+    name: "NounBurned",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "tokenId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
       {
-        name: 'seed',
-        internalType: 'struct INounsSeeder.Seed',
-        type: 'tuple',
+        name: "seed",
+        internalType: "struct INounsSeeder.Seed",
+        type: "tuple",
         components: [
-          { name: 'background', internalType: 'uint48', type: 'uint48' },
-          { name: 'body', internalType: 'uint48', type: 'uint48' },
-          { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-          { name: 'head', internalType: 'uint48', type: 'uint48' },
-          { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+          { name: "background", internalType: "uint48", type: "uint48" },
+          { name: "body", internalType: "uint48", type: "uint48" },
+          { name: "accessory", internalType: "uint48", type: "uint48" },
+          { name: "head", internalType: "uint48", type: "uint48" },
+          { name: "glasses", internalType: "uint48", type: "uint48" },
         ],
         indexed: false,
       },
     ],
-    name: 'NounCreated',
+    name: "NounCreated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'nounsDAO',
-        internalType: 'address',
-        type: 'address',
+        name: "nounsDAO",
+        internalType: "address",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'NounsDAOUpdated',
+    name: "NounsDAOUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "previousOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
+        name: "newOwner",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'OwnershipTransferred',
+    name: "OwnershipTransferred",
   },
-  { type: 'event', anonymous: false, inputs: [], name: 'SeederLocked' },
+  { type: "event", anonymous: false, inputs: [], name: "SeederLocked" },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'seeder',
-        internalType: 'contract INounsSeeder',
-        type: 'address',
+        name: "seeder",
+        internalType: "contract INounsSeeder",
+        type: "address",
         indexed: false,
       },
     ],
-    name: 'SeederUpdated',
+    name: "SeederUpdated",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
+      { name: "from", internalType: "address", type: "address", indexed: true },
+      { name: "to", internalType: "address", type: "address", indexed: true },
       {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "tokenId",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
     ],
-    name: 'Transfer',
+    name: "Transfer",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'DELEGATION_TYPEHASH',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "DELEGATION_TYPEHASH",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'DOMAIN_TYPEHASH',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'view',
+    name: "DOMAIN_TYPEHASH",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
     ],
-    name: 'approve',
+    name: "approve",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'balanceOf',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "owner", internalType: "address", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'nounId', internalType: 'uint256', type: 'uint256' }],
-    name: 'burn',
+    type: "function",
+    inputs: [{ name: "nounId", internalType: "uint256", type: "uint256" }],
+    name: "burn",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '', internalType: 'address', type: 'address' },
-      { name: '', internalType: 'uint32', type: 'uint32' },
+      { name: "", internalType: "address", type: "address" },
+      { name: "", internalType: "uint32", type: "uint32" },
     ],
-    name: 'checkpoints',
+    name: "checkpoints",
     outputs: [
-      { name: 'fromBlock', internalType: 'uint32', type: 'uint32' },
-      { name: 'votes', internalType: 'uint96', type: 'uint96' },
+      { name: "fromBlock", internalType: "uint32", type: "uint32" },
+      { name: "votes", internalType: "uint96", type: "uint96" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'contractURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "contractURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'dataURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "dataURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'decimals',
-    outputs: [{ name: '', internalType: 'uint8', type: 'uint8' }],
-    stateMutability: 'view',
+    name: "decimals",
+    outputs: [{ name: "", internalType: "uint8", type: "uint8" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'delegatee', internalType: 'address', type: 'address' }],
-    name: 'delegate',
+    type: "function",
+    inputs: [{ name: "delegatee", internalType: "address", type: "address" }],
+    name: "delegate",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'delegatee', internalType: 'address', type: 'address' },
-      { name: 'nonce', internalType: 'uint256', type: 'uint256' },
-      { name: 'expiry', internalType: 'uint256', type: 'uint256' },
-      { name: 'v', internalType: 'uint8', type: 'uint8' },
-      { name: 'r', internalType: 'bytes32', type: 'bytes32' },
-      { name: 's', internalType: 'bytes32', type: 'bytes32' },
+      { name: "delegatee", internalType: "address", type: "address" },
+      { name: "nonce", internalType: "uint256", type: "uint256" },
+      { name: "expiry", internalType: "uint256", type: "uint256" },
+      { name: "v", internalType: "uint8", type: "uint8" },
+      { name: "r", internalType: "bytes32", type: "bytes32" },
+      { name: "s", internalType: "bytes32", type: "bytes32" },
     ],
-    name: 'delegateBySig',
+    name: "delegateBySig",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'delegator', internalType: 'address', type: 'address' }],
-    name: 'delegates',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "delegator", internalType: "address", type: "address" }],
+    name: "delegates",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'descriptor',
+    name: "descriptor",
     outputs: [
-      { name: '', internalType: 'contract INounsDescriptor', type: 'address' },
+      { name: "", internalType: "contract INounsDescriptor", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'getApproved',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "getApproved",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'getCurrentVotes',
-    outputs: [{ name: '', internalType: 'uint96', type: 'uint96' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "account", internalType: "address", type: "address" }],
+    name: "getCurrentVotes",
+    outputs: [{ name: "", internalType: "uint96", type: "uint96" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'account', internalType: 'address', type: 'address' },
-      { name: 'blockNumber', internalType: 'uint256', type: 'uint256' },
+      { name: "account", internalType: "address", type: "address" },
+      { name: "blockNumber", internalType: "uint256", type: "uint256" },
     ],
-    name: 'getPriorVotes',
-    outputs: [{ name: '', internalType: 'uint96', type: 'uint96' }],
-    stateMutability: 'view',
+    name: "getPriorVotes",
+    outputs: [{ name: "", internalType: "uint96", type: "uint96" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'operator', internalType: 'address', type: 'address' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "operator", internalType: "address", type: "address" },
     ],
-    name: 'isApprovedForAll',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "isApprovedForAll",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'isDescriptorLocked',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "isDescriptorLocked",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'isMinterLocked',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "isMinterLocked",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'isSeederLocked',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    name: "isSeederLocked",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lilnoundersDAO',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "lilnoundersDAO",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lockDescriptor',
+    name: "lockDescriptor",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lockMinter',
+    name: "lockMinter",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'lockSeeder',
+    name: "lockSeeder",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'mint',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'nonpayable',
+    name: "mint",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'minter',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "minter",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "name",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'address', type: 'address' }],
-    name: 'nonces',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "address", type: "address" }],
+    name: "nonces",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'nounsDAO',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "nounsDAO",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'address', type: 'address' }],
-    name: 'numCheckpoints',
-    outputs: [{ name: '', internalType: 'uint32', type: 'uint32' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "address", type: "address" }],
+    name: "numCheckpoints",
+    outputs: [{ name: "", internalType: "uint32", type: "uint32" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "owner",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ownerOf',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "ownerOf",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'proxyRegistry',
+    name: "proxyRegistry",
     outputs: [
-      { name: '', internalType: 'contract IProxyRegistry', type: 'address' },
+      { name: "", internalType: "contract IProxyRegistry", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'renounceOwnership',
+    name: "renounceOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
     ],
-    name: 'safeTransferFrom',
+    name: "safeTransferFrom",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: '_data', internalType: 'bytes', type: 'bytes' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
+      { name: "_data", internalType: "bytes", type: "bytes" },
     ],
-    name: 'safeTransferFrom',
+    name: "safeTransferFrom",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'seeder',
+    name: "seeder",
     outputs: [
-      { name: '', internalType: 'contract INounsSeeder', type: 'address' },
+      { name: "", internalType: "contract INounsSeeder", type: "address" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    name: 'seeds',
+    type: "function",
+    inputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    name: "seeds",
     outputs: [
-      { name: 'background', internalType: 'uint48', type: 'uint48' },
-      { name: 'body', internalType: 'uint48', type: 'uint48' },
-      { name: 'accessory', internalType: 'uint48', type: 'uint48' },
-      { name: 'head', internalType: 'uint48', type: 'uint48' },
-      { name: 'glasses', internalType: 'uint48', type: 'uint48' },
+      { name: "background", internalType: "uint48", type: "uint48" },
+      { name: "body", internalType: "uint48", type: "uint48" },
+      { name: "accessory", internalType: "uint48", type: "uint48" },
+      { name: "head", internalType: "uint48", type: "uint48" },
+      { name: "glasses", internalType: "uint48", type: "uint48" },
     ],
-    stateMutability: 'view',
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'operator', internalType: 'address', type: 'address' },
-      { name: 'approved', internalType: 'bool', type: 'bool' },
+      { name: "operator", internalType: "address", type: "address" },
+      { name: "approved", internalType: "bool", type: "bool" },
     ],
-    name: 'setApprovalForAll',
+    name: "setApprovalForAll",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'newContractURIHash', internalType: 'string', type: 'string' },
+      { name: "newContractURIHash", internalType: "string", type: "string" },
     ],
-    name: 'setContractURIHash',
+    name: "setContractURIHash",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: '_descriptor',
-        internalType: 'contract INounsDescriptor',
-        type: 'address',
+        name: "_descriptor",
+        internalType: "contract INounsDescriptor",
+        type: "address",
       },
     ],
-    name: 'setDescriptor',
+    name: "setDescriptor",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: '_lilnoundersDAO', internalType: 'address', type: 'address' },
+      { name: "_lilnoundersDAO", internalType: "address", type: "address" },
     ],
-    name: 'setLilNoundersDAO',
+    name: "setLilNoundersDAO",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_minter', internalType: 'address', type: 'address' }],
-    name: 'setMinter',
+    type: "function",
+    inputs: [{ name: "_minter", internalType: "address", type: "address" }],
+    name: "setMinter",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '_nounsDAO', internalType: 'address', type: 'address' }],
-    name: 'setNounsDAO',
+    type: "function",
+    inputs: [{ name: "_nounsDAO", internalType: "address", type: "address" }],
+    name: "setNounsDAO",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
       {
-        name: '_seeder',
-        internalType: 'contract INounsSeeder',
-        type: 'address',
+        name: "_seeder",
+        internalType: "contract INounsSeeder",
+        type: "address",
       },
     ],
-    name: 'setSeeder',
+    name: "setSeeder",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'interfaceId', internalType: 'bytes4', type: 'bytes4' }],
-    name: 'supportsInterface',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "interfaceId", internalType: "bytes4", type: "bytes4" }],
+    name: "supportsInterface",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'symbol',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    name: "symbol",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'tokenByIndex',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "index", internalType: "uint256", type: "uint256" }],
+    name: "tokenByIndex",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'index', internalType: 'uint256', type: 'uint256' },
+      { name: "owner", internalType: "address", type: "address" },
+      { name: "index", internalType: "uint256", type: "uint256" },
     ],
-    name: 'tokenOfOwnerByIndex',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "tokenOfOwnerByIndex",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'tokenURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "tokenId", internalType: "uint256", type: "uint256" }],
+    name: "tokenURI",
+    outputs: [{ name: "", internalType: "string", type: "string" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'totalSupply',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "totalSupply",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
+      { name: "from", internalType: "address", type: "address" },
+      { name: "to", internalType: "address", type: "address" },
+      { name: "tokenId", internalType: "uint256", type: "uint256" },
     ],
-    name: 'transferFrom',
+    name: "transferFrom",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
+    type: "function",
+    inputs: [{ name: "newOwner", internalType: "address", type: "address" }],
+    name: "transferOwnership",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'delegator', internalType: 'address', type: 'address' }],
-    name: 'votesToDelegate',
-    outputs: [{ name: '', internalType: 'uint96', type: 'uint96' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "delegator", internalType: "address", type: "address" }],
+    name: "votesToDelegate",
+    outputs: [{ name: "", internalType: "uint96", type: "uint96" }],
+    stateMutability: "view",
   },
-] as const
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x4b10701bfd7bfedc47d50562b76b436fbb5bdb3b)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0x6e48e79f718776cf412a87e047722dbfda5b465d)
  */
 export const lilNounsTokenAddress = {
-  1: '0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B',
-  11155111: '0x6e48e79f718776CF412a87e047722dBFda5B465D',
-} as const
+  1: "0x4b10701Bfd7BFEdc47d50562b76b436fbB5BdB3B",
+  11155111: "0x6e48e79f718776CF412a87e047722dBFda5B465D",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0x4b10701bfd7bfedc47d50562b76b436fbb5bdb3b)
@@ -4043,7 +4043,7 @@ export const lilNounsTokenAddress = {
 export const lilNounsTokenConfig = {
   address: lilNounsTokenAddress,
   abi: lilNounsTokenAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // LilNounsTreasury
@@ -4055,274 +4055,274 @@ export const lilNounsTokenConfig = {
  */
 export const lilNounsTreasuryAbi = [
   {
-    type: 'constructor',
+    type: "constructor",
     inputs: [
-      { name: 'admin_', internalType: 'address', type: 'address' },
-      { name: 'delay_', internalType: 'uint256', type: 'uint256' },
+      { name: "admin_", internalType: "address", type: "address" },
+      { name: "delay_", internalType: "uint256", type: "uint256" },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'txHash',
-        internalType: 'bytes32',
-        type: 'bytes32',
+        name: "txHash",
+        internalType: "bytes32",
+        type: "bytes32",
         indexed: true,
       },
       {
-        name: 'target',
-        internalType: 'address',
-        type: 'address',
+        name: "target",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'signature',
-        internalType: 'string',
-        type: 'string',
+        name: "signature",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
-      { name: 'data', internalType: 'bytes', type: 'bytes', indexed: false },
-      { name: 'eta', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "data", internalType: "bytes", type: "bytes", indexed: false },
+      { name: "eta", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'CancelTransaction',
+    name: "CancelTransaction",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'txHash',
-        internalType: 'bytes32',
-        type: 'bytes32',
+        name: "txHash",
+        internalType: "bytes32",
+        type: "bytes32",
         indexed: true,
       },
       {
-        name: 'target',
-        internalType: 'address',
-        type: 'address',
+        name: "target",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'signature',
-        internalType: 'string',
-        type: 'string',
+        name: "signature",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
-      { name: 'data', internalType: 'bytes', type: 'bytes', indexed: false },
-      { name: 'eta', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "data", internalType: "bytes", type: "bytes", indexed: false },
+      { name: "eta", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'ExecuteTransaction',
+    name: "ExecuteTransaction",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'newAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "newAdmin",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NewAdmin',
+    name: "NewAdmin",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'newDelay',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "newDelay",
+        internalType: "uint256",
+        type: "uint256",
         indexed: true,
       },
     ],
-    name: 'NewDelay',
+    name: "NewDelay",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'newPendingAdmin',
-        internalType: 'address',
-        type: 'address',
+        name: "newPendingAdmin",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
     ],
-    name: 'NewPendingAdmin',
+    name: "NewPendingAdmin",
   },
   {
-    type: 'event',
+    type: "event",
     anonymous: false,
     inputs: [
       {
-        name: 'txHash',
-        internalType: 'bytes32',
-        type: 'bytes32',
+        name: "txHash",
+        internalType: "bytes32",
+        type: "bytes32",
         indexed: true,
       },
       {
-        name: 'target',
-        internalType: 'address',
-        type: 'address',
+        name: "target",
+        internalType: "address",
+        type: "address",
         indexed: true,
       },
       {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
+        name: "value",
+        internalType: "uint256",
+        type: "uint256",
         indexed: false,
       },
       {
-        name: 'signature',
-        internalType: 'string',
-        type: 'string',
+        name: "signature",
+        internalType: "string",
+        type: "string",
         indexed: false,
       },
-      { name: 'data', internalType: 'bytes', type: 'bytes', indexed: false },
-      { name: 'eta', internalType: 'uint256', type: 'uint256', indexed: false },
+      { name: "data", internalType: "bytes", type: "bytes", indexed: false },
+      { name: "eta", internalType: "uint256", type: "uint256", indexed: false },
     ],
-    name: 'QueueTransaction',
+    name: "QueueTransaction",
   },
-  { type: 'fallback', stateMutability: 'payable' },
+  { type: "fallback", stateMutability: "payable" },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'GRACE_PERIOD',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "GRACE_PERIOD",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MAXIMUM_DELAY',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MAXIMUM_DELAY",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'MINIMUM_DELAY',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "MINIMUM_DELAY",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'acceptAdmin',
+    name: "acceptAdmin",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'admin',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "admin",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'target', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
-      { name: 'signature', internalType: 'string', type: 'string' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
-      { name: 'eta', internalType: 'uint256', type: 'uint256' },
+      { name: "target", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
+      { name: "signature", internalType: "string", type: "string" },
+      { name: "data", internalType: "bytes", type: "bytes" },
+      { name: "eta", internalType: "uint256", type: "uint256" },
     ],
-    name: 'cancelTransaction',
+    name: "cancelTransaction",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'delay',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-    stateMutability: 'view',
+    name: "delay",
+    outputs: [{ name: "", internalType: "uint256", type: "uint256" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'target', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
-      { name: 'signature', internalType: 'string', type: 'string' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
-      { name: 'eta', internalType: 'uint256', type: 'uint256' },
+      { name: "target", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
+      { name: "signature", internalType: "string", type: "string" },
+      { name: "data", internalType: "bytes", type: "bytes" },
+      { name: "eta", internalType: "uint256", type: "uint256" },
     ],
-    name: 'executeTransaction',
-    outputs: [{ name: '', internalType: 'bytes', type: 'bytes' }],
-    stateMutability: 'nonpayable',
+    name: "executeTransaction",
+    outputs: [{ name: "", internalType: "bytes", type: "bytes" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [],
-    name: 'pendingAdmin',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-    stateMutability: 'view',
+    name: "pendingAdmin",
+    outputs: [{ name: "", internalType: "address", type: "address" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'target', internalType: 'address', type: 'address' },
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
-      { name: 'signature', internalType: 'string', type: 'string' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
-      { name: 'eta', internalType: 'uint256', type: 'uint256' },
+      { name: "target", internalType: "address", type: "address" },
+      { name: "value", internalType: "uint256", type: "uint256" },
+      { name: "signature", internalType: "string", type: "string" },
+      { name: "data", internalType: "bytes", type: "bytes" },
+      { name: "eta", internalType: "uint256", type: "uint256" },
     ],
-    name: 'queueTransaction',
-    outputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    stateMutability: 'nonpayable',
+    name: "queueTransaction",
+    outputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
-    inputs: [{ name: '', internalType: 'bytes32', type: 'bytes32' }],
-    name: 'queuedTransactions',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'view',
+    type: "function",
+    inputs: [{ name: "", internalType: "bytes32", type: "bytes32" }],
+    name: "queuedTransactions",
+    outputs: [{ name: "", internalType: "bool", type: "bool" }],
+    stateMutability: "view",
   },
   {
-    type: 'function',
-    inputs: [{ name: 'delay_', internalType: 'uint256', type: 'uint256' }],
-    name: 'setDelay',
+    type: "function",
+    inputs: [{ name: "delay_", internalType: "uint256", type: "uint256" }],
+    name: "setDelay",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
   {
-    type: 'function',
+    type: "function",
     inputs: [
-      { name: 'pendingAdmin_', internalType: 'address', type: 'address' },
+      { name: "pendingAdmin_", internalType: "address", type: "address" },
     ],
-    name: 'setPendingAdmin',
+    name: "setPendingAdmin",
     outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: "nonpayable",
   },
-  { type: 'receive', stateMutability: 'payable' },
-] as const
+  { type: "receive", stateMutability: "payable" },
+] as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xd5f279ff9eb21c6d40c8f345a66f2751c4eea1fb)
  * - [__View Contract on Sepolia Etherscan__](https://sepolia.etherscan.io/address/0xe54f098b1880c536e0083720922b8a365fb403dc)
  */
 export const lilNounsTreasuryAddress = {
-  1: '0xd5f279ff9EB21c6D40C8f345a66f2751C4eeA1fB',
-  11155111: '0xE54f098b1880C536e0083720922b8a365FB403DC',
-} as const
+  1: "0xd5f279ff9EB21c6D40C8f345a66f2751C4eeA1fB",
+  11155111: "0xE54f098b1880C536e0083720922b8a365FB403DC",
+} as const;
 
 /**
  * - [__View Contract on Ethereum Etherscan__](https://etherscan.io/address/0xd5f279ff9eb21c6d40c8f345a66f2751c4eea1fb)
@@ -4331,7 +4331,7 @@ export const lilNounsTreasuryAddress = {
 export const lilNounsTreasuryConfig = {
   address: lilNounsTreasuryAddress,
   abi: lilNounsTreasuryAbi,
-} as const
+} as const;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // React
@@ -4346,7 +4346,7 @@ export const lilNounsTreasuryConfig = {
 export const useReadLilNounsAuction = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsAuctionAbi,
   address: lilNounsAuctionAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"fetchNextNoun"`
@@ -4358,8 +4358,8 @@ export const useReadLilNounsAuctionFetchNextNoun =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'fetchNextNoun',
-  })
+    functionName: "fetchNextNoun",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"fetchNoun"`
@@ -4371,8 +4371,8 @@ export const useReadLilNounsAuctionFetchNoun =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'fetchNoun',
-  })
+    functionName: "fetchNoun",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"getCurrentVRGDAPrice"`
@@ -4384,8 +4384,8 @@ export const useReadLilNounsAuctionGetCurrentVrgdaPrice =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'getCurrentVRGDAPrice',
-  })
+    functionName: "getCurrentVRGDAPrice",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"getSeederBlockNumber"`
@@ -4397,8 +4397,8 @@ export const useReadLilNounsAuctionGetSeederBlockNumber =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'getSeederBlockNumber',
-  })
+    functionName: "getSeederBlockNumber",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"getTargetSaleTime"`
@@ -4410,8 +4410,8 @@ export const useReadLilNounsAuctionGetTargetSaleTime =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'getTargetSaleTime',
-  })
+    functionName: "getTargetSaleTime",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"getVRGDAPrice"`
@@ -4423,8 +4423,8 @@ export const useReadLilNounsAuctionGetVrgdaPrice =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'getVRGDAPrice',
-  })
+    functionName: "getVRGDAPrice",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"lilNounderRewardNouns"`
@@ -4436,8 +4436,8 @@ export const useReadLilNounsAuctionLilNounderRewardNouns =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'lilNounderRewardNouns',
-  })
+    functionName: "lilNounderRewardNouns",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nextNounId"`
@@ -4449,8 +4449,8 @@ export const useReadLilNounsAuctionNextNounId =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nextNounId',
-  })
+    functionName: "nextNounId",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nextNounIdForCaller"`
@@ -4462,8 +4462,8 @@ export const useReadLilNounsAuctionNextNounIdForCaller =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nextNounIdForCaller',
-  })
+    functionName: "nextNounIdForCaller",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nounsDAORewardNouns"`
@@ -4475,8 +4475,8 @@ export const useReadLilNounsAuctionNounsDaoRewardNouns =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nounsDAORewardNouns',
-  })
+    functionName: "nounsDAORewardNouns",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nounsDescriptor"`
@@ -4488,8 +4488,8 @@ export const useReadLilNounsAuctionNounsDescriptor =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nounsDescriptor',
-  })
+    functionName: "nounsDescriptor",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nounsSeeder"`
@@ -4501,8 +4501,8 @@ export const useReadLilNounsAuctionNounsSeeder =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nounsSeeder',
-  })
+    functionName: "nounsSeeder",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nounsSoldAtAuction"`
@@ -4514,8 +4514,8 @@ export const useReadLilNounsAuctionNounsSoldAtAuction =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nounsSoldAtAuction',
-  })
+    functionName: "nounsSoldAtAuction",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"nounsToken"`
@@ -4527,8 +4527,8 @@ export const useReadLilNounsAuctionNounsToken =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'nounsToken',
-  })
+    functionName: "nounsToken",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"owner"`
@@ -4539,8 +4539,8 @@ export const useReadLilNounsAuctionNounsToken =
 export const useReadLilNounsAuctionOwner = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsAuctionAbi,
   address: lilNounsAuctionAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"paused"`
@@ -4552,9 +4552,9 @@ export const useReadLilNounsAuctionPaused = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'paused',
+    functionName: "paused",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"poolSize"`
@@ -4566,8 +4566,8 @@ export const useReadLilNounsAuctionPoolSize =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'poolSize',
-  })
+    functionName: "poolSize",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"proxiableUUID"`
@@ -4579,8 +4579,8 @@ export const useReadLilNounsAuctionProxiableUuid =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'proxiableUUID',
-  })
+    functionName: "proxiableUUID",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"reservePrice"`
@@ -4592,8 +4592,8 @@ export const useReadLilNounsAuctionReservePrice =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'reservePrice',
-  })
+    functionName: "reservePrice",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"seederBlockNumber"`
@@ -4605,8 +4605,8 @@ export const useReadLilNounsAuctionSeederBlockNumber =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'seederBlockNumber',
-  })
+    functionName: "seederBlockNumber",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"startTime"`
@@ -4618,8 +4618,8 @@ export const useReadLilNounsAuctionStartTime =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'startTime',
-  })
+    functionName: "startTime",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"targetPrice"`
@@ -4631,8 +4631,8 @@ export const useReadLilNounsAuctionTargetPrice =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'targetPrice',
-  })
+    functionName: "targetPrice",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"updateInterval"`
@@ -4644,8 +4644,8 @@ export const useReadLilNounsAuctionUpdateInterval =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'updateInterval',
-  })
+    functionName: "updateInterval",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"usedBlockNumbers"`
@@ -4657,8 +4657,8 @@ export const useReadLilNounsAuctionUsedBlockNumbers =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'usedBlockNumbers',
-  })
+    functionName: "usedBlockNumbers",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"wethAddress"`
@@ -4670,8 +4670,8 @@ export const useReadLilNounsAuctionWethAddress =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'wethAddress',
-  })
+    functionName: "wethAddress",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__
@@ -4682,7 +4682,7 @@ export const useReadLilNounsAuctionWethAddress =
 export const useWriteLilNounsAuction = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsAuctionAbi,
   address: lilNounsAuctionAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"buyNow"`
@@ -4694,8 +4694,8 @@ export const useWriteLilNounsAuctionBuyNow =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'buyNow',
-  })
+    functionName: "buyNow",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"initialize"`
@@ -4707,8 +4707,8 @@ export const useWriteLilNounsAuctionInitialize =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"pause"`
@@ -4720,8 +4720,8 @@ export const useWriteLilNounsAuctionPause =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'pause',
-  })
+    functionName: "pause",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -4733,8 +4733,8 @@ export const useWriteLilNounsAuctionRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setNounsDescriptor"`
@@ -4746,8 +4746,8 @@ export const useWriteLilNounsAuctionSetNounsDescriptor =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setNounsDescriptor',
-  })
+    functionName: "setNounsDescriptor",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setNounsSeeder"`
@@ -4759,8 +4759,8 @@ export const useWriteLilNounsAuctionSetNounsSeeder =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setNounsSeeder',
-  })
+    functionName: "setNounsSeeder",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setPoolSize"`
@@ -4772,8 +4772,8 @@ export const useWriteLilNounsAuctionSetPoolSize =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setPoolSize',
-  })
+    functionName: "setPoolSize",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setReservePrice"`
@@ -4785,8 +4785,8 @@ export const useWriteLilNounsAuctionSetReservePrice =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setReservePrice',
-  })
+    functionName: "setReservePrice",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setUpdateInterval"`
@@ -4798,8 +4798,8 @@ export const useWriteLilNounsAuctionSetUpdateInterval =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setUpdateInterval',
-  })
+    functionName: "setUpdateInterval",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"transferOwnership"`
@@ -4811,8 +4811,8 @@ export const useWriteLilNounsAuctionTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"unpause"`
@@ -4824,8 +4824,8 @@ export const useWriteLilNounsAuctionUnpause =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'unpause',
-  })
+    functionName: "unpause",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"upgradeTo"`
@@ -4837,8 +4837,8 @@ export const useWriteLilNounsAuctionUpgradeTo =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'upgradeTo',
-  })
+    functionName: "upgradeTo",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -4850,8 +4850,8 @@ export const useWriteLilNounsAuctionUpgradeToAndCall =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__
@@ -4863,7 +4863,7 @@ export const useSimulateLilNounsAuction =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"buyNow"`
@@ -4875,8 +4875,8 @@ export const useSimulateLilNounsAuctionBuyNow =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'buyNow',
-  })
+    functionName: "buyNow",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"initialize"`
@@ -4888,8 +4888,8 @@ export const useSimulateLilNounsAuctionInitialize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"pause"`
@@ -4901,8 +4901,8 @@ export const useSimulateLilNounsAuctionPause =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'pause',
-  })
+    functionName: "pause",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -4914,8 +4914,8 @@ export const useSimulateLilNounsAuctionRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setNounsDescriptor"`
@@ -4927,8 +4927,8 @@ export const useSimulateLilNounsAuctionSetNounsDescriptor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setNounsDescriptor',
-  })
+    functionName: "setNounsDescriptor",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setNounsSeeder"`
@@ -4940,8 +4940,8 @@ export const useSimulateLilNounsAuctionSetNounsSeeder =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setNounsSeeder',
-  })
+    functionName: "setNounsSeeder",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setPoolSize"`
@@ -4953,8 +4953,8 @@ export const useSimulateLilNounsAuctionSetPoolSize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setPoolSize',
-  })
+    functionName: "setPoolSize",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setReservePrice"`
@@ -4966,8 +4966,8 @@ export const useSimulateLilNounsAuctionSetReservePrice =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setReservePrice',
-  })
+    functionName: "setReservePrice",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"setUpdateInterval"`
@@ -4979,8 +4979,8 @@ export const useSimulateLilNounsAuctionSetUpdateInterval =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'setUpdateInterval',
-  })
+    functionName: "setUpdateInterval",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"transferOwnership"`
@@ -4992,8 +4992,8 @@ export const useSimulateLilNounsAuctionTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"unpause"`
@@ -5005,8 +5005,8 @@ export const useSimulateLilNounsAuctionUnpause =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'unpause',
-  })
+    functionName: "unpause",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"upgradeTo"`
@@ -5018,8 +5018,8 @@ export const useSimulateLilNounsAuctionUpgradeTo =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'upgradeTo',
-  })
+    functionName: "upgradeTo",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -5031,8 +5031,8 @@ export const useSimulateLilNounsAuctionUpgradeToAndCall =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__
@@ -5044,7 +5044,7 @@ export const useWatchLilNounsAuctionEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"AuctionReservePriceUpdated"`
@@ -5056,8 +5056,8 @@ export const useWatchLilNounsAuctionAuctionReservePriceUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'AuctionReservePriceUpdated',
-  })
+    eventName: "AuctionReservePriceUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"AuctionSettled"`
@@ -5069,8 +5069,8 @@ export const useWatchLilNounsAuctionAuctionSettledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'AuctionSettled',
-  })
+    eventName: "AuctionSettled",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"AuctionUpdateIntervalUpdated"`
@@ -5082,8 +5082,8 @@ export const useWatchLilNounsAuctionAuctionUpdateIntervalUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'AuctionUpdateIntervalUpdated',
-  })
+    eventName: "AuctionUpdateIntervalUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"DescriptorUpdated"`
@@ -5095,8 +5095,8 @@ export const useWatchLilNounsAuctionDescriptorUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'DescriptorUpdated',
-  })
+    eventName: "DescriptorUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"Initialized"`
@@ -5108,8 +5108,8 @@ export const useWatchLilNounsAuctionInitializedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'Initialized',
-  })
+    eventName: "Initialized",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -5121,8 +5121,8 @@ export const useWatchLilNounsAuctionOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"Paused"`
@@ -5134,8 +5134,8 @@ export const useWatchLilNounsAuctionPausedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'Paused',
-  })
+    eventName: "Paused",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"PoolSizeUpdated"`
@@ -5147,8 +5147,8 @@ export const useWatchLilNounsAuctionPoolSizeUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'PoolSizeUpdated',
-  })
+    eventName: "PoolSizeUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"SeederUpdated"`
@@ -5160,8 +5160,8 @@ export const useWatchLilNounsAuctionSeederUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'SeederUpdated',
-  })
+    eventName: "SeederUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"Unpaused"`
@@ -5173,8 +5173,8 @@ export const useWatchLilNounsAuctionUnpausedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'Unpaused',
-  })
+    eventName: "Unpaused",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsAuctionAbi}__ and `eventName` set to `"Upgraded"`
@@ -5186,8 +5186,8 @@ export const useWatchLilNounsAuctionUpgradedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsAuctionAbi,
     address: lilNounsAuctionAddress,
-    eventName: 'Upgraded',
-  })
+    eventName: "Upgraded",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__
@@ -5198,7 +5198,7 @@ export const useWatchLilNounsAuctionUpgradedEvent =
 export const useReadLilNounsData = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsDataAbi,
   address: lilNounsDataAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"MAX_PROPOSAL_CALLS"`
@@ -5210,8 +5210,8 @@ export const useReadLilNounsDataMaxProposalCalls =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'MAX_PROPOSAL_CALLS',
-  })
+    functionName: "MAX_PROPOSAL_CALLS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"PRIOR_VOTES_BLOCKS_AGO"`
@@ -5223,8 +5223,8 @@ export const useReadLilNounsDataPriorVotesBlocksAgo =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'PRIOR_VOTES_BLOCKS_AGO',
-  })
+    functionName: "PRIOR_VOTES_BLOCKS_AGO",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
@@ -5236,8 +5236,8 @@ export const useReadLilNounsDataUpgradeInterfaceVersion =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'UPGRADE_INTERFACE_VERSION',
-  })
+    functionName: "UPGRADE_INTERFACE_VERSION",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"createCandidateCost"`
@@ -5249,8 +5249,8 @@ export const useReadLilNounsDataCreateCandidateCost =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'createCandidateCost',
-  })
+    functionName: "createCandidateCost",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"feeRecipient"`
@@ -5262,8 +5262,8 @@ export const useReadLilNounsDataFeeRecipient =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'feeRecipient',
-  })
+    functionName: "feeRecipient",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"owner"`
@@ -5274,8 +5274,8 @@ export const useReadLilNounsDataFeeRecipient =
 export const useReadLilNounsDataOwner = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsDataAbi,
   address: lilNounsDataAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"pendingOwner"`
@@ -5287,8 +5287,8 @@ export const useReadLilNounsDataPendingOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'pendingOwner',
-  })
+    functionName: "pendingOwner",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"propCandidates"`
@@ -5300,8 +5300,8 @@ export const useReadLilNounsDataPropCandidates =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'propCandidates',
-  })
+    functionName: "propCandidates",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"proxiableUUID"`
@@ -5313,8 +5313,8 @@ export const useReadLilNounsDataProxiableUuid =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'proxiableUUID',
-  })
+    functionName: "proxiableUUID",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"token"`
@@ -5325,8 +5325,8 @@ export const useReadLilNounsDataProxiableUuid =
 export const useReadLilNounsDataToken = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsDataAbi,
   address: lilNounsDataAddress,
-  functionName: 'token',
-})
+  functionName: "token",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"updateCandidateCost"`
@@ -5338,8 +5338,8 @@ export const useReadLilNounsDataUpdateCandidateCost =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'updateCandidateCost',
-  })
+    functionName: "updateCandidateCost",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__
@@ -5350,7 +5350,7 @@ export const useReadLilNounsDataUpdateCandidateCost =
 export const useWriteLilNounsData = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsDataAbi,
   address: lilNounsDataAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
@@ -5362,8 +5362,8 @@ export const useWriteLilNounsDataAcceptOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'acceptOwnership',
-  })
+    functionName: "acceptOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"cancelProposalCandidate"`
@@ -5375,8 +5375,8 @@ export const useWriteLilNounsDataCancelProposalCandidate =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'cancelProposalCandidate',
-  })
+    functionName: "cancelProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"createProposalCandidate"`
@@ -5388,8 +5388,8 @@ export const useWriteLilNounsDataCreateProposalCandidate =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'createProposalCandidate',
-  })
+    functionName: "createProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
@@ -5401,8 +5401,8 @@ export const useWriteLilNounsDataInitialize =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initializeV2"`
@@ -5414,8 +5414,8 @@ export const useWriteLilNounsDataInitializeV2 =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'initializeV2',
-  })
+    functionName: "initializeV2",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -5427,8 +5427,8 @@ export const useWriteLilNounsDataRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendCandidateFeedback"`
@@ -5440,8 +5440,8 @@ export const useWriteLilNounsDataSendCandidateFeedback =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'sendCandidateFeedback',
-  })
+    functionName: "sendCandidateFeedback",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
@@ -5453,8 +5453,8 @@ export const useWriteLilNounsDataSendFeedback =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'sendFeedback',
-  })
+    functionName: "sendFeedback",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setCreateCandidateCost"`
@@ -5466,8 +5466,8 @@ export const useWriteLilNounsDataSetCreateCandidateCost =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setCreateCandidateCost',
-  })
+    functionName: "setCreateCandidateCost",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setFeeRecipient"`
@@ -5479,8 +5479,8 @@ export const useWriteLilNounsDataSetFeeRecipient =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setFeeRecipient',
-  })
+    functionName: "setFeeRecipient",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setUpdateCandidateCost"`
@@ -5492,8 +5492,8 @@ export const useWriteLilNounsDataSetUpdateCandidateCost =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setUpdateCandidateCost',
-  })
+    functionName: "setUpdateCandidateCost",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
@@ -5505,8 +5505,8 @@ export const useWriteLilNounsDataTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"updateProposalCandidate"`
@@ -5518,8 +5518,8 @@ export const useWriteLilNounsDataUpdateProposalCandidate =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'updateProposalCandidate',
-  })
+    functionName: "updateProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -5531,8 +5531,8 @@ export const useWriteLilNounsDataUpgradeToAndCall =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"withdrawETH"`
@@ -5544,8 +5544,8 @@ export const useWriteLilNounsDataWithdrawEth =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'withdrawETH',
-  })
+    functionName: "withdrawETH",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__
@@ -5556,7 +5556,7 @@ export const useWriteLilNounsDataWithdrawEth =
 export const useSimulateLilNounsData = /*#__PURE__*/ createUseSimulateContract({
   abi: lilNounsDataAbi,
   address: lilNounsDataAddress,
-})
+});
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"acceptOwnership"`
@@ -5568,8 +5568,8 @@ export const useSimulateLilNounsDataAcceptOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'acceptOwnership',
-  })
+    functionName: "acceptOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"cancelProposalCandidate"`
@@ -5581,8 +5581,8 @@ export const useSimulateLilNounsDataCancelProposalCandidate =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'cancelProposalCandidate',
-  })
+    functionName: "cancelProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"createProposalCandidate"`
@@ -5594,8 +5594,8 @@ export const useSimulateLilNounsDataCreateProposalCandidate =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'createProposalCandidate',
-  })
+    functionName: "createProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initialize"`
@@ -5607,8 +5607,8 @@ export const useSimulateLilNounsDataInitialize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"initializeV2"`
@@ -5620,8 +5620,8 @@ export const useSimulateLilNounsDataInitializeV2 =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'initializeV2',
-  })
+    functionName: "initializeV2",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -5633,8 +5633,8 @@ export const useSimulateLilNounsDataRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendCandidateFeedback"`
@@ -5646,8 +5646,8 @@ export const useSimulateLilNounsDataSendCandidateFeedback =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'sendCandidateFeedback',
-  })
+    functionName: "sendCandidateFeedback",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"sendFeedback"`
@@ -5659,8 +5659,8 @@ export const useSimulateLilNounsDataSendFeedback =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'sendFeedback',
-  })
+    functionName: "sendFeedback",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setCreateCandidateCost"`
@@ -5672,8 +5672,8 @@ export const useSimulateLilNounsDataSetCreateCandidateCost =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setCreateCandidateCost',
-  })
+    functionName: "setCreateCandidateCost",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setFeeRecipient"`
@@ -5685,8 +5685,8 @@ export const useSimulateLilNounsDataSetFeeRecipient =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setFeeRecipient',
-  })
+    functionName: "setFeeRecipient",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"setUpdateCandidateCost"`
@@ -5698,8 +5698,8 @@ export const useSimulateLilNounsDataSetUpdateCandidateCost =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'setUpdateCandidateCost',
-  })
+    functionName: "setUpdateCandidateCost",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"transferOwnership"`
@@ -5711,8 +5711,8 @@ export const useSimulateLilNounsDataTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"updateProposalCandidate"`
@@ -5724,8 +5724,8 @@ export const useSimulateLilNounsDataUpdateProposalCandidate =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'updateProposalCandidate',
-  })
+    functionName: "updateProposalCandidate",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -5737,8 +5737,8 @@ export const useSimulateLilNounsDataUpgradeToAndCall =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDataAbi}__ and `functionName` set to `"withdrawETH"`
@@ -5750,8 +5750,8 @@ export const useSimulateLilNounsDataWithdrawEth =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    functionName: 'withdrawETH',
-  })
+    functionName: "withdrawETH",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__
@@ -5763,7 +5763,7 @@ export const useWatchLilNounsDataEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"CandidateFeedbackSent"`
@@ -5775,8 +5775,8 @@ export const useWatchLilNounsDataCandidateFeedbackSentEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'CandidateFeedbackSent',
-  })
+    eventName: "CandidateFeedbackSent",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"CreateCandidateCostSet"`
@@ -5788,8 +5788,8 @@ export const useWatchLilNounsDataCreateCandidateCostSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'CreateCandidateCostSet',
-  })
+    eventName: "CreateCandidateCostSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"ETHWithdrawn"`
@@ -5801,8 +5801,8 @@ export const useWatchLilNounsDataEthWithdrawnEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'ETHWithdrawn',
-  })
+    eventName: "ETHWithdrawn",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"FeeRecipientSet"`
@@ -5814,8 +5814,8 @@ export const useWatchLilNounsDataFeeRecipientSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'FeeRecipientSet',
-  })
+    eventName: "FeeRecipientSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"FeedbackSent"`
@@ -5827,8 +5827,8 @@ export const useWatchLilNounsDataFeedbackSentEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'FeedbackSent',
-  })
+    eventName: "FeedbackSent",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Initialized"`
@@ -5840,8 +5840,8 @@ export const useWatchLilNounsDataInitializedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'Initialized',
-  })
+    eventName: "Initialized",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferStarted"`
@@ -5853,8 +5853,8 @@ export const useWatchLilNounsDataOwnershipTransferStartedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'OwnershipTransferStarted',
-  })
+    eventName: "OwnershipTransferStarted",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -5866,8 +5866,8 @@ export const useWatchLilNounsDataOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"ProposalCandidateCanceled"`
@@ -5879,8 +5879,8 @@ export const useWatchLilNounsDataProposalCandidateCanceledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'ProposalCandidateCanceled',
-  })
+    eventName: "ProposalCandidateCanceled",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"ProposalCandidateCreated"`
@@ -5892,8 +5892,8 @@ export const useWatchLilNounsDataProposalCandidateCreatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'ProposalCandidateCreated',
-  })
+    eventName: "ProposalCandidateCreated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"ProposalCandidateUpdated"`
@@ -5905,8 +5905,8 @@ export const useWatchLilNounsDataProposalCandidateUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'ProposalCandidateUpdated',
-  })
+    eventName: "ProposalCandidateUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"UpdateCandidateCostSet"`
@@ -5918,8 +5918,8 @@ export const useWatchLilNounsDataUpdateCandidateCostSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'UpdateCandidateCostSet',
-  })
+    eventName: "UpdateCandidateCostSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDataAbi}__ and `eventName` set to `"Upgraded"`
@@ -5931,8 +5931,8 @@ export const useWatchLilNounsDataUpgradedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDataAbi,
     address: lilNounsDataAddress,
-    eventName: 'Upgraded',
-  })
+    eventName: "Upgraded",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__
@@ -5943,7 +5943,7 @@ export const useWatchLilNounsDataUpgradedEvent =
 export const useReadLilNounsDescriptor = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsDescriptorAbi,
   address: lilNounsDescriptorAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"accessories"`
@@ -5955,8 +5955,8 @@ export const useReadLilNounsDescriptorAccessories =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'accessories',
-  })
+    functionName: "accessories",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"accessoryCount"`
@@ -5968,8 +5968,8 @@ export const useReadLilNounsDescriptorAccessoryCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'accessoryCount',
-  })
+    functionName: "accessoryCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"arePartsLocked"`
@@ -5981,8 +5981,8 @@ export const useReadLilNounsDescriptorArePartsLocked =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'arePartsLocked',
-  })
+    functionName: "arePartsLocked",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"art"`
@@ -5994,9 +5994,9 @@ export const useReadLilNounsDescriptorArt = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'art',
+    functionName: "art",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"backgroundCount"`
@@ -6008,8 +6008,8 @@ export const useReadLilNounsDescriptorBackgroundCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'backgroundCount',
-  })
+    functionName: "backgroundCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"backgrounds"`
@@ -6021,8 +6021,8 @@ export const useReadLilNounsDescriptorBackgrounds =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'backgrounds',
-  })
+    functionName: "backgrounds",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"baseURI"`
@@ -6034,8 +6034,8 @@ export const useReadLilNounsDescriptorBaseUri =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'baseURI',
-  })
+    functionName: "baseURI",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"bodies"`
@@ -6047,8 +6047,8 @@ export const useReadLilNounsDescriptorBodies =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'bodies',
-  })
+    functionName: "bodies",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"bodyCount"`
@@ -6060,8 +6060,8 @@ export const useReadLilNounsDescriptorBodyCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'bodyCount',
-  })
+    functionName: "bodyCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"dataURI"`
@@ -6073,8 +6073,8 @@ export const useReadLilNounsDescriptorDataUri =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'dataURI',
-  })
+    functionName: "dataURI",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"generateSVGImage"`
@@ -6086,8 +6086,8 @@ export const useReadLilNounsDescriptorGenerateSvgImage =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'generateSVGImage',
-  })
+    functionName: "generateSVGImage",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"genericDataURI"`
@@ -6099,8 +6099,8 @@ export const useReadLilNounsDescriptorGenericDataUri =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'genericDataURI',
-  })
+    functionName: "genericDataURI",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"getPartsForSeed"`
@@ -6112,8 +6112,8 @@ export const useReadLilNounsDescriptorGetPartsForSeed =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'getPartsForSeed',
-  })
+    functionName: "getPartsForSeed",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"glasses"`
@@ -6125,8 +6125,8 @@ export const useReadLilNounsDescriptorGlasses =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'glasses',
-  })
+    functionName: "glasses",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"glassesCount"`
@@ -6138,8 +6138,8 @@ export const useReadLilNounsDescriptorGlassesCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'glassesCount',
-  })
+    functionName: "glassesCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"headCount"`
@@ -6151,8 +6151,8 @@ export const useReadLilNounsDescriptorHeadCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'headCount',
-  })
+    functionName: "headCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"heads"`
@@ -6164,8 +6164,8 @@ export const useReadLilNounsDescriptorHeads =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'heads',
-  })
+    functionName: "heads",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"isDataURIEnabled"`
@@ -6177,8 +6177,8 @@ export const useReadLilNounsDescriptorIsDataUriEnabled =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'isDataURIEnabled',
-  })
+    functionName: "isDataURIEnabled",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"owner"`
@@ -6190,8 +6190,8 @@ export const useReadLilNounsDescriptorOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'owner',
-  })
+    functionName: "owner",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"palettes"`
@@ -6203,8 +6203,8 @@ export const useReadLilNounsDescriptorPalettes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'palettes',
-  })
+    functionName: "palettes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"renderer"`
@@ -6216,8 +6216,8 @@ export const useReadLilNounsDescriptorRenderer =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'renderer',
-  })
+    functionName: "renderer",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"tokenURI"`
@@ -6229,8 +6229,8 @@ export const useReadLilNounsDescriptorTokenUri =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'tokenURI',
-  })
+    functionName: "tokenURI",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__
@@ -6241,7 +6241,7 @@ export const useReadLilNounsDescriptorTokenUri =
 export const useWriteLilNounsDescriptor = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsDescriptorAbi,
   address: lilNounsDescriptorAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addAccessories"`
@@ -6253,8 +6253,8 @@ export const useWriteLilNounsDescriptorAddAccessories =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addAccessories',
-  })
+    functionName: "addAccessories",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addAccessoriesFromPointer"`
@@ -6266,8 +6266,8 @@ export const useWriteLilNounsDescriptorAddAccessoriesFromPointer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addAccessoriesFromPointer',
-  })
+    functionName: "addAccessoriesFromPointer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBackground"`
@@ -6279,8 +6279,8 @@ export const useWriteLilNounsDescriptorAddBackground =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBackground',
-  })
+    functionName: "addBackground",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBodies"`
@@ -6292,8 +6292,8 @@ export const useWriteLilNounsDescriptorAddBodies =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBodies',
-  })
+    functionName: "addBodies",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBodiesFromPointer"`
@@ -6305,8 +6305,8 @@ export const useWriteLilNounsDescriptorAddBodiesFromPointer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBodiesFromPointer',
-  })
+    functionName: "addBodiesFromPointer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addGlasses"`
@@ -6318,8 +6318,8 @@ export const useWriteLilNounsDescriptorAddGlasses =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addGlasses',
-  })
+    functionName: "addGlasses",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addGlassesFromPointer"`
@@ -6331,8 +6331,8 @@ export const useWriteLilNounsDescriptorAddGlassesFromPointer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addGlassesFromPointer',
-  })
+    functionName: "addGlassesFromPointer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addHeads"`
@@ -6344,8 +6344,8 @@ export const useWriteLilNounsDescriptorAddHeads =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addHeads',
-  })
+    functionName: "addHeads",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addHeadsFromPointer"`
@@ -6357,8 +6357,8 @@ export const useWriteLilNounsDescriptorAddHeadsFromPointer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addHeadsFromPointer',
-  })
+    functionName: "addHeadsFromPointer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addManyBackgrounds"`
@@ -6370,8 +6370,8 @@ export const useWriteLilNounsDescriptorAddManyBackgrounds =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addManyBackgrounds',
-  })
+    functionName: "addManyBackgrounds",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"lockParts"`
@@ -6383,8 +6383,8 @@ export const useWriteLilNounsDescriptorLockParts =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'lockParts',
-  })
+    functionName: "lockParts",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -6396,8 +6396,8 @@ export const useWriteLilNounsDescriptorRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArt"`
@@ -6409,8 +6409,8 @@ export const useWriteLilNounsDescriptorSetArt =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArt',
-  })
+    functionName: "setArt",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArtDescriptor"`
@@ -6422,8 +6422,8 @@ export const useWriteLilNounsDescriptorSetArtDescriptor =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArtDescriptor',
-  })
+    functionName: "setArtDescriptor",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArtInflator"`
@@ -6435,8 +6435,8 @@ export const useWriteLilNounsDescriptorSetArtInflator =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArtInflator',
-  })
+    functionName: "setArtInflator",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setBaseURI"`
@@ -6448,8 +6448,8 @@ export const useWriteLilNounsDescriptorSetBaseUri =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setBaseURI',
-  })
+    functionName: "setBaseURI",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setPalette"`
@@ -6461,8 +6461,8 @@ export const useWriteLilNounsDescriptorSetPalette =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setPalette',
-  })
+    functionName: "setPalette",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setPalettePointer"`
@@ -6474,8 +6474,8 @@ export const useWriteLilNounsDescriptorSetPalettePointer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setPalettePointer',
-  })
+    functionName: "setPalettePointer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setRenderer"`
@@ -6487,8 +6487,8 @@ export const useWriteLilNounsDescriptorSetRenderer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setRenderer',
-  })
+    functionName: "setRenderer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"toggleDataURIEnabled"`
@@ -6500,8 +6500,8 @@ export const useWriteLilNounsDescriptorToggleDataUriEnabled =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'toggleDataURIEnabled',
-  })
+    functionName: "toggleDataURIEnabled",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"transferOwnership"`
@@ -6513,8 +6513,8 @@ export const useWriteLilNounsDescriptorTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__
@@ -6526,7 +6526,7 @@ export const useSimulateLilNounsDescriptor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addAccessories"`
@@ -6538,8 +6538,8 @@ export const useSimulateLilNounsDescriptorAddAccessories =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addAccessories',
-  })
+    functionName: "addAccessories",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addAccessoriesFromPointer"`
@@ -6551,8 +6551,8 @@ export const useSimulateLilNounsDescriptorAddAccessoriesFromPointer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addAccessoriesFromPointer',
-  })
+    functionName: "addAccessoriesFromPointer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBackground"`
@@ -6564,8 +6564,8 @@ export const useSimulateLilNounsDescriptorAddBackground =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBackground',
-  })
+    functionName: "addBackground",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBodies"`
@@ -6577,8 +6577,8 @@ export const useSimulateLilNounsDescriptorAddBodies =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBodies',
-  })
+    functionName: "addBodies",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addBodiesFromPointer"`
@@ -6590,8 +6590,8 @@ export const useSimulateLilNounsDescriptorAddBodiesFromPointer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addBodiesFromPointer',
-  })
+    functionName: "addBodiesFromPointer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addGlasses"`
@@ -6603,8 +6603,8 @@ export const useSimulateLilNounsDescriptorAddGlasses =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addGlasses',
-  })
+    functionName: "addGlasses",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addGlassesFromPointer"`
@@ -6616,8 +6616,8 @@ export const useSimulateLilNounsDescriptorAddGlassesFromPointer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addGlassesFromPointer',
-  })
+    functionName: "addGlassesFromPointer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addHeads"`
@@ -6629,8 +6629,8 @@ export const useSimulateLilNounsDescriptorAddHeads =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addHeads',
-  })
+    functionName: "addHeads",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addHeadsFromPointer"`
@@ -6642,8 +6642,8 @@ export const useSimulateLilNounsDescriptorAddHeadsFromPointer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addHeadsFromPointer',
-  })
+    functionName: "addHeadsFromPointer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"addManyBackgrounds"`
@@ -6655,8 +6655,8 @@ export const useSimulateLilNounsDescriptorAddManyBackgrounds =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'addManyBackgrounds',
-  })
+    functionName: "addManyBackgrounds",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"lockParts"`
@@ -6668,8 +6668,8 @@ export const useSimulateLilNounsDescriptorLockParts =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'lockParts',
-  })
+    functionName: "lockParts",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -6681,8 +6681,8 @@ export const useSimulateLilNounsDescriptorRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArt"`
@@ -6694,8 +6694,8 @@ export const useSimulateLilNounsDescriptorSetArt =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArt',
-  })
+    functionName: "setArt",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArtDescriptor"`
@@ -6707,8 +6707,8 @@ export const useSimulateLilNounsDescriptorSetArtDescriptor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArtDescriptor',
-  })
+    functionName: "setArtDescriptor",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setArtInflator"`
@@ -6720,8 +6720,8 @@ export const useSimulateLilNounsDescriptorSetArtInflator =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setArtInflator',
-  })
+    functionName: "setArtInflator",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setBaseURI"`
@@ -6733,8 +6733,8 @@ export const useSimulateLilNounsDescriptorSetBaseUri =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setBaseURI',
-  })
+    functionName: "setBaseURI",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setPalette"`
@@ -6746,8 +6746,8 @@ export const useSimulateLilNounsDescriptorSetPalette =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setPalette',
-  })
+    functionName: "setPalette",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setPalettePointer"`
@@ -6759,8 +6759,8 @@ export const useSimulateLilNounsDescriptorSetPalettePointer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setPalettePointer',
-  })
+    functionName: "setPalettePointer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"setRenderer"`
@@ -6772,8 +6772,8 @@ export const useSimulateLilNounsDescriptorSetRenderer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'setRenderer',
-  })
+    functionName: "setRenderer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"toggleDataURIEnabled"`
@@ -6785,8 +6785,8 @@ export const useSimulateLilNounsDescriptorToggleDataUriEnabled =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'toggleDataURIEnabled',
-  })
+    functionName: "toggleDataURIEnabled",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `functionName` set to `"transferOwnership"`
@@ -6798,8 +6798,8 @@ export const useSimulateLilNounsDescriptorTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__
@@ -6811,7 +6811,7 @@ export const useWatchLilNounsDescriptorEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"ArtUpdated"`
@@ -6823,8 +6823,8 @@ export const useWatchLilNounsDescriptorArtUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'ArtUpdated',
-  })
+    eventName: "ArtUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"BaseURIUpdated"`
@@ -6836,8 +6836,8 @@ export const useWatchLilNounsDescriptorBaseUriUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'BaseURIUpdated',
-  })
+    eventName: "BaseURIUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"DataURIToggled"`
@@ -6849,8 +6849,8 @@ export const useWatchLilNounsDescriptorDataUriToggledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'DataURIToggled',
-  })
+    eventName: "DataURIToggled",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -6862,8 +6862,8 @@ export const useWatchLilNounsDescriptorOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"PartsLocked"`
@@ -6875,8 +6875,8 @@ export const useWatchLilNounsDescriptorPartsLockedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'PartsLocked',
-  })
+    eventName: "PartsLocked",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsDescriptorAbi}__ and `eventName` set to `"RendererUpdated"`
@@ -6888,8 +6888,8 @@ export const useWatchLilNounsDescriptorRendererUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsDescriptorAbi,
     address: lilNounsDescriptorAddress,
-    eventName: 'RendererUpdated',
-  })
+    eventName: "RendererUpdated",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
@@ -6900,7 +6900,7 @@ export const useWatchLilNounsDescriptorRendererUpdatedEvent =
 export const useReadLilNounsEnsMapper = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsEnsMapperAbi,
   address: lilNounsEnsMapperAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"UPGRADE_INTERFACE_VERSION"`
@@ -6912,8 +6912,8 @@ export const useReadLilNounsEnsMapperUpgradeInterfaceVersion =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'UPGRADE_INTERFACE_VERSION',
-  })
+    functionName: "UPGRADE_INTERFACE_VERSION",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"addr"`
@@ -6925,9 +6925,9 @@ export const useReadLilNounsEnsMapperAddr = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'addr',
+    functionName: "addr",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ens"`
@@ -6938,8 +6938,8 @@ export const useReadLilNounsEnsMapperAddr = /*#__PURE__*/ createUseReadContract(
 export const useReadLilNounsEnsMapperEns = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsEnsMapperAbi,
   address: lilNounsEnsMapperAddress,
-  functionName: 'ens',
-})
+  functionName: "ens",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ensNameOf"`
@@ -6951,8 +6951,8 @@ export const useReadLilNounsEnsMapperEnsNameOf =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'ensNameOf',
-  })
+    functionName: "ensNameOf",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"ensNodeOf"`
@@ -6964,8 +6964,8 @@ export const useReadLilNounsEnsMapperEnsNodeOf =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'ensNodeOf',
-  })
+    functionName: "ensNodeOf",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"isLegacyNode"`
@@ -6977,8 +6977,8 @@ export const useReadLilNounsEnsMapperIsLegacyNode =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'isLegacyNode',
-  })
+    functionName: "isLegacyNode",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"legacy"`
@@ -6990,8 +6990,8 @@ export const useReadLilNounsEnsMapperLegacy =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'legacy',
-  })
+    functionName: "legacy",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"name"`
@@ -7003,9 +7003,9 @@ export const useReadLilNounsEnsMapperName = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'name',
+    functionName: "name",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"nft"`
@@ -7016,8 +7016,8 @@ export const useReadLilNounsEnsMapperName = /*#__PURE__*/ createUseReadContract(
 export const useReadLilNounsEnsMapperNft = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsEnsMapperAbi,
   address: lilNounsEnsMapperAddress,
-  functionName: 'nft',
-})
+  functionName: "nft",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"owner"`
@@ -7029,8 +7029,8 @@ export const useReadLilNounsEnsMapperOwner =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'owner',
-  })
+    functionName: "owner",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"proxiableUUID"`
@@ -7042,8 +7042,8 @@ export const useReadLilNounsEnsMapperProxiableUuid =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'proxiableUUID',
-  })
+    functionName: "proxiableUUID",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"rootLabel"`
@@ -7055,8 +7055,8 @@ export const useReadLilNounsEnsMapperRootLabel =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'rootLabel',
-  })
+    functionName: "rootLabel",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"rootNode"`
@@ -7068,8 +7068,8 @@ export const useReadLilNounsEnsMapperRootNode =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'rootNode',
-  })
+    functionName: "rootNode",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"supportsInterface"`
@@ -7081,8 +7081,8 @@ export const useReadLilNounsEnsMapperSupportsInterface =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'supportsInterface',
-  })
+    functionName: "supportsInterface",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"text"`
@@ -7094,9 +7094,9 @@ export const useReadLilNounsEnsMapperText = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'text',
+    functionName: "text",
   },
-)
+);
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
@@ -7107,7 +7107,7 @@ export const useReadLilNounsEnsMapperText = /*#__PURE__*/ createUseReadContract(
 export const useWriteLilNounsEnsMapper = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsEnsMapperAbi,
   address: lilNounsEnsMapperAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"claimSubname"`
@@ -7119,8 +7119,8 @@ export const useWriteLilNounsEnsMapperClaimSubname =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'claimSubname',
-  })
+    functionName: "claimSubname",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitAddrEvents"`
@@ -7132,8 +7132,8 @@ export const useWriteLilNounsEnsMapperEmitAddrEvents =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'emitAddrEvents',
-  })
+    functionName: "emitAddrEvents",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitTextEvents"`
@@ -7145,8 +7145,8 @@ export const useWriteLilNounsEnsMapperEmitTextEvents =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'emitTextEvents',
-  })
+    functionName: "emitTextEvents",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"initialize"`
@@ -7158,8 +7158,8 @@ export const useWriteLilNounsEnsMapperInitialize =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"migrateLegacySubname"`
@@ -7171,8 +7171,8 @@ export const useWriteLilNounsEnsMapperMigrateLegacySubname =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'migrateLegacySubname',
-  })
+    functionName: "migrateLegacySubname",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"releaseLegacySubname"`
@@ -7184,8 +7184,8 @@ export const useWriteLilNounsEnsMapperReleaseLegacySubname =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'releaseLegacySubname',
-  })
+    functionName: "releaseLegacySubname",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"relinquishSubname"`
@@ -7197,8 +7197,8 @@ export const useWriteLilNounsEnsMapperRelinquishSubname =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'relinquishSubname',
-  })
+    functionName: "relinquishSubname",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -7210,8 +7210,8 @@ export const useWriteLilNounsEnsMapperRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"restoreResolver"`
@@ -7223,8 +7223,8 @@ export const useWriteLilNounsEnsMapperRestoreResolver =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'restoreResolver',
-  })
+    functionName: "restoreResolver",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"setText"`
@@ -7236,8 +7236,8 @@ export const useWriteLilNounsEnsMapperSetText =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'setText',
-  })
+    functionName: "setText",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"transferOwnership"`
@@ -7249,8 +7249,8 @@ export const useWriteLilNounsEnsMapperTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -7262,8 +7262,8 @@ export const useWriteLilNounsEnsMapperUpgradeToAndCall =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
@@ -7275,7 +7275,7 @@ export const useSimulateLilNounsEnsMapper =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"claimSubname"`
@@ -7287,8 +7287,8 @@ export const useSimulateLilNounsEnsMapperClaimSubname =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'claimSubname',
-  })
+    functionName: "claimSubname",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitAddrEvents"`
@@ -7300,8 +7300,8 @@ export const useSimulateLilNounsEnsMapperEmitAddrEvents =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'emitAddrEvents',
-  })
+    functionName: "emitAddrEvents",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"emitTextEvents"`
@@ -7313,8 +7313,8 @@ export const useSimulateLilNounsEnsMapperEmitTextEvents =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'emitTextEvents',
-  })
+    functionName: "emitTextEvents",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"initialize"`
@@ -7326,8 +7326,8 @@ export const useSimulateLilNounsEnsMapperInitialize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"migrateLegacySubname"`
@@ -7339,8 +7339,8 @@ export const useSimulateLilNounsEnsMapperMigrateLegacySubname =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'migrateLegacySubname',
-  })
+    functionName: "migrateLegacySubname",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"releaseLegacySubname"`
@@ -7352,8 +7352,8 @@ export const useSimulateLilNounsEnsMapperReleaseLegacySubname =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'releaseLegacySubname',
-  })
+    functionName: "releaseLegacySubname",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"relinquishSubname"`
@@ -7365,8 +7365,8 @@ export const useSimulateLilNounsEnsMapperRelinquishSubname =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'relinquishSubname',
-  })
+    functionName: "relinquishSubname",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -7378,8 +7378,8 @@ export const useSimulateLilNounsEnsMapperRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"restoreResolver"`
@@ -7391,8 +7391,8 @@ export const useSimulateLilNounsEnsMapperRestoreResolver =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'restoreResolver',
-  })
+    functionName: "restoreResolver",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"setText"`
@@ -7404,8 +7404,8 @@ export const useSimulateLilNounsEnsMapperSetText =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'setText',
-  })
+    functionName: "setText",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"transferOwnership"`
@@ -7417,8 +7417,8 @@ export const useSimulateLilNounsEnsMapperTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `functionName` set to `"upgradeToAndCall"`
@@ -7430,8 +7430,8 @@ export const useSimulateLilNounsEnsMapperUpgradeToAndCall =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    functionName: 'upgradeToAndCall',
-  })
+    functionName: "upgradeToAndCall",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__
@@ -7443,7 +7443,7 @@ export const useWatchLilNounsEnsMapperEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"AddrChanged"`
@@ -7455,8 +7455,8 @@ export const useWatchLilNounsEnsMapperAddrChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'AddrChanged',
-  })
+    eventName: "AddrChanged",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"Initialized"`
@@ -7468,8 +7468,8 @@ export const useWatchLilNounsEnsMapperInitializedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'Initialized',
-  })
+    eventName: "Initialized",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"NameChanged"`
@@ -7481,8 +7481,8 @@ export const useWatchLilNounsEnsMapperNameChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'NameChanged',
-  })
+    eventName: "NameChanged",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -7494,8 +7494,8 @@ export const useWatchLilNounsEnsMapperOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"SubnameClaimed"`
@@ -7507,8 +7507,8 @@ export const useWatchLilNounsEnsMapperSubnameClaimedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'SubnameClaimed',
-  })
+    eventName: "SubnameClaimed",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"TextChanged"`
@@ -7520,8 +7520,8 @@ export const useWatchLilNounsEnsMapperTextChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'TextChanged',
-  })
+    eventName: "TextChanged",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsEnsMapperAbi}__ and `eventName` set to `"Upgraded"`
@@ -7533,8 +7533,8 @@ export const useWatchLilNounsEnsMapperUpgradedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsEnsMapperAbi,
     address: lilNounsEnsMapperAddress,
-    eventName: 'Upgraded',
-  })
+    eventName: "Upgraded",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__
@@ -7545,7 +7545,7 @@ export const useWatchLilNounsEnsMapperUpgradedEvent =
 export const useReadLilNounsGovernor = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsGovernorAbi,
   address: lilNounsGovernorAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"BALLOT_TYPEHASH"`
@@ -7557,8 +7557,8 @@ export const useReadLilNounsGovernorBallotTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'BALLOT_TYPEHASH',
-  })
+    functionName: "BALLOT_TYPEHASH",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"DOMAIN_TYPEHASH"`
@@ -7570,8 +7570,8 @@ export const useReadLilNounsGovernorDomainTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'DOMAIN_TYPEHASH',
-  })
+    functionName: "DOMAIN_TYPEHASH",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_PROPOSAL_THRESHOLD_BPS"`
@@ -7583,8 +7583,8 @@ export const useReadLilNounsGovernorMaxProposalThresholdBps =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_PROPOSAL_THRESHOLD_BPS',
-  })
+    functionName: "MAX_PROPOSAL_THRESHOLD_BPS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_QUORUM_VOTES_BPS"`
@@ -7596,8 +7596,8 @@ export const useReadLilNounsGovernorMaxQuorumVotesBps =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_QUORUM_VOTES_BPS',
-  })
+    functionName: "MAX_QUORUM_VOTES_BPS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_QUORUM_VOTES_BPS_UPPER_BOUND"`
@@ -7609,8 +7609,8 @@ export const useReadLilNounsGovernorMaxQuorumVotesBpsUpperBound =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_QUORUM_VOTES_BPS_UPPER_BOUND',
-  })
+    functionName: "MAX_QUORUM_VOTES_BPS_UPPER_BOUND",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_REFUND_BASE_FEE"`
@@ -7622,8 +7622,8 @@ export const useReadLilNounsGovernorMaxRefundBaseFee =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_REFUND_BASE_FEE',
-  })
+    functionName: "MAX_REFUND_BASE_FEE",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_REFUND_GAS_USED"`
@@ -7635,8 +7635,8 @@ export const useReadLilNounsGovernorMaxRefundGasUsed =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_REFUND_GAS_USED',
-  })
+    functionName: "MAX_REFUND_GAS_USED",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_REFUND_PRIORITY_FEE"`
@@ -7648,8 +7648,8 @@ export const useReadLilNounsGovernorMaxRefundPriorityFee =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_REFUND_PRIORITY_FEE',
-  })
+    functionName: "MAX_REFUND_PRIORITY_FEE",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_VOTING_DELAY"`
@@ -7661,8 +7661,8 @@ export const useReadLilNounsGovernorMaxVotingDelay =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_VOTING_DELAY',
-  })
+    functionName: "MAX_VOTING_DELAY",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MAX_VOTING_PERIOD"`
@@ -7674,8 +7674,8 @@ export const useReadLilNounsGovernorMaxVotingPeriod =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MAX_VOTING_PERIOD',
-  })
+    functionName: "MAX_VOTING_PERIOD",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MIN_PROPOSAL_THRESHOLD_BPS"`
@@ -7687,8 +7687,8 @@ export const useReadLilNounsGovernorMinProposalThresholdBps =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MIN_PROPOSAL_THRESHOLD_BPS',
-  })
+    functionName: "MIN_PROPOSAL_THRESHOLD_BPS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MIN_QUORUM_VOTES_BPS_LOWER_BOUND"`
@@ -7700,8 +7700,8 @@ export const useReadLilNounsGovernorMinQuorumVotesBpsLowerBound =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MIN_QUORUM_VOTES_BPS_LOWER_BOUND',
-  })
+    functionName: "MIN_QUORUM_VOTES_BPS_LOWER_BOUND",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MIN_QUORUM_VOTES_BPS_UPPER_BOUND"`
@@ -7713,8 +7713,8 @@ export const useReadLilNounsGovernorMinQuorumVotesBpsUpperBound =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MIN_QUORUM_VOTES_BPS_UPPER_BOUND',
-  })
+    functionName: "MIN_QUORUM_VOTES_BPS_UPPER_BOUND",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MIN_VOTING_DELAY"`
@@ -7726,8 +7726,8 @@ export const useReadLilNounsGovernorMinVotingDelay =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MIN_VOTING_DELAY',
-  })
+    functionName: "MIN_VOTING_DELAY",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"MIN_VOTING_PERIOD"`
@@ -7739,8 +7739,8 @@ export const useReadLilNounsGovernorMinVotingPeriod =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'MIN_VOTING_PERIOD',
-  })
+    functionName: "MIN_VOTING_PERIOD",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"REFUND_BASE_GAS"`
@@ -7752,8 +7752,8 @@ export const useReadLilNounsGovernorRefundBaseGas =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'REFUND_BASE_GAS',
-  })
+    functionName: "REFUND_BASE_GAS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"admin"`
@@ -7765,9 +7765,9 @@ export const useReadLilNounsGovernorAdmin = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'admin',
+    functionName: "admin",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"dynamicQuorumVotes"`
@@ -7779,8 +7779,8 @@ export const useReadLilNounsGovernorDynamicQuorumVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'dynamicQuorumVotes',
-  })
+    functionName: "dynamicQuorumVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"getActions"`
@@ -7792,8 +7792,8 @@ export const useReadLilNounsGovernorGetActions =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'getActions',
-  })
+    functionName: "getActions",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"getDynamicQuorumParamsAt"`
@@ -7805,8 +7805,8 @@ export const useReadLilNounsGovernorGetDynamicQuorumParamsAt =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'getDynamicQuorumParamsAt',
-  })
+    functionName: "getDynamicQuorumParamsAt",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"getReceipt"`
@@ -7818,8 +7818,8 @@ export const useReadLilNounsGovernorGetReceipt =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'getReceipt',
-  })
+    functionName: "getReceipt",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"implementation"`
@@ -7831,8 +7831,8 @@ export const useReadLilNounsGovernorImplementation =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'implementation',
-  })
+    functionName: "implementation",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"latestProposalIds"`
@@ -7844,8 +7844,8 @@ export const useReadLilNounsGovernorLatestProposalIds =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'latestProposalIds',
-  })
+    functionName: "latestProposalIds",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"maxQuorumVotes"`
@@ -7857,8 +7857,8 @@ export const useReadLilNounsGovernorMaxQuorumVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'maxQuorumVotes',
-  })
+    functionName: "maxQuorumVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"minQuorumVotes"`
@@ -7870,8 +7870,8 @@ export const useReadLilNounsGovernorMinQuorumVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'minQuorumVotes',
-  })
+    functionName: "minQuorumVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"name"`
@@ -7882,8 +7882,8 @@ export const useReadLilNounsGovernorMinQuorumVotes =
 export const useReadLilNounsGovernorName = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsGovernorAbi,
   address: lilNounsGovernorAddress,
-  functionName: 'name',
-})
+  functionName: "name",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"nouns"`
@@ -7895,9 +7895,9 @@ export const useReadLilNounsGovernorNouns = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'nouns',
+    functionName: "nouns",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"pendingAdmin"`
@@ -7909,8 +7909,8 @@ export const useReadLilNounsGovernorPendingAdmin =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'pendingAdmin',
-  })
+    functionName: "pendingAdmin",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"pendingVetoer"`
@@ -7922,8 +7922,8 @@ export const useReadLilNounsGovernorPendingVetoer =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'pendingVetoer',
-  })
+    functionName: "pendingVetoer",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"proposalCount"`
@@ -7935,8 +7935,8 @@ export const useReadLilNounsGovernorProposalCount =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'proposalCount',
-  })
+    functionName: "proposalCount",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"proposalMaxOperations"`
@@ -7948,8 +7948,8 @@ export const useReadLilNounsGovernorProposalMaxOperations =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'proposalMaxOperations',
-  })
+    functionName: "proposalMaxOperations",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"proposalThreshold"`
@@ -7961,8 +7961,8 @@ export const useReadLilNounsGovernorProposalThreshold =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'proposalThreshold',
-  })
+    functionName: "proposalThreshold",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"proposalThresholdBPS"`
@@ -7974,8 +7974,8 @@ export const useReadLilNounsGovernorProposalThresholdBps =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'proposalThresholdBPS',
-  })
+    functionName: "proposalThresholdBPS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"proposals"`
@@ -7987,8 +7987,8 @@ export const useReadLilNounsGovernorProposals =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'proposals',
-  })
+    functionName: "proposals",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"quorumParamsCheckpoints"`
@@ -8000,8 +8000,8 @@ export const useReadLilNounsGovernorQuorumParamsCheckpoints =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'quorumParamsCheckpoints',
-  })
+    functionName: "quorumParamsCheckpoints",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"quorumVotes"`
@@ -8013,8 +8013,8 @@ export const useReadLilNounsGovernorQuorumVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'quorumVotes',
-  })
+    functionName: "quorumVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"quorumVotesBPS"`
@@ -8026,8 +8026,8 @@ export const useReadLilNounsGovernorQuorumVotesBps =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'quorumVotesBPS',
-  })
+    functionName: "quorumVotesBPS",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"state"`
@@ -8039,9 +8039,9 @@ export const useReadLilNounsGovernorState = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'state',
+    functionName: "state",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"timelock"`
@@ -8053,8 +8053,8 @@ export const useReadLilNounsGovernorTimelock =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'timelock',
-  })
+    functionName: "timelock",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"vetoer"`
@@ -8066,8 +8066,8 @@ export const useReadLilNounsGovernorVetoer =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'vetoer',
-  })
+    functionName: "vetoer",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"votingDelay"`
@@ -8079,8 +8079,8 @@ export const useReadLilNounsGovernorVotingDelay =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'votingDelay',
-  })
+    functionName: "votingDelay",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"votingPeriod"`
@@ -8092,8 +8092,8 @@ export const useReadLilNounsGovernorVotingPeriod =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'votingPeriod',
-  })
+    functionName: "votingPeriod",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__
@@ -8104,7 +8104,7 @@ export const useReadLilNounsGovernorVotingPeriod =
 export const useWriteLilNounsGovernor = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsGovernorAbi,
   address: lilNounsGovernorAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_acceptAdmin"`
@@ -8116,8 +8116,8 @@ export const useWriteLilNounsGovernorAcceptAdmin =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_acceptAdmin',
-  })
+    functionName: "_acceptAdmin",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_acceptVetoer"`
@@ -8129,8 +8129,8 @@ export const useWriteLilNounsGovernorAcceptVetoer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_acceptVetoer',
-  })
+    functionName: "_acceptVetoer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_burnVetoPower"`
@@ -8142,8 +8142,8 @@ export const useWriteLilNounsGovernorBurnVetoPower =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_burnVetoPower',
-  })
+    functionName: "_burnVetoPower",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setDynamicQuorumParams"`
@@ -8155,8 +8155,8 @@ export const useWriteLilNounsGovernorSetDynamicQuorumParams =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setDynamicQuorumParams',
-  })
+    functionName: "_setDynamicQuorumParams",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setMaxQuorumVotesBPS"`
@@ -8168,8 +8168,8 @@ export const useWriteLilNounsGovernorSetMaxQuorumVotesBps =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setMaxQuorumVotesBPS',
-  })
+    functionName: "_setMaxQuorumVotesBPS",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setMinQuorumVotesBPS"`
@@ -8181,8 +8181,8 @@ export const useWriteLilNounsGovernorSetMinQuorumVotesBps =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setMinQuorumVotesBPS',
-  })
+    functionName: "_setMinQuorumVotesBPS",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setPendingAdmin"`
@@ -8194,8 +8194,8 @@ export const useWriteLilNounsGovernorSetPendingAdmin =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setPendingAdmin',
-  })
+    functionName: "_setPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setPendingVetoer"`
@@ -8207,8 +8207,8 @@ export const useWriteLilNounsGovernorSetPendingVetoer =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setPendingVetoer',
-  })
+    functionName: "_setPendingVetoer",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setProposalThresholdBPS"`
@@ -8220,8 +8220,8 @@ export const useWriteLilNounsGovernorSetProposalThresholdBps =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setProposalThresholdBPS',
-  })
+    functionName: "_setProposalThresholdBPS",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setQuorumCoefficient"`
@@ -8233,8 +8233,8 @@ export const useWriteLilNounsGovernorSetQuorumCoefficient =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setQuorumCoefficient',
-  })
+    functionName: "_setQuorumCoefficient",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setVotingDelay"`
@@ -8246,8 +8246,8 @@ export const useWriteLilNounsGovernorSetVotingDelay =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setVotingDelay',
-  })
+    functionName: "_setVotingDelay",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setVotingPeriod"`
@@ -8259,8 +8259,8 @@ export const useWriteLilNounsGovernorSetVotingPeriod =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setVotingPeriod',
-  })
+    functionName: "_setVotingPeriod",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_withdraw"`
@@ -8272,8 +8272,8 @@ export const useWriteLilNounsGovernorWithdraw =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_withdraw',
-  })
+    functionName: "_withdraw",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"cancel"`
@@ -8285,8 +8285,8 @@ export const useWriteLilNounsGovernorCancel =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'cancel',
-  })
+    functionName: "cancel",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castRefundableVote"`
@@ -8298,8 +8298,8 @@ export const useWriteLilNounsGovernorCastRefundableVote =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castRefundableVote',
-  })
+    functionName: "castRefundableVote",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castRefundableVoteWithReason"`
@@ -8311,8 +8311,8 @@ export const useWriteLilNounsGovernorCastRefundableVoteWithReason =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castRefundableVoteWithReason',
-  })
+    functionName: "castRefundableVoteWithReason",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVote"`
@@ -8324,8 +8324,8 @@ export const useWriteLilNounsGovernorCastVote =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVote',
-  })
+    functionName: "castVote",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVoteBySig"`
@@ -8337,8 +8337,8 @@ export const useWriteLilNounsGovernorCastVoteBySig =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVoteBySig',
-  })
+    functionName: "castVoteBySig",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVoteWithReason"`
@@ -8350,8 +8350,8 @@ export const useWriteLilNounsGovernorCastVoteWithReason =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVoteWithReason',
-  })
+    functionName: "castVoteWithReason",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"execute"`
@@ -8363,8 +8363,8 @@ export const useWriteLilNounsGovernorExecute =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'execute',
-  })
+    functionName: "execute",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"initialize"`
@@ -8376,8 +8376,8 @@ export const useWriteLilNounsGovernorInitialize =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"propose"`
@@ -8389,8 +8389,8 @@ export const useWriteLilNounsGovernorPropose =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'propose',
-  })
+    functionName: "propose",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"queue"`
@@ -8402,8 +8402,8 @@ export const useWriteLilNounsGovernorQueue =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'queue',
-  })
+    functionName: "queue",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"veto"`
@@ -8415,8 +8415,8 @@ export const useWriteLilNounsGovernorVeto =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'veto',
-  })
+    functionName: "veto",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__
@@ -8428,7 +8428,7 @@ export const useSimulateLilNounsGovernor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_acceptAdmin"`
@@ -8440,8 +8440,8 @@ export const useSimulateLilNounsGovernorAcceptAdmin =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_acceptAdmin',
-  })
+    functionName: "_acceptAdmin",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_acceptVetoer"`
@@ -8453,8 +8453,8 @@ export const useSimulateLilNounsGovernorAcceptVetoer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_acceptVetoer',
-  })
+    functionName: "_acceptVetoer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_burnVetoPower"`
@@ -8466,8 +8466,8 @@ export const useSimulateLilNounsGovernorBurnVetoPower =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_burnVetoPower',
-  })
+    functionName: "_burnVetoPower",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setDynamicQuorumParams"`
@@ -8479,8 +8479,8 @@ export const useSimulateLilNounsGovernorSetDynamicQuorumParams =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setDynamicQuorumParams',
-  })
+    functionName: "_setDynamicQuorumParams",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setMaxQuorumVotesBPS"`
@@ -8492,8 +8492,8 @@ export const useSimulateLilNounsGovernorSetMaxQuorumVotesBps =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setMaxQuorumVotesBPS',
-  })
+    functionName: "_setMaxQuorumVotesBPS",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setMinQuorumVotesBPS"`
@@ -8505,8 +8505,8 @@ export const useSimulateLilNounsGovernorSetMinQuorumVotesBps =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setMinQuorumVotesBPS',
-  })
+    functionName: "_setMinQuorumVotesBPS",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setPendingAdmin"`
@@ -8518,8 +8518,8 @@ export const useSimulateLilNounsGovernorSetPendingAdmin =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setPendingAdmin',
-  })
+    functionName: "_setPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setPendingVetoer"`
@@ -8531,8 +8531,8 @@ export const useSimulateLilNounsGovernorSetPendingVetoer =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setPendingVetoer',
-  })
+    functionName: "_setPendingVetoer",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setProposalThresholdBPS"`
@@ -8544,8 +8544,8 @@ export const useSimulateLilNounsGovernorSetProposalThresholdBps =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setProposalThresholdBPS',
-  })
+    functionName: "_setProposalThresholdBPS",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setQuorumCoefficient"`
@@ -8557,8 +8557,8 @@ export const useSimulateLilNounsGovernorSetQuorumCoefficient =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setQuorumCoefficient',
-  })
+    functionName: "_setQuorumCoefficient",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setVotingDelay"`
@@ -8570,8 +8570,8 @@ export const useSimulateLilNounsGovernorSetVotingDelay =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setVotingDelay',
-  })
+    functionName: "_setVotingDelay",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_setVotingPeriod"`
@@ -8583,8 +8583,8 @@ export const useSimulateLilNounsGovernorSetVotingPeriod =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_setVotingPeriod',
-  })
+    functionName: "_setVotingPeriod",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"_withdraw"`
@@ -8596,8 +8596,8 @@ export const useSimulateLilNounsGovernorWithdraw =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: '_withdraw',
-  })
+    functionName: "_withdraw",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"cancel"`
@@ -8609,8 +8609,8 @@ export const useSimulateLilNounsGovernorCancel =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'cancel',
-  })
+    functionName: "cancel",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castRefundableVote"`
@@ -8622,8 +8622,8 @@ export const useSimulateLilNounsGovernorCastRefundableVote =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castRefundableVote',
-  })
+    functionName: "castRefundableVote",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castRefundableVoteWithReason"`
@@ -8635,8 +8635,8 @@ export const useSimulateLilNounsGovernorCastRefundableVoteWithReason =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castRefundableVoteWithReason',
-  })
+    functionName: "castRefundableVoteWithReason",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVote"`
@@ -8648,8 +8648,8 @@ export const useSimulateLilNounsGovernorCastVote =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVote',
-  })
+    functionName: "castVote",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVoteBySig"`
@@ -8661,8 +8661,8 @@ export const useSimulateLilNounsGovernorCastVoteBySig =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVoteBySig',
-  })
+    functionName: "castVoteBySig",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"castVoteWithReason"`
@@ -8674,8 +8674,8 @@ export const useSimulateLilNounsGovernorCastVoteWithReason =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'castVoteWithReason',
-  })
+    functionName: "castVoteWithReason",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"execute"`
@@ -8687,8 +8687,8 @@ export const useSimulateLilNounsGovernorExecute =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'execute',
-  })
+    functionName: "execute",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"initialize"`
@@ -8700,8 +8700,8 @@ export const useSimulateLilNounsGovernorInitialize =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'initialize',
-  })
+    functionName: "initialize",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"propose"`
@@ -8713,8 +8713,8 @@ export const useSimulateLilNounsGovernorPropose =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'propose',
-  })
+    functionName: "propose",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"queue"`
@@ -8726,8 +8726,8 @@ export const useSimulateLilNounsGovernorQueue =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'queue',
-  })
+    functionName: "queue",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `functionName` set to `"veto"`
@@ -8739,8 +8739,8 @@ export const useSimulateLilNounsGovernorVeto =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    functionName: 'veto',
-  })
+    functionName: "veto",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__
@@ -8752,7 +8752,7 @@ export const useWatchLilNounsGovernorEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"MaxQuorumVotesBPSSet"`
@@ -8764,8 +8764,8 @@ export const useWatchLilNounsGovernorMaxQuorumVotesBpsSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'MaxQuorumVotesBPSSet',
-  })
+    eventName: "MaxQuorumVotesBPSSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"MinQuorumVotesBPSSet"`
@@ -8777,8 +8777,8 @@ export const useWatchLilNounsGovernorMinQuorumVotesBpsSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'MinQuorumVotesBPSSet',
-  })
+    eventName: "MinQuorumVotesBPSSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"NewAdmin"`
@@ -8790,8 +8790,8 @@ export const useWatchLilNounsGovernorNewAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'NewAdmin',
-  })
+    eventName: "NewAdmin",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"NewImplementation"`
@@ -8803,8 +8803,8 @@ export const useWatchLilNounsGovernorNewImplementationEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'NewImplementation',
-  })
+    eventName: "NewImplementation",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"NewPendingAdmin"`
@@ -8816,8 +8816,8 @@ export const useWatchLilNounsGovernorNewPendingAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'NewPendingAdmin',
-  })
+    eventName: "NewPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"NewPendingVetoer"`
@@ -8829,8 +8829,8 @@ export const useWatchLilNounsGovernorNewPendingVetoerEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'NewPendingVetoer',
-  })
+    eventName: "NewPendingVetoer",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"NewVetoer"`
@@ -8842,8 +8842,8 @@ export const useWatchLilNounsGovernorNewVetoerEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'NewVetoer',
-  })
+    eventName: "NewVetoer",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalCanceled"`
@@ -8855,8 +8855,8 @@ export const useWatchLilNounsGovernorProposalCanceledEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalCanceled',
-  })
+    eventName: "ProposalCanceled",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalCreated"`
@@ -8868,8 +8868,8 @@ export const useWatchLilNounsGovernorProposalCreatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalCreated',
-  })
+    eventName: "ProposalCreated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalCreatedWithRequirements"`
@@ -8881,8 +8881,8 @@ export const useWatchLilNounsGovernorProposalCreatedWithRequirementsEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalCreatedWithRequirements',
-  })
+    eventName: "ProposalCreatedWithRequirements",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalExecuted"`
@@ -8894,8 +8894,8 @@ export const useWatchLilNounsGovernorProposalExecutedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalExecuted',
-  })
+    eventName: "ProposalExecuted",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalQueued"`
@@ -8907,8 +8907,8 @@ export const useWatchLilNounsGovernorProposalQueuedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalQueued',
-  })
+    eventName: "ProposalQueued",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalThresholdBPSSet"`
@@ -8920,8 +8920,8 @@ export const useWatchLilNounsGovernorProposalThresholdBpsSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalThresholdBPSSet',
-  })
+    eventName: "ProposalThresholdBPSSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"ProposalVetoed"`
@@ -8933,8 +8933,8 @@ export const useWatchLilNounsGovernorProposalVetoedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'ProposalVetoed',
-  })
+    eventName: "ProposalVetoed",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"QuorumCoefficientSet"`
@@ -8946,8 +8946,8 @@ export const useWatchLilNounsGovernorQuorumCoefficientSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'QuorumCoefficientSet',
-  })
+    eventName: "QuorumCoefficientSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"QuorumVotesBPSSet"`
@@ -8959,8 +8959,8 @@ export const useWatchLilNounsGovernorQuorumVotesBpsSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'QuorumVotesBPSSet',
-  })
+    eventName: "QuorumVotesBPSSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"RefundableVote"`
@@ -8972,8 +8972,8 @@ export const useWatchLilNounsGovernorRefundableVoteEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'RefundableVote',
-  })
+    eventName: "RefundableVote",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"VoteCast"`
@@ -8985,8 +8985,8 @@ export const useWatchLilNounsGovernorVoteCastEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'VoteCast',
-  })
+    eventName: "VoteCast",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"VotingDelaySet"`
@@ -8998,8 +8998,8 @@ export const useWatchLilNounsGovernorVotingDelaySetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'VotingDelaySet',
-  })
+    eventName: "VotingDelaySet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"VotingPeriodSet"`
@@ -9011,8 +9011,8 @@ export const useWatchLilNounsGovernorVotingPeriodSetEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'VotingPeriodSet',
-  })
+    eventName: "VotingPeriodSet",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsGovernorAbi}__ and `eventName` set to `"Withdraw"`
@@ -9024,8 +9024,8 @@ export const useWatchLilNounsGovernorWithdrawEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsGovernorAbi,
     address: lilNounsGovernorAddress,
-    eventName: 'Withdraw',
-  })
+    eventName: "Withdraw",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__
@@ -9036,7 +9036,7 @@ export const useWatchLilNounsGovernorWithdrawEvent =
 export const useReadLilNounsToken = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"DELEGATION_TYPEHASH"`
@@ -9048,8 +9048,8 @@ export const useReadLilNounsTokenDelegationTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'DELEGATION_TYPEHASH',
-  })
+    functionName: "DELEGATION_TYPEHASH",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"DOMAIN_TYPEHASH"`
@@ -9061,8 +9061,8 @@ export const useReadLilNounsTokenDomainTypehash =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'DOMAIN_TYPEHASH',
-  })
+    functionName: "DOMAIN_TYPEHASH",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"balanceOf"`
@@ -9074,8 +9074,8 @@ export const useReadLilNounsTokenBalanceOf =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'balanceOf',
-  })
+    functionName: "balanceOf",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"checkpoints"`
@@ -9087,8 +9087,8 @@ export const useReadLilNounsTokenCheckpoints =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'checkpoints',
-  })
+    functionName: "checkpoints",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"contractURI"`
@@ -9100,8 +9100,8 @@ export const useReadLilNounsTokenContractUri =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'contractURI',
-  })
+    functionName: "contractURI",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"dataURI"`
@@ -9112,8 +9112,8 @@ export const useReadLilNounsTokenContractUri =
 export const useReadLilNounsTokenDataUri = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'dataURI',
-})
+  functionName: "dataURI",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"decimals"`
@@ -9125,9 +9125,9 @@ export const useReadLilNounsTokenDecimals = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'decimals',
+    functionName: "decimals",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"delegates"`
@@ -9139,8 +9139,8 @@ export const useReadLilNounsTokenDelegates =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'delegates',
-  })
+    functionName: "delegates",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"descriptor"`
@@ -9152,8 +9152,8 @@ export const useReadLilNounsTokenDescriptor =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'descriptor',
-  })
+    functionName: "descriptor",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"getApproved"`
@@ -9165,8 +9165,8 @@ export const useReadLilNounsTokenGetApproved =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'getApproved',
-  })
+    functionName: "getApproved",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"getCurrentVotes"`
@@ -9178,8 +9178,8 @@ export const useReadLilNounsTokenGetCurrentVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'getCurrentVotes',
-  })
+    functionName: "getCurrentVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"getPriorVotes"`
@@ -9191,8 +9191,8 @@ export const useReadLilNounsTokenGetPriorVotes =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'getPriorVotes',
-  })
+    functionName: "getPriorVotes",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"isApprovedForAll"`
@@ -9204,8 +9204,8 @@ export const useReadLilNounsTokenIsApprovedForAll =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'isApprovedForAll',
-  })
+    functionName: "isApprovedForAll",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"isDescriptorLocked"`
@@ -9217,8 +9217,8 @@ export const useReadLilNounsTokenIsDescriptorLocked =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'isDescriptorLocked',
-  })
+    functionName: "isDescriptorLocked",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"isMinterLocked"`
@@ -9230,8 +9230,8 @@ export const useReadLilNounsTokenIsMinterLocked =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'isMinterLocked',
-  })
+    functionName: "isMinterLocked",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"isSeederLocked"`
@@ -9243,8 +9243,8 @@ export const useReadLilNounsTokenIsSeederLocked =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'isSeederLocked',
-  })
+    functionName: "isSeederLocked",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lilnoundersDAO"`
@@ -9256,8 +9256,8 @@ export const useReadLilNounsTokenLilnoundersDao =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lilnoundersDAO',
-  })
+    functionName: "lilnoundersDAO",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"minter"`
@@ -9268,8 +9268,8 @@ export const useReadLilNounsTokenLilnoundersDao =
 export const useReadLilNounsTokenMinter = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'minter',
-})
+  functionName: "minter",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"name"`
@@ -9280,8 +9280,8 @@ export const useReadLilNounsTokenMinter = /*#__PURE__*/ createUseReadContract({
 export const useReadLilNounsTokenName = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'name',
-})
+  functionName: "name",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"nonces"`
@@ -9292,8 +9292,8 @@ export const useReadLilNounsTokenName = /*#__PURE__*/ createUseReadContract({
 export const useReadLilNounsTokenNonces = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'nonces',
-})
+  functionName: "nonces",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"nounsDAO"`
@@ -9305,9 +9305,9 @@ export const useReadLilNounsTokenNounsDao = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'nounsDAO',
+    functionName: "nounsDAO",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"numCheckpoints"`
@@ -9319,8 +9319,8 @@ export const useReadLilNounsTokenNumCheckpoints =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'numCheckpoints',
-  })
+    functionName: "numCheckpoints",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"owner"`
@@ -9331,8 +9331,8 @@ export const useReadLilNounsTokenNumCheckpoints =
 export const useReadLilNounsTokenOwner = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'owner',
-})
+  functionName: "owner",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"ownerOf"`
@@ -9343,8 +9343,8 @@ export const useReadLilNounsTokenOwner = /*#__PURE__*/ createUseReadContract({
 export const useReadLilNounsTokenOwnerOf = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'ownerOf',
-})
+  functionName: "ownerOf",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"proxyRegistry"`
@@ -9356,8 +9356,8 @@ export const useReadLilNounsTokenProxyRegistry =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'proxyRegistry',
-  })
+    functionName: "proxyRegistry",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"seeder"`
@@ -9368,8 +9368,8 @@ export const useReadLilNounsTokenProxyRegistry =
 export const useReadLilNounsTokenSeeder = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'seeder',
-})
+  functionName: "seeder",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"seeds"`
@@ -9380,8 +9380,8 @@ export const useReadLilNounsTokenSeeder = /*#__PURE__*/ createUseReadContract({
 export const useReadLilNounsTokenSeeds = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'seeds',
-})
+  functionName: "seeds",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"supportsInterface"`
@@ -9393,8 +9393,8 @@ export const useReadLilNounsTokenSupportsInterface =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'supportsInterface',
-  })
+    functionName: "supportsInterface",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"symbol"`
@@ -9405,8 +9405,8 @@ export const useReadLilNounsTokenSupportsInterface =
 export const useReadLilNounsTokenSymbol = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'symbol',
-})
+  functionName: "symbol",
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"tokenByIndex"`
@@ -9418,8 +9418,8 @@ export const useReadLilNounsTokenTokenByIndex =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'tokenByIndex',
-  })
+    functionName: "tokenByIndex",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"tokenOfOwnerByIndex"`
@@ -9431,8 +9431,8 @@ export const useReadLilNounsTokenTokenOfOwnerByIndex =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'tokenOfOwnerByIndex',
-  })
+    functionName: "tokenOfOwnerByIndex",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"tokenURI"`
@@ -9444,9 +9444,9 @@ export const useReadLilNounsTokenTokenUri = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'tokenURI',
+    functionName: "tokenURI",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"totalSupply"`
@@ -9458,8 +9458,8 @@ export const useReadLilNounsTokenTotalSupply =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'totalSupply',
-  })
+    functionName: "totalSupply",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"votesToDelegate"`
@@ -9471,8 +9471,8 @@ export const useReadLilNounsTokenVotesToDelegate =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'votesToDelegate',
-  })
+    functionName: "votesToDelegate",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__
@@ -9483,7 +9483,7 @@ export const useReadLilNounsTokenVotesToDelegate =
 export const useWriteLilNounsToken = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"approve"`
@@ -9495,8 +9495,8 @@ export const useWriteLilNounsTokenApprove =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'approve',
-  })
+    functionName: "approve",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"burn"`
@@ -9507,8 +9507,8 @@ export const useWriteLilNounsTokenApprove =
 export const useWriteLilNounsTokenBurn = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'burn',
-})
+  functionName: "burn",
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"delegate"`
@@ -9520,8 +9520,8 @@ export const useWriteLilNounsTokenDelegate =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'delegate',
-  })
+    functionName: "delegate",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"delegateBySig"`
@@ -9533,8 +9533,8 @@ export const useWriteLilNounsTokenDelegateBySig =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'delegateBySig',
-  })
+    functionName: "delegateBySig",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockDescriptor"`
@@ -9546,8 +9546,8 @@ export const useWriteLilNounsTokenLockDescriptor =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockDescriptor',
-  })
+    functionName: "lockDescriptor",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockMinter"`
@@ -9559,8 +9559,8 @@ export const useWriteLilNounsTokenLockMinter =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockMinter',
-  })
+    functionName: "lockMinter",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockSeeder"`
@@ -9572,8 +9572,8 @@ export const useWriteLilNounsTokenLockSeeder =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockSeeder',
-  })
+    functionName: "lockSeeder",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"mint"`
@@ -9584,8 +9584,8 @@ export const useWriteLilNounsTokenLockSeeder =
 export const useWriteLilNounsTokenMint = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsTokenAbi,
   address: lilNounsTokenAddress,
-  functionName: 'mint',
-})
+  functionName: "mint",
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -9597,8 +9597,8 @@ export const useWriteLilNounsTokenRenounceOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"safeTransferFrom"`
@@ -9610,8 +9610,8 @@ export const useWriteLilNounsTokenSafeTransferFrom =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'safeTransferFrom',
-  })
+    functionName: "safeTransferFrom",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setApprovalForAll"`
@@ -9623,8 +9623,8 @@ export const useWriteLilNounsTokenSetApprovalForAll =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setApprovalForAll',
-  })
+    functionName: "setApprovalForAll",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setContractURIHash"`
@@ -9636,8 +9636,8 @@ export const useWriteLilNounsTokenSetContractUriHash =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setContractURIHash',
-  })
+    functionName: "setContractURIHash",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setDescriptor"`
@@ -9649,8 +9649,8 @@ export const useWriteLilNounsTokenSetDescriptor =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setDescriptor',
-  })
+    functionName: "setDescriptor",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setLilNoundersDAO"`
@@ -9662,8 +9662,8 @@ export const useWriteLilNounsTokenSetLilNoundersDao =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setLilNoundersDAO',
-  })
+    functionName: "setLilNoundersDAO",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setMinter"`
@@ -9675,8 +9675,8 @@ export const useWriteLilNounsTokenSetMinter =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setMinter',
-  })
+    functionName: "setMinter",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setNounsDAO"`
@@ -9688,8 +9688,8 @@ export const useWriteLilNounsTokenSetNounsDao =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setNounsDAO',
-  })
+    functionName: "setNounsDAO",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setSeeder"`
@@ -9701,8 +9701,8 @@ export const useWriteLilNounsTokenSetSeeder =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setSeeder',
-  })
+    functionName: "setSeeder",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"transferFrom"`
@@ -9714,8 +9714,8 @@ export const useWriteLilNounsTokenTransferFrom =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"transferOwnership"`
@@ -9727,8 +9727,8 @@ export const useWriteLilNounsTokenTransferOwnership =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__
@@ -9738,7 +9738,7 @@ export const useWriteLilNounsTokenTransferOwnership =
  */
 export const useSimulateLilNounsToken = /*#__PURE__*/ createUseSimulateContract(
   { abi: lilNounsTokenAbi, address: lilNounsTokenAddress },
-)
+);
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"approve"`
@@ -9750,8 +9750,8 @@ export const useSimulateLilNounsTokenApprove =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'approve',
-  })
+    functionName: "approve",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"burn"`
@@ -9763,8 +9763,8 @@ export const useSimulateLilNounsTokenBurn =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'burn',
-  })
+    functionName: "burn",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"delegate"`
@@ -9776,8 +9776,8 @@ export const useSimulateLilNounsTokenDelegate =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'delegate',
-  })
+    functionName: "delegate",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"delegateBySig"`
@@ -9789,8 +9789,8 @@ export const useSimulateLilNounsTokenDelegateBySig =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'delegateBySig',
-  })
+    functionName: "delegateBySig",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockDescriptor"`
@@ -9802,8 +9802,8 @@ export const useSimulateLilNounsTokenLockDescriptor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockDescriptor',
-  })
+    functionName: "lockDescriptor",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockMinter"`
@@ -9815,8 +9815,8 @@ export const useSimulateLilNounsTokenLockMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockMinter',
-  })
+    functionName: "lockMinter",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"lockSeeder"`
@@ -9828,8 +9828,8 @@ export const useSimulateLilNounsTokenLockSeeder =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'lockSeeder',
-  })
+    functionName: "lockSeeder",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"mint"`
@@ -9841,8 +9841,8 @@ export const useSimulateLilNounsTokenMint =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'mint',
-  })
+    functionName: "mint",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"renounceOwnership"`
@@ -9854,8 +9854,8 @@ export const useSimulateLilNounsTokenRenounceOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'renounceOwnership',
-  })
+    functionName: "renounceOwnership",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"safeTransferFrom"`
@@ -9867,8 +9867,8 @@ export const useSimulateLilNounsTokenSafeTransferFrom =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'safeTransferFrom',
-  })
+    functionName: "safeTransferFrom",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setApprovalForAll"`
@@ -9880,8 +9880,8 @@ export const useSimulateLilNounsTokenSetApprovalForAll =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setApprovalForAll',
-  })
+    functionName: "setApprovalForAll",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setContractURIHash"`
@@ -9893,8 +9893,8 @@ export const useSimulateLilNounsTokenSetContractUriHash =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setContractURIHash',
-  })
+    functionName: "setContractURIHash",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setDescriptor"`
@@ -9906,8 +9906,8 @@ export const useSimulateLilNounsTokenSetDescriptor =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setDescriptor',
-  })
+    functionName: "setDescriptor",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setLilNoundersDAO"`
@@ -9919,8 +9919,8 @@ export const useSimulateLilNounsTokenSetLilNoundersDao =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setLilNoundersDAO',
-  })
+    functionName: "setLilNoundersDAO",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setMinter"`
@@ -9932,8 +9932,8 @@ export const useSimulateLilNounsTokenSetMinter =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setMinter',
-  })
+    functionName: "setMinter",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setNounsDAO"`
@@ -9945,8 +9945,8 @@ export const useSimulateLilNounsTokenSetNounsDao =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setNounsDAO',
-  })
+    functionName: "setNounsDAO",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"setSeeder"`
@@ -9958,8 +9958,8 @@ export const useSimulateLilNounsTokenSetSeeder =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'setSeeder',
-  })
+    functionName: "setSeeder",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"transferFrom"`
@@ -9971,8 +9971,8 @@ export const useSimulateLilNounsTokenTransferFrom =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'transferFrom',
-  })
+    functionName: "transferFrom",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `functionName` set to `"transferOwnership"`
@@ -9984,8 +9984,8 @@ export const useSimulateLilNounsTokenTransferOwnership =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    functionName: 'transferOwnership',
-  })
+    functionName: "transferOwnership",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__
@@ -9997,7 +9997,7 @@ export const useWatchLilNounsTokenEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"Approval"`
@@ -10009,8 +10009,8 @@ export const useWatchLilNounsTokenApprovalEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'Approval',
-  })
+    eventName: "Approval",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"ApprovalForAll"`
@@ -10022,8 +10022,8 @@ export const useWatchLilNounsTokenApprovalForAllEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'ApprovalForAll',
-  })
+    eventName: "ApprovalForAll",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"DelegateChanged"`
@@ -10035,8 +10035,8 @@ export const useWatchLilNounsTokenDelegateChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'DelegateChanged',
-  })
+    eventName: "DelegateChanged",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"DelegateVotesChanged"`
@@ -10048,8 +10048,8 @@ export const useWatchLilNounsTokenDelegateVotesChangedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'DelegateVotesChanged',
-  })
+    eventName: "DelegateVotesChanged",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"DescriptorLocked"`
@@ -10061,8 +10061,8 @@ export const useWatchLilNounsTokenDescriptorLockedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'DescriptorLocked',
-  })
+    eventName: "DescriptorLocked",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"DescriptorUpdated"`
@@ -10074,8 +10074,8 @@ export const useWatchLilNounsTokenDescriptorUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'DescriptorUpdated',
-  })
+    eventName: "DescriptorUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"LilNoundersDAOUpdated"`
@@ -10087,8 +10087,8 @@ export const useWatchLilNounsTokenLilNoundersDaoUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'LilNoundersDAOUpdated',
-  })
+    eventName: "LilNoundersDAOUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"MinterLocked"`
@@ -10100,8 +10100,8 @@ export const useWatchLilNounsTokenMinterLockedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'MinterLocked',
-  })
+    eventName: "MinterLocked",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"MinterUpdated"`
@@ -10113,8 +10113,8 @@ export const useWatchLilNounsTokenMinterUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'MinterUpdated',
-  })
+    eventName: "MinterUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"NounBurned"`
@@ -10126,8 +10126,8 @@ export const useWatchLilNounsTokenNounBurnedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'NounBurned',
-  })
+    eventName: "NounBurned",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"NounCreated"`
@@ -10139,8 +10139,8 @@ export const useWatchLilNounsTokenNounCreatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'NounCreated',
-  })
+    eventName: "NounCreated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"NounsDAOUpdated"`
@@ -10152,8 +10152,8 @@ export const useWatchLilNounsTokenNounsDaoUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'NounsDAOUpdated',
-  })
+    eventName: "NounsDAOUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"OwnershipTransferred"`
@@ -10165,8 +10165,8 @@ export const useWatchLilNounsTokenOwnershipTransferredEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'OwnershipTransferred',
-  })
+    eventName: "OwnershipTransferred",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"SeederLocked"`
@@ -10178,8 +10178,8 @@ export const useWatchLilNounsTokenSeederLockedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'SeederLocked',
-  })
+    eventName: "SeederLocked",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"SeederUpdated"`
@@ -10191,8 +10191,8 @@ export const useWatchLilNounsTokenSeederUpdatedEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'SeederUpdated',
-  })
+    eventName: "SeederUpdated",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTokenAbi}__ and `eventName` set to `"Transfer"`
@@ -10204,8 +10204,8 @@ export const useWatchLilNounsTokenTransferEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTokenAbi,
     address: lilNounsTokenAddress,
-    eventName: 'Transfer',
-  })
+    eventName: "Transfer",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__
@@ -10216,7 +10216,7 @@ export const useWatchLilNounsTokenTransferEvent =
 export const useReadLilNounsTreasury = /*#__PURE__*/ createUseReadContract({
   abi: lilNounsTreasuryAbi,
   address: lilNounsTreasuryAddress,
-})
+});
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"GRACE_PERIOD"`
@@ -10228,8 +10228,8 @@ export const useReadLilNounsTreasuryGracePeriod =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'GRACE_PERIOD',
-  })
+    functionName: "GRACE_PERIOD",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"MAXIMUM_DELAY"`
@@ -10241,8 +10241,8 @@ export const useReadLilNounsTreasuryMaximumDelay =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'MAXIMUM_DELAY',
-  })
+    functionName: "MAXIMUM_DELAY",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"MINIMUM_DELAY"`
@@ -10254,8 +10254,8 @@ export const useReadLilNounsTreasuryMinimumDelay =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'MINIMUM_DELAY',
-  })
+    functionName: "MINIMUM_DELAY",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"admin"`
@@ -10267,9 +10267,9 @@ export const useReadLilNounsTreasuryAdmin = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'admin',
+    functionName: "admin",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"delay"`
@@ -10281,9 +10281,9 @@ export const useReadLilNounsTreasuryDelay = /*#__PURE__*/ createUseReadContract(
   {
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'delay',
+    functionName: "delay",
   },
-)
+);
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"pendingAdmin"`
@@ -10295,8 +10295,8 @@ export const useReadLilNounsTreasuryPendingAdmin =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'pendingAdmin',
-  })
+    functionName: "pendingAdmin",
+  });
 
 /**
  * Wraps __{@link useReadContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"queuedTransactions"`
@@ -10308,8 +10308,8 @@ export const useReadLilNounsTreasuryQueuedTransactions =
   /*#__PURE__*/ createUseReadContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'queuedTransactions',
-  })
+    functionName: "queuedTransactions",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__
@@ -10320,7 +10320,7 @@ export const useReadLilNounsTreasuryQueuedTransactions =
 export const useWriteLilNounsTreasury = /*#__PURE__*/ createUseWriteContract({
   abi: lilNounsTreasuryAbi,
   address: lilNounsTreasuryAddress,
-})
+});
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"acceptAdmin"`
@@ -10332,8 +10332,8 @@ export const useWriteLilNounsTreasuryAcceptAdmin =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'acceptAdmin',
-  })
+    functionName: "acceptAdmin",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"cancelTransaction"`
@@ -10345,8 +10345,8 @@ export const useWriteLilNounsTreasuryCancelTransaction =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'cancelTransaction',
-  })
+    functionName: "cancelTransaction",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"executeTransaction"`
@@ -10358,8 +10358,8 @@ export const useWriteLilNounsTreasuryExecuteTransaction =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'executeTransaction',
-  })
+    functionName: "executeTransaction",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"queueTransaction"`
@@ -10371,8 +10371,8 @@ export const useWriteLilNounsTreasuryQueueTransaction =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'queueTransaction',
-  })
+    functionName: "queueTransaction",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"setDelay"`
@@ -10384,8 +10384,8 @@ export const useWriteLilNounsTreasurySetDelay =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'setDelay',
-  })
+    functionName: "setDelay",
+  });
 
 /**
  * Wraps __{@link useWriteContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"setPendingAdmin"`
@@ -10397,8 +10397,8 @@ export const useWriteLilNounsTreasurySetPendingAdmin =
   /*#__PURE__*/ createUseWriteContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'setPendingAdmin',
-  })
+    functionName: "setPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__
@@ -10410,7 +10410,7 @@ export const useSimulateLilNounsTreasury =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"acceptAdmin"`
@@ -10422,8 +10422,8 @@ export const useSimulateLilNounsTreasuryAcceptAdmin =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'acceptAdmin',
-  })
+    functionName: "acceptAdmin",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"cancelTransaction"`
@@ -10435,8 +10435,8 @@ export const useSimulateLilNounsTreasuryCancelTransaction =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'cancelTransaction',
-  })
+    functionName: "cancelTransaction",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"executeTransaction"`
@@ -10448,8 +10448,8 @@ export const useSimulateLilNounsTreasuryExecuteTransaction =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'executeTransaction',
-  })
+    functionName: "executeTransaction",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"queueTransaction"`
@@ -10461,8 +10461,8 @@ export const useSimulateLilNounsTreasuryQueueTransaction =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'queueTransaction',
-  })
+    functionName: "queueTransaction",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"setDelay"`
@@ -10474,8 +10474,8 @@ export const useSimulateLilNounsTreasurySetDelay =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'setDelay',
-  })
+    functionName: "setDelay",
+  });
 
 /**
  * Wraps __{@link useSimulateContract}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `functionName` set to `"setPendingAdmin"`
@@ -10487,8 +10487,8 @@ export const useSimulateLilNounsTreasurySetPendingAdmin =
   /*#__PURE__*/ createUseSimulateContract({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    functionName: 'setPendingAdmin',
-  })
+    functionName: "setPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__
@@ -10500,7 +10500,7 @@ export const useWatchLilNounsTreasuryEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-  })
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"CancelTransaction"`
@@ -10512,8 +10512,8 @@ export const useWatchLilNounsTreasuryCancelTransactionEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'CancelTransaction',
-  })
+    eventName: "CancelTransaction",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"ExecuteTransaction"`
@@ -10525,8 +10525,8 @@ export const useWatchLilNounsTreasuryExecuteTransactionEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'ExecuteTransaction',
-  })
+    eventName: "ExecuteTransaction",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"NewAdmin"`
@@ -10538,8 +10538,8 @@ export const useWatchLilNounsTreasuryNewAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'NewAdmin',
-  })
+    eventName: "NewAdmin",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"NewDelay"`
@@ -10551,8 +10551,8 @@ export const useWatchLilNounsTreasuryNewDelayEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'NewDelay',
-  })
+    eventName: "NewDelay",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"NewPendingAdmin"`
@@ -10564,8 +10564,8 @@ export const useWatchLilNounsTreasuryNewPendingAdminEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'NewPendingAdmin',
-  })
+    eventName: "NewPendingAdmin",
+  });
 
 /**
  * Wraps __{@link useWatchContractEvent}__ with `abi` set to __{@link lilNounsTreasuryAbi}__ and `eventName` set to `"QueueTransaction"`
@@ -10577,5 +10577,5 @@ export const useWatchLilNounsTreasuryQueueTransactionEvent =
   /*#__PURE__*/ createUseWatchContractEvent({
     abi: lilNounsTreasuryAbi,
     address: lilNounsTreasuryAddress,
-    eventName: 'QueueTransaction',
-  })
+    eventName: "QueueTransaction",
+  });
